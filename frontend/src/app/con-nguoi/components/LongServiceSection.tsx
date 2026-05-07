@@ -158,12 +158,12 @@ const LongServiceSection = ({
                           <div className="w-14 h-14 md:w-16 md:h-16 relative rounded-full overflow-hidden border-2 border-white mb-2 shadow-md">
                             <Image src={encodeURI(person.img)} fill sizes="64px" className="object-cover" alt={person.name} style={{ objectPosition: person.objectPosition || 'center', transform: `scale(${person.scale || 1})` }} />
                           </div>
-                          <h2 className="text-white text-4xl md:text-4xl font-beausans font-black mb-1 drop-shadow-lg uppercase tracking-tighter leading-none">{person.years} NĂM</h2>
+                          <h2 className="text-white text-2xl md:text-3xl font-beausans font-black mb-1 drop-shadow-lg uppercase tracking-tighter leading-none">{person.years} NĂM</h2>
                           <p className="text-white/90 text-sm md:text-xs font-beausans font-bold">cống hiến</p>
                         </div>
                         <div className="my-auto flex flex-col justify-center py-2">
                           <p className="text-white/80 text-sm md:text-xs font-beausans font-bold mb-1 tracking-widest">Đồng chí</p>
-                          <h3 className="text-white text-2xl md:text-2xl font-beausans font-black mb-2 uppercase leading-tight drop-shadow-md tracking-tighter">{person.name.replace('ĐỒNG CHÍ ', '')}</h3>
+                          <h3 className="text-white text-lg md:text-xl font-beausans font-black mb-2 uppercase leading-tight drop-shadow-md tracking-tighter">{person.name.replace('ĐỒNG CHÍ ', '')}</h3>
                           <div className="w-8 h-1 bg-white/30 mx-auto mb-2"></div>
                           <p className="text-white text-base md:text-sm font-beausans font-black tracking-tight px-2 leading-tight">{person.dept}</p>
                         </div>
