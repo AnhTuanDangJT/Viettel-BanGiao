@@ -251,7 +251,7 @@ export const departments: Department[] = [
     hasTextOnImage: false,
     details: {
       leader: { name: "Đồng chí Phan Thị Ngọc Tú", role: "Trưởng phòng Bộ phận Kế hoạch", img: encodeURI("/images/tapthephong/tp_pp/bo_phan_ke_hoach/tp_phan_thi_ngoc_tu.jpg") },
-      group: { name: "Tập thể Bộ phận Kế hoạch", subName: "Phòng Kế hoạch và Kiểm soát", img: "/images/tapthephong/bo_phan_ke_hoach_tong_hop.jpg", objectPosition: "90% center" },
+      group: { name: "Tập thể Phòng Kế hoạch và Kiểm soát\nBộ phận Kế hoạch", subName: "Phòng Kế hoạch và Kiểm soát", img: "/images/tapthephong/bo_phan_ke_hoach_tong_hop.jpg", objectPosition: "90% center" },
       deputies: [
         { name: "Đồng chí Phạm Anh Quân", role: "Phó phòng Bộ phận Kế hoạch", img: encodeURI("/images/tapthephong/tp_pp/bo_phan_ke_hoach/pp_pham_anh_quan.jpg") }
       ]
