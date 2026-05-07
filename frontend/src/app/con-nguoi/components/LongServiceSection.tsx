@@ -153,7 +153,7 @@ const LongServiceSection = ({
                     {/* Back side */}
                     <div className="absolute inset-0 w-full h-full z-10 rounded-[40px] overflow-hidden shadow-2xl bg-[#EE0033] flex flex-col items-center justify-center p-4 md:p-6 text-center border-4 border-white/20" style={{ backfaceVisibility: 'hidden', WebkitBackfaceVisibility: 'hidden', transform: 'rotateY(180deg)' }}>
                       <div className="absolute inset-0 opacity-15 bg-[url('/images/diahinh.png')] bg-cover bg-center"></div>
-                      <div className="relative z-10 flex flex-col h-full w-full justify-between py-2">
+                      <div className="relative z-10 flex flex-col h-full w-full justify-between pt-1 pb-8 -translate-y-3 md:-translate-y-4">
                         <div className="flex flex-col items-center shrink-0">
                           <div className="w-14 h-14 md:w-16 md:h-16 relative rounded-full overflow-hidden border-2 border-white mb-2 shadow-md">
                             <Image src={encodeURI(person.img)} fill sizes="64px" className="object-cover" alt={person.name} style={{ objectPosition: person.objectPosition || 'center', transform: `scale(${person.scale || 1})` }} />
