@@ -262,7 +262,7 @@ export const departments: Department[] = [
     img: "/images/tapthephong/bo_phan_kiem_soat.jpg",
     hasTextOnImage: false,
     details: {
-      group: { name: "Tập thể Bộ phận Kiểm soát", subName: "Phòng Kế hoạch và Kiểm soát", img: "/images/tapthephong/bo_phan_kiem_soat.jpg" },
+      group: { name: "Tập thể Phòng Kế hoạch và Kiểm soát\nBộ phận Kiểm soát", subName: "Phòng Kế hoạch và Kiểm soát", img: "/images/tapthephong/bo_phan_kiem_soat.jpg" },
       deputies: [
         { name: "Đồng chí Đoàn Chí Hiếu", role: "Phó phòng - Phụ trách bộ phận Kiểm soát", img: encodeURI("/images/tapthephong/tp_pp/bo_phan_kiem_soat/pp_doan_chi_hieu.jpg") }
       ]
