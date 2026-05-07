@@ -88,7 +88,7 @@ const DepartmentModal = ({ dept, onClose, hideComradeLabel }: DepartmentModalPro
                             <Image quality={75} src={encodeURI(dept.details.group.img)} fill sizes="100vw" className="object-cover" alt="group" />
                           </div>
                           <div className="mt-4 text-center">
-                            <h3 className="text-white font-bold text-lg uppercase">{dept.details.group.name}</h3>
+                            <h3 className="text-white font-bold text-lg uppercase whitespace-pre-line">{dept.details.group.name}</h3>
                           </div>
                         </div>
                       )}
@@ -217,7 +217,7 @@ const DepartmentModal = ({ dept, onClose, hideComradeLabel }: DepartmentModalPro
                             <Image quality={75} src={encodeURI(dept.details.group.img)} fill sizes="1200px" className={dept.details.group.objectFit === 'contain' ? 'object-contain' : 'object-cover'} style={{ objectPosition: dept.details.group.objectPosition || 'center' }} alt="group" />
                           </div>
                           <div className="mt-6 text-center">
-                            <h3 className="text-white font-bold text-xl uppercase tracking-wide">{dept.details.group.name}</h3>
+                            <h3 className="text-white font-bold text-xl uppercase tracking-wide whitespace-pre-line">{dept.details.group.name}</h3>
                           </div>
                         </div>
                       )}

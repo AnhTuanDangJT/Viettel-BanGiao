@@ -178,7 +178,7 @@ export const departments: Department[] = [
     hasTextOnImage: false,
     details: {
       leader: { name: "Phạm Anh Tuấn", role: "Trưởng phòng Điều hành và Phát triển Siêu thị", img: "/images/tapthephong/tp_pp/dieu_hanh_sieu_thi/tp_pham_anh_tuan.jpg" },
-      group: { name: "Tập thể Bộ phận Điều hành Siêu thị", subName: "Phòng Điều hành và Phát triển Siêu thị", img: "/images/tapthephong/bo_phan_dieu_hanh_sieu_thi.jpg" },
+      group: { name: "Tập thể Phòng Điều hành và Phát triển Siêu thị\nBộ phận Điều hành Siêu thị", subName: "Phòng Điều hành và Phát triển Siêu thị", img: "/images/tapthephong/bo_phan_dieu_hanh_sieu_thi.jpg" },
       deputies: [
         { name: "Chung Duy Tuấn", role: "Phó phòng Điều hành và Phát triển Siêu thị", img: "/images/tapthephong/tp_pp/dieu_hanh_sieu_thi/pp_chung_duy_tuan_2.jpg" }
       ]
