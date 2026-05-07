@@ -13,6 +13,49 @@
 :root {
   --background: #ffffff;
   --foreground: #262626;
+  --ls-card-width: calc(25% - 1.5rem);
+  --ls-card-gap: 2rem;
+  --prov-spacing: 280px;
+  --prov-card-width: 280px;
+  --prov-card-height: 400px;
+  --prov-rotate-factor: 12deg;
+  --prov-y-factor: 45px;
+  --prov-y-sq-factor: 20px;
+  --prov-scale-center: 1.15;
+  --prov-scale-step: 0.1;
+  --branch-round: 40px;
+}
+
+@media (max-width: 1023px) {
+  :root {
+    --ls-card-width: calc(50% - 1rem);
+    --ls-card-gap: 2rem;
+    --prov-spacing: 200px;
+    --prov-card-width: 30vw;
+    --prov-card-height: 42vw;
+    --prov-rotate-factor: 12deg;
+    --prov-y-factor: 45px;
+    --prov-y-sq-factor: 20px;
+    --prov-scale-center: 1.15;
+    --prov-scale-step: 0.1;
+    --branch-round: 40px;
+  }
+}
+
+@media (max-width: 767px) {
+  :root {
+    --ls-card-width: 100%;
+    --ls-card-gap: 1rem;
+    --prov-spacing: 35vw;
+    --prov-card-width: 50vw;
+    --prov-card-height: 68vw;
+    --prov-rotate-factor: 5deg;
+    --prov-y-factor: 20px;
+    --prov-y-sq-factor: 5px;
+    --prov-scale-center: 1.05;
+    --prov-scale-step: 0.15;
+    --branch-round: 24px;
+  }
 }
 
 html {
