@@ -173,7 +173,7 @@ export const departments: Department[] = [
     }
   },
   {
-    name: "PHÒNG ĐIỀU HÀNH VÀ PHÁT TRIỂN SIÊU THỊ\nBỘ PHẬN ĐIỀU HÀNH SIÊU THỊ",
+    name: "Phòng Điều hành và Phát triển Siêu thị\nBộ phận Điều hành Siêu thị",
     img: "/images/tapthephong/bo_phan_dieu_hanh_sieu_thi.jpg",
     hasTextOnImage: false,
     details: {

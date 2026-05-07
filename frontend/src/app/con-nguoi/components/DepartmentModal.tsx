@@ -40,7 +40,7 @@ const DepartmentModal = ({ dept, onClose, hideComradeLabel }: DepartmentModalPro
         <button onClick={onClose} className="sticky top-0 self-end text-white/50 hover:text-white z-[60] p-2 hover:bg-white/10 rounded-full cursor-pointer transition-all mb-0">
           <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M18 6 6 18" /><path d="m6 6 12 12" /></svg>
         </button>
-        <h2 className="relative z-50 font-beausans font-black text-xl md:text-4xl uppercase mb-6 md:mb-10 tracking-tight text-center px-4" style={{ color: '#FFFFFF' }}>
+        <h2 className="relative z-50 font-beausans font-black text-xl md:text-4xl uppercase mb-6 md:mb-10 tracking-tight text-center px-4 whitespace-pre-line" style={{ color: '#FFFFFF' }}>
           {dept.name}
         </h2>
 
