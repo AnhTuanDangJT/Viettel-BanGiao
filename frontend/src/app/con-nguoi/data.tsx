@@ -280,7 +280,7 @@ export const departments: Department[] = [
 ];
 
 export const ecommerceChannel: Department = {
-  name: "KÊNH THƯƠNG MẠI ĐIỆN TỬ",
+  name: "Kênh Thương mại Điện tử",
   img: "/images/tapthephong/kenh_tmdt.jpg",
   hasTextOnImage: false,
   details: {
