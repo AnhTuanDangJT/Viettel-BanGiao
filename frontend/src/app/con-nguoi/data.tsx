@@ -233,12 +233,12 @@ export const departments: Department[] = [
   },
   {
     name: "Phòng Công nghệ Thông tin",
-    img: "/images/tapthephong/cntt.jpg",
+    img: "/images/tapthephong/cntt.JPG?v=1",
     gridScale: 1.15,
     hasTextOnImage: false,
     details: {
       leader: { name: "Đồng chí Đặng Thị Quỳnh Nga", role: "Trưởng phòng Công nghệ Thông tin", img: "/images/tapthephong/tp_pp/cntt/tp_dang_thi_quynh_nga.jpg" },
-      group: { name: "Tập thể Phòng Công nghệ Thông tin", subName: "", img: "/images/tapthephong/cntt.jpg" },
+      group: { name: "Tập thể Phòng Công nghệ Thông tin", subName: "", img: "/images/tapthephong/cntt.JPG?v=1" },
       deputies: [
         { name: "Đồng chí Đinh Đăng Thiên", role: "Phó phòng Công nghệ Thông tin", img: "/images/tapthephong/tp_pp/cntt/pp_dinh_dang_thien.jpg" }
       ]
