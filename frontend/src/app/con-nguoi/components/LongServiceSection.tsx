@@ -126,10 +126,14 @@ const LongServiceSection = ({
                 >
                   <div 
                     className="w-full h-full relative transition-all duration-700" 
-                    style={{ transformStyle: 'preserve-3d', transform: isFlipped ? 'rotateY(180deg)' : 'rotateY(0deg)', willChange: 'transform' }}
+                    style={!isMobile ? { transformStyle: 'preserve-3d', transform: isFlipped ? 'rotateY(180deg)' : 'rotateY(0deg)', willChange: 'transform' } : {}}
                   >
                     {/* Front side */}
-                    <div className="absolute inset-0 w-full h-full z-20 rounded-[40px] overflow-hidden shadow-2xl bg-transparent" style={{ backfaceVisibility: 'hidden', WebkitBackfaceVisibility: 'hidden' }}>
+                    {(!isMobile || !isFlipped) && (
+                      <div 
+                        className="absolute inset-0 w-full h-full z-20 rounded-[40px] overflow-hidden shadow-2xl bg-transparent transition-all duration-500" 
+                        style={!isMobile ? { backfaceVisibility: 'hidden', WebkitBackfaceVisibility: 'hidden' } : {}}
+                      >
                         <Image 
                           src={encodeURI(person.img)} 
                           fill 
@@ -143,35 +147,42 @@ const LongServiceSection = ({
                           }}
                           onError={(e) => e.currentTarget.src = "/images/logo-viettel-store.png"} 
                         />
-                      <div className={`absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent transition-opacity duration-300 flex items-end p-6 ${isFlipped ? 'opacity-0' : 'opacity-100'}`}>
-                        <div className="flex flex-col items-start">
-                          <p className="text-gray-400 font-beausans font-bold text-xs md:text-sm uppercase tracking-wider mb-1">Đồng chí</p>
-                          <p className="text-white font-beausans font-black text-lg md:text-xl uppercase tracking-tight leading-tight drop-shadow-md">{person.name.replace('Đồng chí ', '').replace('ĐỒNG CHÍ ', '')}</p>
-                        </div>
-                      </div>
-                    </div>
-                    {/* Back side */}
-                    <div className="absolute inset-0 w-full h-full z-10 rounded-[40px] overflow-hidden shadow-2xl bg-[#EE0033] flex flex-col items-center justify-center p-4 md:p-6 text-center border-4 border-white/20" style={{ backfaceVisibility: 'hidden', WebkitBackfaceVisibility: 'hidden', transform: 'rotateY(180deg)' }}>
-                      <div className="absolute inset-0 opacity-15 bg-[url('/images/diahinh.png')] bg-cover bg-center"></div>
-                      <div className="relative z-10 flex flex-col h-full w-full justify-between pt-1 pb-8 -translate-y-3 md:-translate-y-4">
-                        <div className="flex flex-col items-center shrink-0">
-                          <div className="w-14 h-14 md:w-16 md:h-16 relative rounded-full overflow-hidden border-2 border-white mb-2 shadow-md">
-                            <Image src={encodeURI(person.img)} fill sizes="64px" className="object-cover" alt={person.name} style={{ objectPosition: person.objectPosition || 'center', transform: `scale(${person.scale || 1})` }} />
+                        <div className={`absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent transition-opacity duration-300 flex items-end p-6 ${isFlipped ? 'opacity-0' : 'opacity-100'}`}>
+                          <div className="flex flex-col items-start">
+                            <p className="text-gray-400 font-beausans font-bold text-xs md:text-sm uppercase tracking-wider mb-1">Đồng chí</p>
+                            <p className="text-white font-beausans font-black text-lg md:text-xl uppercase tracking-tight leading-tight drop-shadow-md">{person.name.replace('Đồng chí ', '').replace('ĐỒNG CHÍ ', '')}</p>
                           </div>
-                          <h2 className="text-white text-2xl md:text-3xl font-beausans font-black mb-1 drop-shadow-lg uppercase tracking-tighter leading-none">{person.years} NĂM</h2>
-                          <p className="text-white/90 text-sm md:text-xs font-beausans font-bold">cống hiến</p>
-                        </div>
-                        <div className="my-auto flex flex-col justify-center py-2">
-                          <p className="text-white/80 text-sm md:text-xs font-beausans font-bold mb-1 tracking-widest">Đồng chí</p>
-                          <h3 className="text-white text-lg md:text-xl font-beausans font-black mb-2 uppercase leading-tight drop-shadow-md tracking-tighter">{person.name.replace('ĐỒNG CHÍ ', '')}</h3>
-                          <div className="w-8 h-1 bg-white/30 mx-auto mb-2"></div>
-                          <p className="text-white text-base md:text-sm font-beausans font-black tracking-tight px-2 leading-tight">{person.dept}</p>
-                        </div>
-                        <div className="shrink-0">
-                          <p className="text-white/80 text-sm md:text-xs font-roboto font-medium">Ngày gia nhập: {person.date}</p>
                         </div>
                       </div>
-                    </div>
+                    )}
+
+                    {/* Back side */}
+                    {(!isMobile || isFlipped) && (
+                      <div 
+                        className="absolute inset-0 w-full h-full z-10 rounded-[40px] overflow-hidden shadow-2xl bg-[#EE0033] flex flex-col items-center justify-center p-4 md:p-6 text-center border-4 border-white/20 transition-all duration-500" 
+                        style={!isMobile ? { backfaceVisibility: 'hidden', WebkitBackfaceVisibility: 'hidden', transform: 'rotateY(180deg)' } : {}}
+                      >
+                        <div className="absolute inset-0 opacity-15 bg-[url('/images/diahinh.png')] bg-cover bg-center"></div>
+                        <div className="relative z-10 flex flex-col h-full w-full justify-between pt-1 pb-8 -translate-y-3 md:-translate-y-4">
+                          <div className="flex flex-col items-center shrink-0">
+                            <div className="w-14 h-14 md:w-16 md:h-16 relative rounded-full overflow-hidden border-2 border-white mb-2 shadow-md">
+                              <Image src={encodeURI(person.img)} fill sizes="64px" className="object-cover" alt={person.name} style={{ objectPosition: person.objectPosition || 'center', transform: `scale(${person.scale || 1})` }} />
+                            </div>
+                            <h2 className="text-white text-2xl md:text-3xl font-beausans font-black mb-1 drop-shadow-lg uppercase tracking-tighter leading-none">{person.years} NĂM</h2>
+                            <p className="text-white/90 text-sm md:text-xs font-beausans font-bold">cống hiến</p>
+                          </div>
+                          <div className="my-auto flex flex-col justify-center py-2">
+                            <p className="text-white/80 text-sm md:text-xs font-beausans font-bold mb-1 tracking-widest">Đồng chí</p>
+                            <h3 className="text-white text-lg md:text-xl font-beausans font-black mb-2 uppercase leading-tight drop-shadow-md tracking-tighter">{person.name.replace('ĐỒNG CHÍ ', '')}</h3>
+                            <div className="w-8 h-1 bg-white/30 mx-auto mb-2"></div>
+                            <p className="text-white text-base md:text-sm font-beausans font-black tracking-tight px-2 leading-tight">{person.dept}</p>
+                          </div>
+                          <div className="shrink-0">
+                            <p className="text-white/80 text-sm md:text-xs font-roboto font-medium">Ngày gia nhập: {person.date}</p>
+                          </div>
+                        </div>
+                      </div>
+                    )}
                   </div>
                 </div>
               );
