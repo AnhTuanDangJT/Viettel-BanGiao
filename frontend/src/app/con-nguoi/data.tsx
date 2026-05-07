@@ -189,7 +189,7 @@ export const departments: Department[] = [
     img: "/images/tapthephong/phong_phat_trien_sieu_thi.jpg",
     hasTextOnImage: false,
     details: {
-      group: { name: "Tập thể Bộ phận Phát triển Kênh", subName: "Phòng Điều hành và Phát triển Siêu thị", img: "/images/tapthephong/phong_phat_trien_sieu_thi.jpg" },
+      group: { name: "Tập thể Phòng Điều hành và Phát triển Siêu thị\nBộ phận Phát triển Kênh", subName: "Phòng Điều hành và Phát triển Siêu thị", img: "/images/tapthephong/phong_phat_trien_sieu_thi.jpg" },
       deputies: [
         { name: "Đồng chí Trần Hải Vinh", role: "Phó phòng - Phụ trách bộ phận Phát triển Kênh", img: "/images/tapthephong/tp_pp/phat_trien_kenh/pp_tran_hai_vinh.jpg" }
       ]
