@@ -168,7 +168,7 @@ export const departments: Department[] = [
       leader: { name: "Đồng chí Bùi Quốc Hưng", role: "Trưởng phòng Marketing", img: "/images/tapthephong/tp_pp/mkt/tp_bui_quoc_hung.jpg" },
       group: { name: "Tập thể Phòng Marketing", subName: "Phòng Marketing", img: "/images/tapthephong/phong_marketing.jpg", objectFit: "contain" },
       deputies: [
-        { name: "Đồng chí Bùi Xuân Vinh", role: "Phó phòng Marketing", img: "/images/tapthephong/tp_pp/mkt/pp_bui_xuan_vinh.jpg" }
+        { name: "Đồng chí Bùi Xuân Vinh", role: "Phó phòng Marketing", img: "/images/tapthephong/tp_pp/mkt/pp_bui_xuan_vinh.JPG?v=1" }
       ]
     }
   },
