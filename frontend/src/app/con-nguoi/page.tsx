@@ -247,7 +247,7 @@ export default function ConNguoiPage() {
               {/* New Section for Supermarket Channel */}
               <section className="pb-24 bg-transparent">
                 <div className="container mx-auto px-4">
-                  <h2 className="text-[#4A4A4A] font-beausans font-black text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-8 md:mb-16 text-center tracking-tight px-4 leading-tight">
+                  <h2 className="text-[#4A4A4A] font-beausans font-black text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-8 md:mb-16 text-center tracking-tight px-4 leading-tight uppercase">
                     Kênh Siêu thị
                   </h2>
                   <div className="max-w-4xl mx-auto flex justify-center">
