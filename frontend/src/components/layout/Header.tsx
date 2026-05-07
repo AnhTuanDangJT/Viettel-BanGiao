@@ -14,7 +14,7 @@ export const Header = () => {
 
   const links = [
     { name: "HÀNH TRÌNH TỰ HÀO", href: "/hanh-trinh" },
-    { name: "CON NGƯỜI VIETTEL STORE", href: "/con-nguoi" },
+    { name: "MÔ HÌNH TỔ CHỨC", href: "/con-nguoi" },
     { name: "CÂU CHUYỆN VIETTEL STORE", href: "/cau-chuyen" },
     { name: "VỮNG BƯỚC TƯƠNG LAI", href: "/tuong-lai" },
   ];
