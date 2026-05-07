@@ -114,9 +114,9 @@ export const leaders: Leader[] = [
 
 export const longService: LongService[] = [
   { name: "ĐỒNG CHÍ NGÔ NGÂN HÀ", years: 20, dept: "Phòng Kinh doanh Thiết bị", date: "01/10/2005", img: "/images/vinhdanh/v1.jpg", objectPosition: "center 10%", scale: 1.0 },
-  { name: "ĐỒNG CHÍ NGUYỄN THỊ THÙY DƯƠNG", years: 20, dept: "Phòng Chất lượng dịch vụ", date: "01/10/2005", img: "/images/vinhdanh/v2.jpg" },
+  { name: "ĐỒNG CHÍ NGUYỄN THỊ THÙY DƯƠNG", years: 20, dept: "Phòng Chất lượng Dịch vụ", date: "01/10/2005", img: "/images/vinhdanh/v2.jpg" },
   { name: "ĐỒNG CHÍ ĐOÀN CHÍ HIẾU", years: 20, dept: "Phòng Kế hoạch và kiểm soát", date: "01/10/2005", img: "/images/vinhdanh/v3.jpg" },
-  { name: "ĐỒNG CHÍ BÙI ĐỨC TOÀN", years: 20, dept: "Phòng Chất lượng dịch vụ", date: "01/10/2005", img: "/images/vinhdanh/v4.jpg" },
+  { name: "ĐỒNG CHÍ BÙI ĐỨC TOÀN", years: 20, dept: "Phòng Chất lượng Dịch vụ", date: "01/10/2005", img: "/images/vinhdanh/v4.jpg" },
   { name: "ĐỒNG CHÍ PHAN MINH TUẤN", years: 19, dept: "Phòng Kinh doanh Thiết bị", date: "27/12/2005", img: "/images/vinhdanh/v5.jpg" },
   { name: "ĐỒNG CHÍ NGUYỄN THỊ DUYÊN", years: 19, dept: "Hệ thống siêu thị: HNI03", date: "01/07/2006", img: "/images/vinhdanh/v6.jpg" },
   { name: "ĐỒNG CHÍ NGUYỄN THỊ NGỌC OANH", years: 19, dept: "Hệ thống cửa hàng: HYN-CH01", date: "03/01/2006", img: "/images/vinhdanh/v7.jpg" },
@@ -129,7 +129,7 @@ export const longService: LongService[] = [
   { name: "ĐỒNG CHÍ DƯƠNG SƠN TÙNG", years: 18, dept: "Phòng Kinh doanh Dịch vụ", date: "01/11/2007", img: "/images/vinhdanh/v14.jpg" },
   { name: "ĐỒNG CHÍ NGUYỄN THỊ HẠNH", years: 18, dept: "Phòng Kinh doanh Thiết bị", date: "01/10/2006", img: "/images/vinhdanh/v15.jpg" },
   { name: "ĐỒNG CHÍ NGUYỄN THỊ NGÀ", years: 17, dept: "Phòng Kinh doanh Thiết bị", date: "01/08/2008", img: "/images/vinhdanh/v16.jpg" },
-  { name: "ĐỒNG CHÍ LÊ DUY BÁCH", years: 17, dept: "Phòng Chất lượng dịch vụ", date: "01/09/2008", img: "/images/vinhdanh/v17.jpg" },
+  { name: "ĐỒNG CHÍ LÊ DUY BÁCH", years: 17, dept: "Phòng Chất lượng Dịch vụ", date: "01/09/2008", img: "/images/vinhdanh/v17.jpg" },
   { name: "ĐỒNG CHÍ TRƯƠNG ĐẠI NGHĨA", years: 17, dept: "Ban Giám đốc Trung tâm", date: "01/10/2007", img: "/images/vinhdanh/v18.jpg" },
   { name: "ĐỒNG CHÍ HUỲNH THỊ BÁ THẢO", years: 17, dept: "Hệ thống siêu thị: LDG08", date: "01/12/2006", img: "/images/vinhdanh/v19.jpg" },
   { name: "ĐỒNG CHÍ VÕ THỊ CHÂU TRINH", years: 17, dept: "Hệ thống siêu thị: QNI02", date: "01/11/2007", img: "/images/vinhdanh/v20.jpg" },
