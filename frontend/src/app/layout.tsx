@@ -68,7 +68,6 @@ export const metadata: Metadata = {
 };
 
 import { Header } from "@/components/layout/Header";
-import { Providers } from "@/components/providers/Providers";
 import { LoadingIntro } from "@/components/layout/LoadingIntro";
 import { PageTransition } from "@/components/layout/PageTransition";
 
@@ -81,14 +80,12 @@ export default function RootLayout({
     <html lang="vi" suppressHydrationWarning>
       <body className={`${roboto.variable} ${fsMagistral.variable} ${fsBeauSans.variable} ${myriadPro.variable} font-sans antialiased min-h-screen flex flex-col`} suppressHydrationWarning>
         <LoadingIntro />
-        <Providers>
-          <Header />
-          <main className="flex-1 overflow-x-clip">
-            <PageTransition>
-              {children}
-            </PageTransition>
-          </main>
-        </Providers>
+        <Header />
+        <main className="flex-1 overflow-x-clip">
+          <PageTransition>
+            {children}
+          </PageTransition>
+        </main>
       </body>
     </html>
   );
