@@ -28,8 +28,7 @@ export const MilestoneCircle = memo(({ milestone, onClick, isPriority = false }:
         className="object-cover transition-transform duration-500 group-hover:scale-110"
       />
 
-      {/* LEFT HALF — dark overlay */}
-      <div className="absolute top-0 left-0 h-full w-1/2 md:w-[150px] bg-black/40 z-[2]" />
+
 
       {/* RIGHT HALF — SVG curved overlay for desktop */}
       <svg
@@ -83,7 +82,7 @@ export const MilestoneCircle = memo(({ milestone, onClick, isPriority = false }:
 
       {/* RIGHT HALF — Title + Description */}
       <div
-        className="absolute top-0 h-full z-[3] flex flex-col justify-start left-1/2 w-1/2 md:left-[150px] md:w-[150px] pt-[15%] sm:pt-[20%] md:pt-[80px] pl-2 pr-2 md:pl-3 md:pr-3"
+        className="absolute top-0 h-full z-[3] flex flex-col justify-start left-1/2 w-1/2 md:left-[150px] md:w-[150px] pt-[27%] sm:pt-[32%] md:pt-[110px] pl-2 pr-2 md:pl-3 md:pr-3"
         style={{ alignItems: 'flex-start' }}
       >
         <h4 

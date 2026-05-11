@@ -101,7 +101,7 @@ export const JourneyGrid: React.FC = () => {
     });
   };
 
-  const handleTouchMove = (e: React.TouchEvent) => {
+  const handleTouchMove = () => {
     if (!isMobile || touchStart === null) return;
   };
 
@@ -204,39 +204,78 @@ export const JourneyGrid: React.FC = () => {
         milestone={selectedMilestone}
       />
 
-      <div className="mt-8 flex items-center justify-center gap-4">
-        <button
-          onClick={() => paginate(-1)}
-          className="w-12 h-12 rounded-full bg-white text-gray-600 hover:text-[#EE0033] shadow-[0_4px_15px_rgba(0,0,0,0.15)] hover:shadow-[0_6px_20px_rgba(0,0,0,0.25)] transition-all duration-300 flex items-center justify-center"
-          aria-label="Previous Page"
-        >
-          <ChevronLeft size={22} />
-        </button>
+      {isMobile ? (
+        <div className="mt-8 flex flex-col items-center gap-6 w-full">
+          {/* Dots on top */}
+          <div className="flex flex-nowrap justify-center gap-1.5 items-center max-w-full px-4">
+            {Array.from({ length: totalPages }).map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setPageDirect(index)}
+                className={cn(
+                  "h-2 transition-all duration-300 rounded-full",
+                  page === index 
+                    ? "w-8 bg-[#EE0033]" 
+                    : "w-2 bg-[#B5B4B4] hover:bg-[#EE0033]/40"
+                )}
+                aria-label={`Go to page ${index + 1}`}
+              />
+            ))}
+          </div>
 
-        <div className="flex gap-2.5 items-center">
-          {Array.from({ length: totalPages }).map((_, index) => (
+          {/* Left/Right buttons underneath */}
+          <div className="flex items-center justify-center gap-8">
             <button
-              key={index}
-              onClick={() => setPageDirect(index)}
-              className={cn(
-                "h-2 transition-all duration-300 rounded-full",
-                page === index 
-                  ? "w-8 bg-[#EE0033]" 
-                  : "w-2 bg-[#B5B4B4] hover:bg-[#EE0033]/40"
-              )}
-              aria-label={`Go to page ${index + 1}`}
-            />
-          ))}
+              onClick={() => paginate(-1)}
+              className="w-12 h-12 rounded-full bg-white text-gray-600 hover:text-[#EE0033] shadow-[0_4px_15px_rgba(0,0,0,0.15)] hover:shadow-[0_6px_20px_rgba(0,0,0,0.25)] transition-all duration-300 flex items-center justify-center"
+              aria-label="Previous Page"
+            >
+              <ChevronLeft size={22} />
+            </button>
+            <button
+              onClick={() => paginate(1)}
+              className="w-12 h-12 rounded-full bg-white text-gray-600 hover:text-[#EE0033] shadow-[0_4px_15px_rgba(0,0,0,0.15)] hover:shadow-[0_6px_20px_rgba(0,0,0,0.25)] transition-all duration-300 flex items-center justify-center"
+              aria-label="Next Page"
+            >
+              <ChevronRight size={22} />
+            </button>
+          </div>
         </div>
+      ) : (
+        <div className="mt-8 flex items-center justify-center gap-4">
+          <button
+            onClick={() => paginate(-1)}
+            className="w-12 h-12 rounded-full bg-white text-gray-600 hover:text-[#EE0033] shadow-[0_4px_15px_rgba(0,0,0,0.15)] hover:shadow-[0_6px_20px_rgba(0,0,0,0.25)] transition-all duration-300 flex items-center justify-center"
+            aria-label="Previous Page"
+          >
+            <ChevronLeft size={22} />
+          </button>
 
-        <button
-          onClick={() => paginate(1)}
-          className="w-12 h-12 rounded-full bg-white text-gray-600 hover:text-[#EE0033] shadow-[0_4px_15px_rgba(0,0,0,0.15)] hover:shadow-[0_6px_20px_rgba(0,0,0,0.25)] transition-all duration-300 flex items-center justify-center"
-          aria-label="Next Page"
-        >
-          <ChevronRight size={22} />
-        </button>
-      </div>
+          <div className="flex gap-2.5 items-center">
+            {Array.from({ length: totalPages }).map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setPageDirect(index)}
+                className={cn(
+                  "h-2 transition-all duration-300 rounded-full",
+                  page === index 
+                    ? "w-8 bg-[#EE0033]" 
+                    : "w-2 bg-[#B5B4B4] hover:bg-[#EE0033]/40"
+                )}
+                aria-label={`Go to page ${index + 1}`}
+              />
+            ))}
+          </div>
+
+          <button
+            onClick={() => paginate(1)}
+            className="w-12 h-12 rounded-full bg-white text-gray-600 hover:text-[#EE0033] shadow-[0_4px_15px_rgba(0,0,0,0.15)] hover:shadow-[0_6px_20px_rgba(0,0,0,0.25)] transition-all duration-300 flex items-center justify-center"
+            aria-label="Next Page"
+          >
+            <ChevronRight size={22} />
+          </button>
+        </div>
+      )}
     </div>
   );
 };

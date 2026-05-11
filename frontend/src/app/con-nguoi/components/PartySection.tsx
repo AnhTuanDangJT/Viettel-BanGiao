@@ -47,8 +47,6 @@ const PartySection = ({
     return () => el.removeEventListener('touchmove', handleTouchMoveManual);
   }, [isMobile, touchStart]);
 
-  const itemsPerPage = isMobile ? 1 : 4;
-  const totalPages = partyGroups.length;
 
   const handleTouchStart = (e: React.TouchEvent) => {
     if (!isMobile) return;

@@ -271,7 +271,7 @@ export default function HanhTrinhPage() {
 
       {/* 3. THÀNH TỰU */}
       <motion.section 
-        className="py-24 bg-gray-50 mt-16 relative overflow-hidden"
+        className="py-24 bg-gray-50 relative overflow-hidden"
         {...fadeInUp}
       >
         {/* Background Ripples */}

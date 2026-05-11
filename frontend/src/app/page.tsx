@@ -11,7 +11,7 @@ export default function Home() {
             src="/images/homepage/anh-trang-chu.webp"
             alt="20 Năm Khát Vọng Vươn Xa"
             fill
-            className="object-cover"
+            className="object-contain scale-x-[1.75] scale-y-[1.9] translate-y-[5px] md:scale-100 md:translate-y-0 md:object-cover"
             priority
             sizes="(max-width: 768px) 100vw, 1920px"
             quality={80}

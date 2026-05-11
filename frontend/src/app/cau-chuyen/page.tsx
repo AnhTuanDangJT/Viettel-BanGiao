@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import { VietnamMap } from "@/components/story/VietnamMap";
 import Image from "next/image";
 
@@ -47,7 +47,7 @@ const heartPieces: HeartPiece[] = [
   { id: "BOX-024", x: 450, y: 2748, w: 150, h: 150, img: basePathChibo + "anh2.webp" },
   { id: "BOX-025", x: 606, y: 2748, w: 72, h: 72, img: basePathNew + "z7749622513668_1a35e432b1292d9319551cb78361c139.webp" },
   { id: "BOX-026", x: 684, y: 2670, w: 72, h: 72, img: basePathNew + "z7749625211493_478bcf6f11d10f026fa4d0808514bfa4.webp" },
-  { id: "BOX-027", x: 685, y: 2748, w: 72, h: 72, img: basePathNew + "anhPhuNu.jpg" },
+  { id: "BOX-027", x: 685, y: 2748, w: 72, h: 72, img: basePathNew + "anhPhuNu.webp" },
   { id: "BOX-028", x: 996, y: 2670, w: 122, h: 122, img: basePathChibo + "anh6.webp" },
   { id: "BOX-029", x: 1124, y: 2670, w: 72, h: 72, img: basePathNew + "14.webp" },
   { id: "BOX-030", x: 996, y: 2798, w: 72, h: 72, img: basePathNew + "21.webp" },
@@ -225,9 +225,6 @@ export default function CauChuyenPage() {
           <div ref={heartRef} className="relative w-full flex justify-center mt-6">
             <div style={{ width: "972px", height: "730px", position: "relative", perspective: "1000px" }}>
               {heartPieces.map((box) => {
-                // Make it static for desktop as well to avoid white gaps
-                const isActive = true;
-                const isFinished = false;
 
                 return (
                   <div
@@ -328,9 +325,6 @@ export default function CauChuyenPage() {
                 perspective: "1000px"
               }}>
                 {heartPieces.map((box) => {
-                  // On mobile, we want it to be static (always show the image) to avoid white gaps
-                  const isActive = true; 
-                  const isFinished = false;
 
                   return (
                     <div
