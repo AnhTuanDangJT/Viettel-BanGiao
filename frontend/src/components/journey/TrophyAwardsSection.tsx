@@ -29,7 +29,7 @@ export const TrophyAwardsSection: React.FC = () => {
         }}
       >
         <Image 
-          src="/images/exact-diahinh2.2.png" 
+          src="/images/backgrounds/exact-diahinh2.2.webp" 
           fill 
           className="object-cover" 
           alt="" 

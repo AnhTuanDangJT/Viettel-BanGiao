@@ -224,7 +224,7 @@ export const departments: Department[] = [
     img: "/images/tapthephong/phong_chinh_tri_nhan_su.jpg",
     hasTextOnImage: false,
     details: {
-      leader: { name: "Đồng chí Nguyễn Thị Hà Doan", role: "Trưởng phòng Chính trị Nhân sự", img: "/images/Canhan5.JPG" },
+      leader: { name: "Đồng chí Nguyễn Thị Hà Doan", role: "Trưởng phòng Chính trị Nhân sự", img: "/images/staff/Canhan5.JPG" },
       group: { name: "Tập thể Phòng Chính trị Nhân sự", subName: "", img: "/images/tapthephong/phong_chinh_tri_nhan_su.jpg" },
       deputies: [
         { name: "Đồng chí Ngô Quang Hiếu", role: "Phó phòng Chính trị Nhân sự", img: "/images/tapthephong/tp_pp/chinh_tri_nhan_su/pp_ngo_quang_hieu.jpg", objectPosition: "60% center" }
@@ -270,10 +270,10 @@ export const departments: Department[] = [
   },
   {
     name: "Chi nhánh bán lẻ khu vực phía Nam",
-    img: "/1792293004306854965.jpg",
+    img: "/images/staff/1792293004306854965.jpg",
     hasTextOnImage: false,
     details: {
-      group: { name: "Chi nhánh bán lẻ khu vực phía Nam", subName: "Viettel Store", img: "/1792293004306854965.jpg" },
+      group: { name: "Chi nhánh bán lẻ khu vực phía Nam", subName: "Viettel Store", img: "/images/staff/1792293004306854965.jpg" },
       deputies: []
     }
   },
@@ -293,7 +293,7 @@ export const ecommerceChannel: Department = {
 
 export const supermarketChannel: Department = {
   name: "Quản lý vùng",
-  img: "/images/tap_the_qlv.jpg",
+  img: "/images/staff/tap_the_qlv.jpg",
   hasTextOnImage: false,
   details: {
     deputies: [],
@@ -457,88 +457,88 @@ export const partyGroups: Department[] = [
 export const branches: Branch[] = [
   {
     name: "Chi nhánh Bình Dương",
-    img: "/images/logo-viettel-store.png", // Fallback for missing Binh Duong image
+    img: "/images/homepage/logo-viettel-store.png", // Fallback for missing Binh Duong image
     hasTextOnImage: false,
     details: {
-      leader: { name: "Đang cập nhật...", role: "Giám đốc Chi nhánh", img: "/images/logo-viettel-store.png" },
-      group: { name: "Tập thể Chi nhánh Bình Dương", subName: "Chi nhánh bán lẻ Bình Dương", img: "/images/logo-viettel-store.png" },
+      leader: { name: "Đang cập nhật...", role: "Giám đốc Chi nhánh", img: "/images/homepage/logo-viettel-store.png" },
+      group: { name: "Tập thể Chi nhánh Bình Dương", subName: "Chi nhánh bán lẻ Bình Dương", img: "/images/homepage/logo-viettel-store.png" },
       deputies: [
-        { name: "Đang cập nhật...", role: "Phó giám đốc", img: "/images/logo-viettel-store.png" }
+        { name: "Đang cập nhật...", role: "Phó giám đốc", img: "/images/homepage/logo-viettel-store.png" }
       ]
     }
   },
   {
     name: "Chi nhánh Cà Mau",
-    img: "/images/logo-viettel-store.png",
+    img: "/images/homepage/logo-viettel-store.png",
     hasTextOnImage: false,
     details: {
-      leader: { name: "Đang cập nhật...", role: "Giám đốc Chi nhánh", img: "/images/logo-viettel-store.png" },
-      group: { name: "Tập thể Chi nhánh Cà Mau", subName: "Chi nhánh bán lẻ Cà Mau", img: "/images/logo-viettel-store.png" },
+      leader: { name: "Đang cập nhật...", role: "Giám đốc Chi nhánh", img: "/images/homepage/logo-viettel-store.png" },
+      group: { name: "Tập thể Chi nhánh Cà Mau", subName: "Chi nhánh bán lẻ Cà Mau", img: "/images/homepage/logo-viettel-store.png" },
       deputies: [
-        { name: "Đang cập nhật...", role: "Phó giám đốc", img: "/images/logo-viettel-store.png" }
+        { name: "Đang cập nhật...", role: "Phó giám đốc", img: "/images/homepage/logo-viettel-store.png" }
       ]
     }
   },
   {
     name: "Chi nhánh TP. Hồ Chí Minh",
-    img: "/images/logo-viettel-store.png",
+    img: "/images/homepage/logo-viettel-store.png",
     hasTextOnImage: false,
     details: {
-      leader: { name: "Đang cập nhật...", role: "Giám đốc Chi nhánh", img: "/images/logo-viettel-store.png" },
-      group: { name: "Tập thể Chi nhánh TP. Hồ Chí Minh", subName: "Chi nhánh bán lẻ TP. HCM", img: "/images/logo-viettel-store.png" },
+      leader: { name: "Đang cập nhật...", role: "Giám đốc Chi nhánh", img: "/images/homepage/logo-viettel-store.png" },
+      group: { name: "Tập thể Chi nhánh TP. Hồ Chí Minh", subName: "Chi nhánh bán lẻ TP. HCM", img: "/images/homepage/logo-viettel-store.png" },
       deputies: [
-        { name: "Đang cập nhật...", role: "Phó giám đốc", img: "/images/logo-viettel-store.png" }
+        { name: "Đang cập nhật...", role: "Phó giám đốc", img: "/images/homepage/logo-viettel-store.png" }
       ]
     }
   },
   {
     name: "Chi nhánh Đồng Nai",
-    img: "/images/logo-viettel-store.png",
+    img: "/images/homepage/logo-viettel-store.png",
     hasTextOnImage: false,
     details: {
-      leader: { name: "Đang cập nhật...", role: "Giám đốc Chi nhánh", img: "/images/logo-viettel-store.png" },
-      group: { name: "Tập thể Chi nhánh Đồng Nai", subName: "Chi nhánh bán lẻ Đồng Nai", img: "/images/logo-viettel-store.png" },
-      deputy: { name: "Đang cập nhật...", role: "Phó giám đốc", img: "/images/logo-viettel-store.png" }
+      leader: { name: "Đang cập nhật...", role: "Giám đốc Chi nhánh", img: "/images/homepage/logo-viettel-store.png" },
+      group: { name: "Tập thể Chi nhánh Đồng Nai", subName: "Chi nhánh bán lẻ Đồng Nai", img: "/images/homepage/logo-viettel-store.png" },
+      deputy: { name: "Đang cập nhật...", role: "Phó giám đốc", img: "/images/homepage/logo-viettel-store.png" }
     }
   },
   {
     name: "Chi nhánh Long An",
-    img: "/images/logo-viettel-store.png",
+    img: "/images/homepage/logo-viettel-store.png",
     hasTextOnImage: false,
     details: {
-      leader: { name: "Đang cập nhật...", role: "Giám đốc Chi nhánh", img: "/images/logo-viettel-store.png" },
-      group: { name: "Tập thể Chi nhánh Long An", subName: "Chi nhánh bán lẻ Long An", img: "/images/logo-viettel-store.png" },
-      deputy: { name: "Đang cập nhật...", role: "Phó giám đốc", img: "/images/logo-viettel-store.png" }
+      leader: { name: "Đang cập nhật...", role: "Giám đốc Chi nhánh", img: "/images/homepage/logo-viettel-store.png" },
+      group: { name: "Tập thể Chi nhánh Long An", subName: "Chi nhánh bán lẻ Long An", img: "/images/homepage/logo-viettel-store.png" },
+      deputy: { name: "Đang cập nhật...", role: "Phó giám đốc", img: "/images/homepage/logo-viettel-store.png" }
     }
   },
   {
     name: "Chi nhánh Tiền Giang",
-    img: "/images/logo-viettel-store.png",
+    img: "/images/homepage/logo-viettel-store.png",
     hasTextOnImage: false,
     details: {
-      leader: { name: "Đang cập nhật...", role: "Giám đốc Chi nhánh", img: "/images/logo-viettel-store.png" },
-      group: { name: "Tập thể Chi nhánh Tiền Giang", subName: "Chi nhánh bán lẻ Tiền Giang", img: "/images/logo-viettel-store.png" },
-      deputy: { name: "Đang cập nhật...", role: "Phó giám đốc", img: "/images/logo-viettel-store.png" }
+      leader: { name: "Đang cập nhật...", role: "Giám đốc Chi nhánh", img: "/images/homepage/logo-viettel-store.png" },
+      group: { name: "Tập thể Chi nhánh Tiền Giang", subName: "Chi nhánh bán lẻ Tiền Giang", img: "/images/homepage/logo-viettel-store.png" },
+      deputy: { name: "Đang cập nhật...", role: "Phó giám đốc", img: "/images/homepage/logo-viettel-store.png" }
     }
   },
   {
     name: "Chi nhánh Vũng Tàu",
-    img: "/images/logo-viettel-store.png",
+    img: "/images/homepage/logo-viettel-store.png",
     hasTextOnImage: false,
     details: {
-      leader: { name: "Đang cập nhật...", role: "Giám đốc Chi nhánh", img: "/images/logo-viettel-store.png" },
-      group: { name: "Tập thể Chi nhánh Vũng Tàu", subName: "Chi nhánh bán lẻ Vũng Tàu", img: "/images/logo-viettel-store.png" },
-      deputy: { name: "Đang cập nhật...", role: "Phó giám đốc", img: "/images/logo-viettel-store.png" }
+      leader: { name: "Đang cập nhật...", role: "Giám đốc Chi nhánh", img: "/images/homepage/logo-viettel-store.png" },
+      group: { name: "Tập thể Chi nhánh Vũng Tàu", subName: "Chi nhánh bán lẻ Vũng Tàu", img: "/images/homepage/logo-viettel-store.png" },
+      deputy: { name: "Đang cập nhật...", role: "Phó giám đốc", img: "/images/homepage/logo-viettel-store.png" }
     }
   },
   {
     name: "Chi nhánh Cần Thơ",
-    img: "/images/logo-viettel-store.png",
+    img: "/images/homepage/logo-viettel-store.png",
     hasTextOnImage: false,
     details: {
-      leader: { name: "Đang cập nhật...", role: "Giám đốc Chi nhánh", img: "/images/logo-viettel-store.png" },
-      group: { name: "Tập thể Chi nhánh Cần Thơ", subName: "Chi nhánh bán lẻ Cần Thơ", img: "/images/logo-viettel-store.png" },
-      deputy: { name: "Đang cập nhật...", role: "Phó giám đốc", img: "/images/logo-viettel-store.png" }
+      leader: { name: "Đang cập nhật...", role: "Giám đốc Chi nhánh", img: "/images/homepage/logo-viettel-store.png" },
+      group: { name: "Tập thể Chi nhánh Cần Thơ", subName: "Chi nhánh bán lẻ Cần Thơ", img: "/images/homepage/logo-viettel-store.png" },
+      deputy: { name: "Đang cập nhật...", role: "Phó giám đốc", img: "/images/homepage/logo-viettel-store.png" }
     }
   },
 ];
@@ -889,8 +889,8 @@ export const provinces: Province[] = [
   },
   {
     name: "TP. ĐÀ NẴNG",
-    map: "/images/danang_text4.png",
-    mapWithText: "/images/danang_text3.png",
+    map: "/images/regions/danang_text4.png",
+    mapWithText: "/images/regions/danang_text3.png",
     stores: [
       { id: "DNG01", img: "/images/hethongsieuthi/danang/dng01.jpg", objectPosition: "center 60%" },
       { id: "DNG02", img: "/images/hethongsieuthi/danang/dng02.jpg", objectPosition: "center 10%", scale: 1.0 },
@@ -954,8 +954,8 @@ export const provinces: Province[] = [
   },
   {
     name: "KHÁNH HOÀ",
-    map: "/images/khanhhoa_text4.png",
-    mapWithText: "/images/khanhhoa_text3.png",
+    map: "/images/regions/khanhhoa_text4.png",
+    mapWithText: "/images/regions/khanhhoa_text3.png",
     stores: [
       { id: "KHA01", img: "/images/hethongsieuthi/khanhhoa/kha01.jpg" },
       { id: "KHA02", img: "/images/hethongsieuthi/khanhhoa/kha02.jpg", scale: 1.0 },
@@ -1256,7 +1256,7 @@ export const formerDirectorsData: FormerDirector[] = [
   },
   {
     name: "Đồng chí Phạm Thị Thanh Vân",
-    img: "/images/pham-thi-van-v2.png",
+    img: "/images/staff/pham-thi-van-v2.png",
     role: "Phó Giám đốc Công ty kiêm Giám đốc Trung tâm Viettel Store",
     period: "09/2015 - 11/2015",
     description: (

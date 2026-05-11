@@ -1,7 +1,7 @@
 "use client";
 import React, { memo, useState } from "react";
 import Image from "next/image";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { Leader } from "../data";
 
 interface LeadersSectionProps {
@@ -128,7 +128,7 @@ const LeadersSection = ({ leaders, positions, isMobile, isTablet, rotateLeaders 
                       transform: `scale(${leader.scale || 1.8})`
                     }}
                     priority={true}
-                    onError={(e) => e.currentTarget.src = "/images/logo-viettel-store.png"}
+                    onError={(e) => e.currentTarget.src = "/images/homepage/logo-viettel-store.png"}
                   />
                 </div>
               </motion.div>

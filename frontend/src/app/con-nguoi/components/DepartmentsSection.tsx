@@ -5,19 +5,12 @@ import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Department } from "../data";
 
-interface DepartmentsSectionProps {
-  departments: Department[];
-  activeDeptPage: number;
-  onPageChange: (newPage: number) => void;
-  onSelectDept: (dept: Department) => void;
-  isMobile: boolean;
-}
+
 
 const DepartmentsSection = ({ 
   departments, 
-  onSelectDept,
-  isMobile
-}: { departments: Department[], onSelectDept: (dept: Department) => void, isMobile: boolean }) => {
+  onSelectDept
+}: { departments: Department[], onSelectDept: (dept: Department) => void }) => {
   const totalPages = Math.ceil(departments.length / 4);
   const [activeDeptPage, setActiveDeptPage] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(true);
@@ -136,7 +129,7 @@ const DepartmentsSection = ({
                               priority={actualPageIdx === 0}
                               loading={actualPageIdx === 0 ? "eager" : "lazy"}
                               quality={100}
-                              onError={(e) => e.currentTarget.src = "/images/logo-viettel-store.png"}
+                              onError={(e) => e.currentTarget.src = "/images/homepage/logo-viettel-store.png"}
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent flex items-end p-6 md:p-8">
                               <div className="text-white">

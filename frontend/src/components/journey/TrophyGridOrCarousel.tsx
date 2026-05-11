@@ -5,10 +5,10 @@ import React from "react";
 export const TrophyGridOrCarousel: React.FC = () => {
   // Use the 4 exact cup images as requested
   const displayTrophies = [
-    { id: "1", title: "Cup 1", image: "/images/trophies/exact-cup-1.png" },
-    { id: "2", title: "Cup 2", image: "/images/trophies/exact-cup-2.png" },
-    { id: "3", title: "Cup 3", image: "/images/trophies/exact-cup-3.png" },
-    { id: "4", title: "Cup 4", image: "/images/trophies/exact-cup-4.png" },
+    { id: "1", title: "Cup 1", image: "/images/trophies/exact-cup-1.webp" },
+    { id: "2", title: "Cup 2", image: "/images/trophies/exact-cup-2.webp" },
+    { id: "3", title: "Cup 3", image: "/images/trophies/exact-cup-3.webp" },
+    { id: "4", title: "Cup 4", image: "/images/trophies/exact-cup-4.webp" },
   ];
 
   return (

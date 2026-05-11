@@ -5,16 +5,7 @@ import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { LongService } from "../data";
 
-interface LongServiceSectionProps {
-  longService: LongService[];
-  vdIndex: number;
-  selectedHonoree: number | null;
-  onSelectHonoree: (idx: number | null) => void;
-  onPrev: () => void;
-  onNext: () => void;
-  isMobile: boolean;
-  isTablet: boolean;
-}
+
 
 const LongServiceSection = ({ 
   longService, 
@@ -83,7 +74,7 @@ const LongServiceSection = ({
 
   return (
     <section className="py-24 bg-black relative w-full overflow-hidden">
-      <div className="absolute inset-0 opacity-20 mix-blend-screen bg-[url('/images/diahinh.png')] bg-cover bg-center"></div>
+      <div className="absolute inset-0 opacity-20 mix-blend-screen bg-[url('/images/backgrounds/diahinh.png')] bg-cover bg-center"></div>
       <div className="absolute inset-0 pointer-events-none z-0" style={{ background: 'radial-gradient(ellipse 60% 50% at center, rgba(238,0,51,0.4) 0%, rgba(0,0,0,0) 100%)' }}></div>
       <div className="container mx-auto px-4 relative z-10 max-w-6xl">
         <h2 className="text-white font-beausans font-black text-2xl md:text-4xl uppercase mb-16 text-center tracking-wide">VINH DANH NHÂN SỰ CỐNG HIẾN LÂU NĂM</h2>
@@ -103,7 +94,7 @@ const LongServiceSection = ({
             } as React.CSSProperties}
           >
             {[...longService, ...longService, ...longService].map((person, idx) => {
-              const realIdx = idx % longService.length;
+
               const isFlipped = selectedHonoree === idx;
               // Adjust visibility logic to account for triple duplication
               const isVisible = isMobile 
@@ -145,7 +136,7 @@ const LongServiceSection = ({
                             objectPosition: person.objectPosition || 'center',
                             transform: `scale(${person.scale || 1})`
                           }}
-                          onError={(e) => e.currentTarget.src = "/images/logo-viettel-store.png"} 
+                          onError={(e) => e.currentTarget.src = "/images/homepage/logo-viettel-store.png"} 
                         />
                         <div className={`absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent transition-opacity duration-300 flex items-end p-6 ${isFlipped ? 'opacity-0' : 'opacity-100'}`}>
                           <div className="flex flex-col items-start">
@@ -162,7 +153,7 @@ const LongServiceSection = ({
                         className="absolute inset-0 w-full h-full z-10 rounded-[40px] overflow-hidden shadow-2xl bg-[#EE0033] flex flex-col items-center justify-center p-4 md:p-6 text-center border-4 border-white/20 transition-all duration-500" 
                         style={!isMobile ? { backfaceVisibility: 'hidden', WebkitBackfaceVisibility: 'hidden', transform: 'rotateY(180deg)' } : {}}
                       >
-                        <div className="absolute inset-0 opacity-15 bg-[url('/images/diahinh.png')] bg-cover bg-center"></div>
+                        <div className="absolute inset-0 opacity-15 bg-[url('/images/backgrounds/diahinh.png')] bg-cover bg-center"></div>
                         <div className="relative z-10 flex flex-col h-full w-full justify-between pt-1 pb-8 -translate-y-3 md:-translate-y-4">
                           <div className="flex flex-col items-center shrink-0">
                             <div className="w-14 h-14 md:w-16 md:h-16 relative rounded-full overflow-hidden border-2 border-white mb-2 shadow-md">

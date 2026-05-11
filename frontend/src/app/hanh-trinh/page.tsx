@@ -487,7 +487,7 @@ export default function HanhTrinhPage() {
         {...fadeInUp}
       >
         <div className="honors-pattern">
-          <Image src="/images/diahinh1.1.png" fill className="object-cover" alt="" />
+          <Image src="/images/backgrounds/diahinh1.1.webp" fill className="object-cover" alt="" />
         </div>
 
         <div className="honors-container">

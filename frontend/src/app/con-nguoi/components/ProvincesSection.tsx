@@ -8,8 +8,6 @@ interface ProvincesSectionProps {
   provinces: Province[];
   activeProvince: number;
   isMobile: boolean;
-  isTablet: boolean;
-  windowWidth: number;
   onActiveChange: (idx: number) => void;
   onSelectProvince: (prov: Province) => void;
   onPrev: () => void;
@@ -20,8 +18,6 @@ const ProvincesSection = ({
   provinces, 
   activeProvince, 
   isMobile, 
-  isTablet, 
-  windowWidth, 
   onActiveChange, 
   onSelectProvince, 
   onPrev, 

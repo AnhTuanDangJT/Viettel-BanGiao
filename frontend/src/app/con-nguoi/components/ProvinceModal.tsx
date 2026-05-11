@@ -19,12 +19,11 @@ interface ProvinceModalProps {
 const ProvinceModal = ({ 
   province, 
   activeStoreIndex, 
-  slideDirection, 
   isMobile, 
   onClose, 
   onPrevStore, 
   onNextStore 
-}: ProvinceModalProps) => {
+}: Omit<ProvinceModalProps, 'slideDirection'>) => {
   const [touchStart, setTouchStart] = React.useState<number | null>(null);
 
   const handleTouchStart = (e: React.TouchEvent) => {
@@ -187,7 +186,7 @@ const ProvinceModal = ({
                       objectPosition: currentStore.objectPosition || 'center',
                       transform: `scale(${getScale()}) translate(${currentStore.translateX || '0px'}, ${currentStore.translateY || '0px'})`
                     }}
-                    onError={(e) => e.currentTarget.src = "/images/logo-viettel-store.png"}
+                    onError={(e) => e.currentTarget.src = "/images/homepage/logo-viettel-store.png"}
                   />
                 </motion.div>
               </AnimatePresence>

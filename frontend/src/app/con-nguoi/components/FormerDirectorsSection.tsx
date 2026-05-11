@@ -37,7 +37,7 @@ const FormerDirectorsSection = ({ formerDirectorsData, isMobile, onSelect }: For
                   transform: `scale(${isMobile ? (director.mobileScale || director.scale || 1) : (director.scale || 1)}) translate(${director.translateX || '0px'}, ${director.translateY || '0px'})`
                 }}
                 loading="lazy"
-                onError={(e) => e.currentTarget.src = "/images/logo-viettel-store.png"}
+                onError={(e) => e.currentTarget.src = "/images/homepage/logo-viettel-store.png"}
               />
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500"></div>
             </div>

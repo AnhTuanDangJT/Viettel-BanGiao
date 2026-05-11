@@ -25,7 +25,7 @@ export const Header = () => {
         <div className="flex items-center flex-shrink-0 h-full">
           <Link href="/" className="block relative w-32 sm:w-48 h-full md:w-64 overflow-hidden">
             <Image 
-              src="/images/logo-viettel-store.png" 
+              src="/images/homepage/logo-viettel-store.png" 
               alt="Viettel Store" 
               fill 
               className="object-contain object-left scale-[2.4] sm:scale-[3.8] origin-left translate-x-0 translate-y-2"

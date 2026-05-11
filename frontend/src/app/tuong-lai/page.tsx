@@ -34,12 +34,12 @@ const WavyBackground = () => (
 
 
 const heroSlides = [
-  "/images/tuong-lai/slideshow/s1.png",
-  "/images/tuong-lai/slideshow/s2.png",
-  "/images/tuong-lai/slideshow/s3_v2.png",
-  "/images/tuong-lai/slideshow/s4.png",
-  "/images/tuong-lai/slideshow/s5.png",
-  "/images/tuong-lai/slideshow/s6.png",
+  "/images/tuong-lai/slideshow/s1.webp",
+  "/images/tuong-lai/slideshow/s2.webp",
+  "/images/tuong-lai/slideshow/s3_v2.webp",
+  "/images/tuong-lai/slideshow/s4.webp",
+  "/images/tuong-lai/slideshow/s5.webp",
+  "/images/tuong-lai/slideshow/s6.webp",
 ];
 
 const heroFeatures = [
@@ -399,7 +399,7 @@ export default function TuongLaiPage() {
                 }} 
               >
                 <Image
-                  src="/images/tuong-lai/Trái.jpg"
+                  src="/images/tuong-lai/Trái.webp"
                   alt="Trái"
                   width={185}
                   height={185}
@@ -418,7 +418,7 @@ export default function TuongLaiPage() {
                 }} 
               >
                 <Image
-                  src="/images/tuong-lai/Giữa.jpg"
+                  src="/images/tuong-lai/Giữa.webp"
                   alt="Giữa"
                   width={142}
                   height={142}
@@ -437,7 +437,7 @@ export default function TuongLaiPage() {
                 }} 
               >
                 <Image
-                  src="/images/tuong-lai/Phải.jpg"
+                  src="/images/tuong-lai/Phải.webp"
                   alt="Phải"
                   width={224}
                   height={224}
@@ -975,7 +975,7 @@ export default function TuongLaiPage() {
       <section 
         className="relative w-full overflow-hidden h-auto lg:h-[900px] min-h-[500px] flex flex-col items-center justify-center py-20 lg:py-0"
         style={{
-          backgroundImage: 'url(/images/tuong-lai/header-ve-chung-toi.jpg)',
+          backgroundImage: 'url(/images/tuong-lai/header-ve-chung-toi.webp)',
           backgroundSize: 'cover',
           backgroundPosition: 'center'
         }}

@@ -43,7 +43,7 @@ export default function ConNguoiPage() {
   const [selectedProvince, setSelectedProvince] = useState<Province | null>(null);
   const [selectedDirector, setSelectedDirector] = useState<FormerDirector | null>(null);
   const [activeStoreIndex, setActiveStoreIndex] = useState(0);
-  const [slideDirection, setSlideDirection] = useState(0);
+
 
   // --- Leader Carousel State ---
   const [positions, setPositions] = useState([0, 1, 2]);
@@ -75,7 +75,7 @@ export default function ConNguoiPage() {
   }, []);
 
   // --- Long Service Section State ---
-  const [selectedHonoree, setSelectedHonoree] = useState<number | null>(null);
+
 
   // --- Departments Carousel State ---
 
@@ -126,11 +126,10 @@ export default function ConNguoiPage() {
           <ProvinceModal 
             province={selectedProvince}
             activeStoreIndex={activeStoreIndex}
-            slideDirection={slideDirection}
             isMobile={isMobile}
             onClose={() => { setSelectedProvince(null); setActiveStoreIndex(0); }}
-            onPrevStore={() => { setSlideDirection(-1); setActiveStoreIndex(prev => (prev - 1 + selectedProvince.stores.length) % selectedProvince.stores.length); }}
-            onNextStore={() => { setSlideDirection(1); setActiveStoreIndex(prev => (prev + 1) % selectedProvince.stores.length); }}
+            onPrevStore={() => { setActiveStoreIndex(prev => (prev - 1 + selectedProvince.stores.length) % selectedProvince.stores.length); }}
+            onNextStore={() => { setActiveStoreIndex(prev => (prev + 1) % selectedProvince.stores.length); }}
           />
         )}
       </>,
@@ -147,7 +146,7 @@ export default function ConNguoiPage() {
         style={{ paddingTop: '80px' }}
       >
         <div className="absolute top-0 left-0 right-0 z-0 pointer-events-none opacity-[0.03]">
-          <div className="w-full h-[1000px] bg-[url('/images/diahinh.png')] bg-cover bg-center"></div>
+          <div className="w-full h-[1000px] bg-[url('/images/backgrounds/diahinh.png')] bg-cover bg-center"></div>
         </div>
 
         <div className="relative z-10 w-full pt-0">
@@ -177,7 +176,7 @@ export default function ConNguoiPage() {
           <div className="relative bg-[#F2F2F2] overflow-hidden">
             {/* Diagonal terrain background */}
             <div 
-              className="absolute inset-0 z-0 pointer-events-none bg-[url('/diahinh2.2.png')] bg-no-repeat bg-cover opacity-[0.15]"
+              className="absolute inset-0 z-0 pointer-events-none bg-[url('/images/backgrounds/diahinh2.2.png')] bg-no-repeat bg-cover opacity-[0.15]"
               style={{ 
                 transform: 'scale(1.8) rotate(-12deg)',
                 transformOrigin: 'center center',
@@ -211,7 +210,6 @@ export default function ConNguoiPage() {
               <DepartmentsSection 
                 departments={departments}
                 onSelectDept={setSelectedDept}
-                isMobile={isMobile}
               />
 
               {/* New Section for Ecommerce Channel */}
@@ -280,8 +278,6 @@ export default function ConNguoiPage() {
             provinces={provinces}
             activeProvince={activeProvince}
             isMobile={isMobile}
-            isTablet={isTablet}
-            windowWidth={windowWidth}
             onActiveChange={setActiveProvince}
             onSelectProvince={setSelectedProvince}
             onPrev={prevProvince}

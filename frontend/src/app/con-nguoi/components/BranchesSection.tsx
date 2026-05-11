@@ -5,19 +5,12 @@ import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Branch } from "../data";
 
-interface BranchesSectionProps {
-  branches: Branch[];
-  activeBranchPage: number;
-  onPageChange: (newPage: number) => void;
-  onSelectBranch: (branch: Branch) => void;
-  isMobile: boolean;
-}
+
 
 const BranchesSection = ({ 
   branches, 
-  onSelectBranch,
-  isMobile
-}: { branches: Branch[], onSelectBranch: (branch: Branch) => void, isMobile: boolean }) => {
+  onSelectBranch
+}: { branches: Branch[], onSelectBranch: (branch: Branch) => void }) => {
   const totalPages = Math.ceil(branches.length / 4);
   const [activeBranchPage, setActiveBranchPage] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(true);
@@ -135,7 +128,7 @@ const BranchesSection = ({
                               alt={branch.name}
                               loading="lazy"
                               quality={100}
-                              onError={(e) => e.currentTarget.src = "/images/logo-viettel-store.png"}
+                              onError={(e) => e.currentTarget.src = "/images/homepage/logo-viettel-store.png"}
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent flex items-end p-8 md:p-12">
                               {!branch.hasTextOnImage && (

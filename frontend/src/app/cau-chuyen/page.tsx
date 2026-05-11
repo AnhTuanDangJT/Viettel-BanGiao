@@ -174,7 +174,7 @@ export default function CauChuyenPage() {
           {/* Background Pattern */}
           <div className="absolute inset-0 opacity-100 pointer-events-none z-0">
             <Image 
-              src="/images/diahinh2.1.png"
+              src="/images/backgrounds/diahinh2.1.webp"
               alt="Background Pattern"
               fill
               priority={true}
@@ -308,7 +308,7 @@ export default function CauChuyenPage() {
       <div className="block md:hidden w-full bg-[#F2F2F2] flex flex-col relative">
         <div className="absolute inset-0 opacity-100 pointer-events-none z-0">
           <Image 
-            src="/images/diahinh2.1.png"
+            src="/images/backgrounds/diahinh2.1.webp"
             alt="Background Pattern"
             fill
             priority={true}
