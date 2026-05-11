@@ -28,8 +28,8 @@ const DepartmentModal = ({ dept, onClose, hideComradeLabel }: DepartmentModalPro
   const prevPage = () => setCurrentPage((prev) => (prev - 1 + totalPages) % totalPages);
 
   return (
-    <div className="fixed inset-0 z-[2147483647] bg-black/45 backdrop-blur-lg flex items-center justify-center p-0 animate-in fade-in duration-300 font-beausans">
-      <div className="absolute inset-0 opacity-10 pointer-events-none bg-[url('/images/backgrounds/diahinh.png')] bg-[length:200%_auto] bg-center mix-blend-screen"></div>
+    <div className="fixed inset-0 z-[2147483647] bg-black/45 backdrop-blur-md flex items-center justify-center p-0 animate-in fade-in duration-300 font-beausans">
+      <div className="absolute inset-0 opacity-10 pointer-events-none bg-[url('/images/backgrounds/diahinh.webp')] bg-[length:200%_auto] bg-center mix-blend-screen"></div>
       <div className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(circle at center, rgba(238,0,51,0.05) 0%, transparent 70%)' }}></div>
 
       {/* Close Button */}

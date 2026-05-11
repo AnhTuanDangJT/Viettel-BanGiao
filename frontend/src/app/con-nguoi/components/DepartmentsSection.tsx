@@ -9,14 +9,39 @@ import { Department } from "../data";
 
 const DepartmentsSection = ({ 
   departments, 
-  onSelectDept
-}: { departments: Department[], onSelectDept: (dept: Department) => void }) => {
-  const totalPages = Math.ceil(departments.length / 4);
+  onSelectDept,
+  isMobile
+}: { departments: Department[], onSelectDept: (dept: Department) => void, isMobile: boolean }) => {
+  const itemsPerPage = isMobile ? 1 : 4;
+  const totalPages = Math.ceil(departments.length / itemsPerPage);
   const [activeDeptPage, setActiveDeptPage] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(true);
-  const [touchStart, setTouchStart] = useState<number | null>(null);
+  const [touchStart, setTouchStart] = useState<{x: number, y: number} | null>(null);
   const [dragOffset, setDragOffset] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
+  const containerRef = React.useRef<HTMLDivElement>(null);
+
+  // Radical fix for vertical slip
+  React.useEffect(() => {
+    const el = containerRef.current;
+    if (!el || !isMobile) return;
+
+    const handleTouchMoveManual = (e: TouchEvent) => {
+      if (!touchStart) return;
+      const x = e.touches[0].clientX;
+      const y = e.touches[0].clientY;
+      const dx = Math.abs(x - touchStart.x);
+      const dy = Math.abs(y - touchStart.y);
+
+      // If swiping mostly horizontally, prevent vertical scrolling
+      if (dx > dy && dx > 10) {
+        if (e.cancelable) e.preventDefault();
+      }
+    };
+
+    el.addEventListener('touchmove', handleTouchMoveManual, { passive: false });
+    return () => el.removeEventListener('touchmove', handleTouchMoveManual);
+  }, [isMobile, touchStart]);
 
   const handleNext = () => {
     setIsTransitioning(true);
@@ -52,20 +77,23 @@ const DepartmentsSection = ({
   }, [isTransitioning]);
 
   const handleTouchStart = (e: React.TouchEvent) => {
-    setTouchStart(e.targetTouches[0].clientX);
+    setTouchStart({
+      x: e.targetTouches[0].clientX,
+      y: e.targetTouches[0].clientY
+    });
     setIsDragging(true);
   };
 
   const handleTouchMove = (e: React.TouchEvent) => {
     if (touchStart === null) return;
-    const currentTouch = e.targetTouches[0].clientX;
-    setDragOffset(currentTouch - touchStart);
+    const currentTouchX = e.targetTouches[0].clientX;
+    setDragOffset(currentTouchX - touchStart.x);
   };
 
   const handleTouchEnd = (e: React.TouchEvent) => {
     if (touchStart === null) return;
     const touchEnd = e.changedTouches[0].clientX;
-    const diff = touchStart - touchEnd;
+    const diff = touchStart.x - touchEnd;
 
     if (Math.abs(diff) > 50) {
       if (diff > 0) handleNext();
@@ -93,14 +121,15 @@ const DepartmentsSection = ({
           </button>
 
           <div 
+            ref={containerRef}
             className="w-full flex-1 relative overflow-hidden py-4"
             onTouchStart={handleTouchStart}
             onTouchMove={handleTouchMove}
             onTouchEnd={handleTouchEnd}
-            style={{ touchAction: 'pan-y' }}
+            style={{ touchAction: isMobile ? 'pan-y' : 'auto' }}
           >
             <div
-              className={`flex will-change-transform ${isDragging || !isTransitioning ? '' : 'transition-transform duration-700 cubic-bezier(0.16, 1, 0.3, 1)'}`}
+              className={`flex will-change-transform ${isDragging || !isTransitioning ? '' : 'transition-transform duration-300 cubic-bezier(0.2, 1, 0.3, 1)'}`}
               style={{ transform: `translateX(calc(-${(activeDeptPage + 1) * 100}% + ${dragOffset}px))` }}
             >
               {allPages.map((pageIdx, displayIdx) => {
@@ -109,7 +138,7 @@ const DepartmentsSection = ({
                   <div key={displayIdx} className="w-full shrink-0 px-4 md:px-2">
                     <div className="max-w-4xl mx-auto w-full">
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 w-full">
-                        {departments.slice(actualPageIdx * 4, actualPageIdx * 4 + 4).map((dept, idx) => (
+                        {departments.slice(actualPageIdx * itemsPerPage, actualPageIdx * itemsPerPage + itemsPerPage).map((dept, idx) => (
                           <div
                             key={idx}
                             className="relative w-full rounded-xl md:rounded-2xl overflow-hidden shadow-lg group cursor-pointer transition-all duration-500 hover:-translate-y-2 aspect-[4/3] bg-black/90"
@@ -118,7 +147,7 @@ const DepartmentsSection = ({
                             <Image
                               src={encodeURI(dept.img)}
                               fill
-                              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 750px"
+                              sizes="(max-width: 640px) 400px, (max-width: 1024px) 50vw, 600px"
                               className="transition-transform duration-1000 group-hover:scale-105"
                               style={{
                                 objectFit: dept.gridObjectFit || 'cover',
@@ -126,10 +155,9 @@ const DepartmentsSection = ({
                                 transform: dept.gridScale ? `scale(${dept.gridScale})` : (dept.name.includes('Kế hoạch') ? 'scale(1.1)' : 'none')
                               }}
                               alt={dept.name}
-                              priority={actualPageIdx === 0}
-                              loading={actualPageIdx === 0 ? "eager" : "lazy"}
-                              quality={100}
-                              onError={(e) => e.currentTarget.src = "/images/homepage/logo-viettel-store.png"}
+                              quality={40}
+                              loading="lazy"
+                              onError={(e) => e.currentTarget.src = "/images/homepage/logo-viettel-store.webp"}
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent flex items-end p-6 md:p-8">
                               <div className="text-white">

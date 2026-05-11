@@ -4,7 +4,7 @@ import React from "react";
 import Image from "next/image";
 import { TrophyGridOrCarousel } from "./TrophyGridOrCarousel";
 
-export const TrophyAwardsSection: React.FC = () => {
+export const TrophyAwardsSection: React.FC<{ isMobile?: boolean }> = ({ isMobile = false }) => {
   return (
     <section 
       className="relative bg-white overflow-hidden"
@@ -39,14 +39,15 @@ export const TrophyAwardsSection: React.FC = () => {
 
       {/* CONTENT */}
       <div className="mx-auto max-w-[1680px] px-8 relative z-10">
-        <div className="mb-16 relative inline-block ml-[208px] translate-y-[60px]">
+        <div className="mb-12 md:mb-16 relative inline-block ml-0 md:ml-[208px] translate-y-[20px] md:translate-y-[60px] text-left">
           <h2 className="text-[#EE0033] text-[32px] md:text-[40px] lg:text-[48px] font-bold uppercase leading-tight font-beausans">
-            CÚP VÀ GIẢI THƯỞNG
+            <span className="block md:inline">CÚP VÀ</span>
+            <span className="block md:inline md:ml-3">GIẢI THƯỞNG</span>
           </h2>
         </div>
 
         <div className="relative z-10">
-          <TrophyGridOrCarousel />
+          <TrophyGridOrCarousel isMobile={isMobile} />
         </div>
       </div>
     </section>

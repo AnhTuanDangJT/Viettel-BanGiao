@@ -8,13 +8,13 @@ export default function Home() {
       <section className="relative w-full h-full flex items-start justify-center overflow-hidden">
         <div className="relative w-full h-[110%] -mt-12 md:-mt-24">
           <Image
-            src="/images/homepage/anh-trang-chu.jpg"
+            src="/images/homepage/anh-trang-chu.webp"
             alt="20 Năm Khát Vọng Vươn Xa"
             fill
             className="object-cover"
             priority
-            sizes="100vw"
-            quality={100}
+            sizes="(max-width: 768px) 100vw, 1920px"
+            quality={80}
           />
         </div>
       </section>

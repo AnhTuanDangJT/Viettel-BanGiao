@@ -4,25 +4,25 @@ import Image from "next/image";
 
 import { motion, AnimatePresence } from "framer-motion";
 
-import { 
+import {
   ArrowRight
 } from "lucide-react";
 
 const WavyBackground = () => (
   <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-[0.15] z-0">
-    <svg 
-      className="absolute w-full h-full" 
-      viewBox="0 0 1440 1000" 
+    <svg
+      className="absolute w-full h-full"
+      viewBox="0 0 1440 1000"
       preserveAspectRatio="none"
-      fill="none" 
+      fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
       {[...Array(25)].map((_, i) => (
-        <path 
+        <path
           key={i}
-          d={`M-100 ${50 + i * 40}C${200 + (i % 2) * 100} ${i * 40} ${400 + (i % 3) * 100} ${100 + i * 40} ${720} ${50 + i * 40}C${1040} ${i * 40} ${1240} ${100 + i * 40} 1540 ${50 + i * 40}`} 
-          stroke="white" 
-          strokeWidth="1" 
+          d={`M-100 ${50 + i * 40}C${200 + (i % 2) * 100} ${i * 40} ${400 + (i % 3) * 100} ${100 + i * 40} ${720} ${50 + i * 40}C${1040} ${i * 40} ${1240} ${100 + i * 40} 1540 ${50 + i * 40}`}
+          stroke="white"
+          strokeWidth="1"
         />
       ))}
     </svg>
@@ -47,9 +47,9 @@ const heroFeatures = [
     title: "ĐA DỊCH VỤ",
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" width="55" height="55" viewBox="0 0 55 55" fill="none">
-        <circle cx="27.5" cy="27.5" r="27.5" fill="white"/>
-        <path d="M18.2 24C18.2 22.7385 19.242 21.716 20.5273 21.716H32.3818C33.6671 21.716 34.7091 22.7385 34.7091 24L36.2 36.116C36.2 37.3774 35.158 38.4 33.8727 38.4H19.3273C18.042 38.4 17 37.3774 17 36.116L18.2 24Z" fill="white"/>
-        <path d="M30.2 24.6V21.6C30.2 19.6118 28.5882 18 26.6 18C24.6118 18 23 19.6118 23 21.6V24.6M19.3273 38.4H33.8727C35.158 38.4 36.2 37.3774 36.2 36.116L34.7091 24C34.7091 22.7385 33.6671 21.716 32.3818 21.716H20.5273C19.242 21.716 18.2 22.7385 18.2 24L17 36.116C17 37.3774 18.042 38.4 19.3273 38.4Z" stroke="#EE0033" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        <circle cx="27.5" cy="27.5" r="27.5" fill="white" />
+        <path d="M18.2 24C18.2 22.7385 19.242 21.716 20.5273 21.716H32.3818C33.6671 21.716 34.7091 22.7385 34.7091 24L36.2 36.116C36.2 37.3774 35.158 38.4 33.8727 38.4H19.3273C18.042 38.4 17 37.3774 17 36.116L18.2 24Z" fill="white" />
+        <path d="M30.2 24.6V21.6C30.2 19.6118 28.5882 18 26.6 18C24.6118 18 23 19.6118 23 21.6V24.6M19.3273 38.4H33.8727C35.158 38.4 36.2 37.3774 36.2 36.116L34.7091 24C34.7091 22.7385 33.6671 21.716 32.3818 21.716H20.5273C19.242 21.716 18.2 22.7385 18.2 24L17 36.116C17 37.3774 18.042 38.4 19.3273 38.4Z" stroke="#EE0033" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     )
   },
@@ -57,21 +57,21 @@ const heroFeatures = [
     title: "DẪN ĐẦU CÔNG NGHỆ",
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" width="55" height="55" viewBox="0 0 55 55" fill="none">
-        <circle cx="27.5" cy="27.5" r="27.5" fill="white"/>
-        <line x1="19" y1="12" x2="19" y2="15" stroke="#EE0033" strokeWidth="2"/>
-        <rect x="14" y="15" width="27" height="27" rx="4" fill="white" fillOpacity={0.2} stroke="#EE0033" strokeWidth="2"/>
-        <rect x="18" y="19" width="19" height="19" rx="2" fill="white" fillOpacity={0.2} stroke="#EE0033" strokeWidth="2"/>
-        <line x1="14" y1="21" x2="11" y2="21" stroke="#EE0033" strokeWidth="2"/>
-        <line x1="44" y1="21" x2="41" y2="21" stroke="#EE0033" strokeWidth="2"/>
-        <line x1="36" y1="45" x2="36" y2="42" stroke="#EE0033" strokeWidth="2"/>
-        <line x1="27" y1="12" x2="27" y2="15" stroke="#EE0033" strokeWidth="2"/>
-        <line x1="14" y1="29" x2="11" y2="29" stroke="#EE0033" strokeWidth="2"/>
-        <line x1="44" y1="29" x2="41" y2="29" stroke="#EE0033" strokeWidth="2"/>
-        <line x1="28" y1="45" x2="28" y2="42" stroke="#EE0033" strokeWidth="2"/>
-        <line x1="35" y1="12" x2="35" y2="15" stroke="#EE0033" strokeWidth="2"/>
-        <line x1="14" y1="37" x2="11" y2="37" stroke="#EE0033" strokeWidth="2"/>
-        <line x1="44" y1="37" x2="41" y2="37" stroke="#EE0033" strokeWidth="2"/>
-        <line x1="20" y1="45" x2="20" y2="42" stroke="#EE0033" strokeWidth="2"/>
+        <circle cx="27.5" cy="27.5" r="27.5" fill="white" />
+        <line x1="19" y1="12" x2="19" y2="15" stroke="#EE0033" strokeWidth="2" />
+        <rect x="14" y="15" width="27" height="27" rx="4" fill="white" fillOpacity={0.2} stroke="#EE0033" strokeWidth="2" />
+        <rect x="18" y="19" width="19" height="19" rx="2" fill="white" fillOpacity={0.2} stroke="#EE0033" strokeWidth="2" />
+        <line x1="14" y1="21" x2="11" y2="21" stroke="#EE0033" strokeWidth="2" />
+        <line x1="44" y1="21" x2="41" y2="21" stroke="#EE0033" strokeWidth="2" />
+        <line x1="36" y1="45" x2="36" y2="42" stroke="#EE0033" strokeWidth="2" />
+        <line x1="27" y1="12" x2="27" y2="15" stroke="#EE0033" strokeWidth="2" />
+        <line x1="14" y1="29" x2="11" y2="29" stroke="#EE0033" strokeWidth="2" />
+        <line x1="44" y1="29" x2="41" y2="29" stroke="#EE0033" strokeWidth="2" />
+        <line x1="28" y1="45" x2="28" y2="42" stroke="#EE0033" strokeWidth="2" />
+        <line x1="35" y1="12" x2="35" y2="15" stroke="#EE0033" strokeWidth="2" />
+        <line x1="14" y1="37" x2="11" y2="37" stroke="#EE0033" strokeWidth="2" />
+        <line x1="44" y1="37" x2="41" y2="37" stroke="#EE0033" strokeWidth="2" />
+        <line x1="20" y1="45" x2="20" y2="42" stroke="#EE0033" strokeWidth="2" />
       </svg>
     )
   },
@@ -79,9 +79,9 @@ const heroFeatures = [
     title: "ĐA KÊNH",
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" width="55" height="55" viewBox="0 0 55 55" fill="none">
-        <circle cx="27.5" cy="27.5" r="27.5" fill="white"/>
-        <path d="M27.8 31C27.8 33.9823 25.3823 36.4 22.4 36.4C19.4177 36.4 17 33.9823 17 31C17 28.0177 19.4177 25.6 22.4 25.6C25.3823 25.6 27.8 28.0177 27.8 31Z" fill="white"/>
-        <path d="M25.4 22.6C25.9457 20.1952 28.0963 18.4 30.6662 18.4C33.6485 18.4 36.0662 20.8177 36.0662 23.8C36.0662 26.5625 33.9918 28.8405 31.3157 29.1613M21.8 20.8L24.2 18.4L21.8 16M17 23.2V21.6C17 19.8327 18.4327 18.4 20.2 18.4H22.6M32.6 32.8L30.2 35.2L32.6 37.6M37.4 30.4V32C37.4 33.7673 35.9673 35.2 34.2 35.2H31.8M27.8 31C27.8 33.9823 25.3823 36.4 22.4 36.4C19.4177 36.4 17 33.9823 17 31C17 28.0177 19.4177 25.6 22.4 25.6C25.3823 25.6 27.8 28.0177 27.8 31Z" stroke="#EE0033" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        <circle cx="27.5" cy="27.5" r="27.5" fill="white" />
+        <path d="M27.8 31C27.8 33.9823 25.3823 36.4 22.4 36.4C19.4177 36.4 17 33.9823 17 31C17 28.0177 19.4177 25.6 22.4 25.6C25.3823 25.6 27.8 28.0177 27.8 31Z" fill="white" />
+        <path d="M25.4 22.6C25.9457 20.1952 28.0963 18.4 30.6662 18.4C33.6485 18.4 36.0662 20.8177 36.0662 23.8C36.0662 26.5625 33.9918 28.8405 31.3157 29.1613M21.8 20.8L24.2 18.4L21.8 16M17 23.2V21.6C17 19.8327 18.4327 18.4 20.2 18.4H22.6M32.6 32.8L30.2 35.2L32.6 37.6M37.4 30.4V32C37.4 33.7673 35.9673 35.2 34.2 35.2H31.8M27.8 31C27.8 33.9823 25.3823 36.4 22.4 36.4C19.4177 36.4 17 33.9823 17 31C17 28.0177 19.4177 25.6 22.4 25.6C25.3823 25.6 27.8 28.0177 27.8 31Z" stroke="#EE0033" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     )
   },
@@ -89,13 +89,13 @@ const heroFeatures = [
     title: "TRẢI NGHIỆM XUẤT SẮC",
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" width="55" height="55" viewBox="0 0 55 55" fill="none">
-        <circle cx="27.5" cy="27.5" r="27.5" fill="white"/>
-        <path d="M27.544 23.7575C27.544 25.4979 26.318 26.7347 24.8056 26.7347C23.2932 26.7347 22.0672 25.4979 22.0672 23.7575C22.0672 22.0171 23.2932 20.9771 24.8056 20.9771C26.318 20.9771 27.544 22.0171 27.544 23.7575Z" fill="white"/>
-        <path d="M31.9423 33.7586C31.9423 35.5488 29.8298 37 24.9711 37C20.1125 37 18 35.5488 18 33.7586C18 31.9685 21.1211 30.5173 24.9711 30.5173C28.8212 30.5173 31.9423 31.9685 31.9423 33.7586Z" fill="white"/>
-        <path d="M33.685 18L34.6725 20.1075L37 20.387L35.2828 21.9691L35.7338 24.2494L33.685 23.1197L31.6363 24.2494L32.0872 21.9691L30.3701 20.387L32.6975 20.1075L33.685 18Z" fill="white"/>
-        <path d="M27.544 23.7575C27.544 25.4979 26.318 26.7347 24.8056 26.7347C23.2932 26.7347 22.0672 25.4979 22.0672 23.7575C22.0672 22.0171 23.2932 20.9771 24.8056 20.9771C26.318 20.9771 27.544 22.0171 27.544 23.7575Z" stroke="#EE0033" strokeWidth="2" strokeLinejoin="round"/>
-        <path d="M31.9423 33.7586C31.9423 35.5488 29.8298 37 24.9711 37C20.1125 37 18 35.5488 18 33.7586C18 31.9685 21.1211 30.5173 24.9711 30.5173C28.8212 30.5173 31.9423 31.9685 31.9423 33.7586Z" stroke="#EE0033" strokeWidth="2" strokeLinejoin="round"/>
-        <path d="M33.685 18L34.6725 20.1075L37 20.387L35.2828 21.9691L35.7338 24.2494L33.685 23.1197L31.6363 24.2494L32.0872 21.9691L30.3701 20.387L32.6975 20.1075L33.685 18Z" stroke="#EE0033" strokeWidth="2" strokeLinejoin="round"/>
+        <circle cx="27.5" cy="27.5" r="27.5" fill="white" />
+        <path d="M27.544 23.7575C27.544 25.4979 26.318 26.7347 24.8056 26.7347C23.2932 26.7347 22.0672 25.4979 22.0672 23.7575C22.0672 22.0171 23.2932 20.9771 24.8056 20.9771C26.318 20.9771 27.544 22.0171 27.544 23.7575Z" fill="white" />
+        <path d="M31.9423 33.7586C31.9423 35.5488 29.8298 37 24.9711 37C20.1125 37 18 35.5488 18 33.7586C18 31.9685 21.1211 30.5173 24.9711 30.5173C28.8212 30.5173 31.9423 31.9685 31.9423 33.7586Z" fill="white" />
+        <path d="M33.685 18L34.6725 20.1075L37 20.387L35.2828 21.9691L35.7338 24.2494L33.685 23.1197L31.6363 24.2494L32.0872 21.9691L30.3701 20.387L32.6975 20.1075L33.685 18Z" fill="white" />
+        <path d="M27.544 23.7575C27.544 25.4979 26.318 26.7347 24.8056 26.7347C23.2932 26.7347 22.0672 25.4979 22.0672 23.7575C22.0672 22.0171 23.2932 20.9771 24.8056 20.9771C26.318 20.9771 27.544 22.0171 27.544 23.7575Z" stroke="#EE0033" strokeWidth="2" strokeLinejoin="round" />
+        <path d="M31.9423 33.7586C31.9423 35.5488 29.8298 37 24.9711 37C20.1125 37 18 35.5488 18 33.7586C18 31.9685 21.1211 30.5173 24.9711 30.5173C28.8212 30.5173 31.9423 31.9685 31.9423 33.7586Z" stroke="#EE0033" strokeWidth="2" strokeLinejoin="round" />
+        <path d="M33.685 18L34.6725 20.1075L37 20.387L35.2828 21.9691L35.7338 24.2494L33.685 23.1197L31.6363 24.2494L32.0872 21.9691L30.3701 20.387L32.6975 20.1075L33.685 18Z" stroke="#EE0033" strokeWidth="2" strokeLinejoin="round" />
       </svg>
     )
   }
@@ -103,6 +103,14 @@ const heroFeatures = [
 
 export default function TuongLaiPage() {
   const [currentSlide, setCurrentSlide] = React.useState(0);
+  const [isMobile, setIsMobile] = React.useState(false);
+
+  React.useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 1024);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   React.useEffect(() => {
     const timer = setInterval(() => {
@@ -116,14 +124,14 @@ export default function TuongLaiPage() {
   return (
     <div className="min-h-screen flex flex-col font-sans bg-white">
       {/* 1. Main Future Vision Section */}
-      <section 
+      <section
         className="relative h-auto lg:h-screen min-h-screen flex flex-col lg:flex-row items-center justify-center lg:justify-end overflow-hidden py-16 lg:py-0"
         style={{ background: 'rgba(0, 0, 0, 0.85)' }}
       >
         <WavyBackground />
         {/* Red Box Overlay - Now filling the section */}
-        <div 
-          style={{ 
+        <div
+          style={{
             position: 'absolute',
             inset: 0,
             background: 'rgba(112, 6, 6, 0.49)',
@@ -134,17 +142,18 @@ export default function TuongLaiPage() {
         <div className="absolute inset-0">
           <AnimatePresence>
             <motion.div
-              key={currentSlide}
+              key={isMobile ? 'mobile-bg' : currentSlide}
               initial={{ opacity: 0 }}
               animate={{ opacity: 0.6 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 1.5 }}
               className="absolute inset-0"
             >
-              <Image 
-                src={heroSlides[currentSlide]} 
-                alt="Future Vision" 
-                fill 
+              <Image
+                src={isMobile ? "/images/vung_buoc_tuong_lai_dt/mobile_bg.webp" : heroSlides[currentSlide]}
+                alt="Future Vision"
+                fill
+                style={{ objectPosition: isMobile ? '25% center' : 'center' }}
                 className="object-cover"
                 priority
               />
@@ -184,19 +193,19 @@ export default function TuongLaiPage() {
 
         <div className="relative z-10 flex flex-col items-center lg:items-end text-center lg:text-right px-6 mt-12 lg:mt-0 w-full desktop-custom-hero">
           <div className="mr-0 flex flex-col items-center lg:items-flex-end max-w-full desktop-custom-margin">
-            <motion.div 
+            <motion.div
               className="w-full max-w-[626px] desktop-custom-title"
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <h1 
+              <h1
                 className="text-white text-[28px] sm:text-[42px] lg:text-[52px] font-bold uppercase whitespace-normal lg:whitespace-nowrap m-0 tracking-tight"
                 style={{ fontFamily: 'var(--font-beausans)', lineHeight: 'normal' }}
               >
-                VỮNG BƯỚC <motion.span 
+                VỮNG BƯỚC <motion.span
                   style={{ color: '#E03' }}
-                  animate={{ 
+                  animate={{
                     textShadow: [
                       "0 0 5px rgba(224, 0, 51, 0.3)",
                       "0 0 25px rgba(224, 0, 51, 0.9)",
@@ -205,18 +214,18 @@ export default function TuongLaiPage() {
                       "0 0 5px rgba(224, 0, 51, 0.3)"
                     ]
                   }}
-                  transition={{ 
-                    duration: 1.8, 
-                    repeat: Infinity, 
+                  transition={{
+                    duration: 1.8,
+                    repeat: Infinity,
                     times: [0, 0.1, 0.2, 0.4, 1],
-                    ease: "easeInOut" 
+                    ease: "easeInOut"
                   }}
                 >
                   TƯƠNG LAI
                 </motion.span>
               </h1>
             </motion.div>
-            
+
             <div className="flex items-center justify-center lg:justify-end gap-4 mt-6 lg:mr-0 max-w-[450px] lg:max-w-none">
               <p className="w-full max-w-[324px] text-white/90 text-center lg:text-right font-roboto text-sm sm:text-base font-normal leading-normal desktop-custom-p">
                 Từ những nỗ lực mỗi ngày, Viettel Store đang từng bước kiến tạo một tương lai phát triển vững chắc và khác biệt
@@ -227,22 +236,22 @@ export default function TuongLaiPage() {
         </div>
 
         {/* 4 Items at the bottom */}
-        <div 
+        <div
           className="relative lg:absolute lg:bottom-20 lg:left-1/2 lg:-translate-x-1/2 w-full max-w-[1200px] px-6 z-20 flex flex-wrap lg:grid lg:grid-cols-4 gap-4 select-none justify-center lg:justify-items-center mt-12 lg:mt-0"
         >
           {heroFeatures.map((feature, idx) => (
-            <div 
+            <div
               key={idx}
               className="flex flex-col items-center justify-center text-center cursor-pointer group w-full sm:w-auto min-w-[120px]"
             >
-              <motion.div 
+              <motion.div
                 className="w-[55px] h-[55px] mb-3 flex items-center justify-center rounded-full select-none"
                 whileHover={{ scale: 1.12, rotate: 3 }}
                 transition={{ type: "spring", stiffness: 300, damping: 15 }}
               >
                 {feature.icon}
               </motion.div>
-              <span 
+              <span
                 style={{
                   color: '#FFF',
                   fontFamily: 'var(--font-beausans), sans-serif',
@@ -331,8 +340,8 @@ export default function TuongLaiPage() {
                   "Dẫn đầu về ứng dụng công nghệ và trải nghiệm khách hàng",
                   "Đóng góp lớn cho Tập đoàn và là đại diện hình ảnh Viettel"
                 ].map((text, idx) => (
-                  <motion.li 
-                    key={idx} 
+                  <motion.li
+                    key={idx}
                     className="flex items-center justify-start lg:justify-start gap-4 select-none cursor-pointer group"
                     whileHover={{ x: 10 }}
                     transition={{ type: "spring", stiffness: 300, damping: 20 }}
@@ -389,14 +398,14 @@ export default function TuongLaiPage() {
             {/* RIGHT CIRCLES CONTAINER */}
             <div className="relative w-[520px] h-[360px] flex-shrink-0 select-none mx-auto mt-8 lg:mt-0 mobile-custom-circles">
               {/* Image Trái */}
-              <div 
+              <div
                 className="absolute z-30 circle-left"
-                style={{ 
-                  width: '185px', height: '185px', borderRadius: '185px', 
+                style={{
+                  width: '185px', height: '185px', borderRadius: '185px',
                   boxShadow: '4px 1px 4px 0 rgba(0, 0, 0, 0.25)',
                   top: '0px', left: '120px',
                   overflow: 'hidden'
-                }} 
+                }}
               >
                 <Image
                   src="/images/tuong-lai/Trái.webp"
@@ -408,14 +417,14 @@ export default function TuongLaiPage() {
                 />
               </div>
               {/* Image Giữa */}
-              <div 
+              <div
                 className="absolute z-20 circle-mid"
-                style={{ 
-                  width: '142px', height: '142px', borderRadius: '142px', 
+                style={{
+                  width: '142px', height: '142px', borderRadius: '142px',
                   boxShadow: '4px 1px 4px 0 rgba(0, 0, 0, 0.25)',
                   top: '140px', left: '10px',
                   overflow: 'hidden'
-                }} 
+                }}
               >
                 <Image
                   src="/images/tuong-lai/Giữa.webp"
@@ -427,14 +436,14 @@ export default function TuongLaiPage() {
                 />
               </div>
               {/* Image Phải */}
-              <div 
+              <div
                 className="absolute z-10 circle-right"
-                style={{ 
-                  width: '224px', height: '224px', borderRadius: '224px', 
+                style={{
+                  width: '224px', height: '224px', borderRadius: '224px',
                   boxShadow: '4px 1px 4px 0 rgba(0, 0, 0, 0.25)',
                   top: '140px', left: '260px',
                   overflow: 'hidden'
-                }} 
+                }}
               >
                 <Image
                   src="/images/tuong-lai/Phải.webp"
@@ -477,7 +486,7 @@ export default function TuongLaiPage() {
           {/* 3 White Boxes */}
           <div className="flex flex-wrap justify-center gap-8 mb-12">
             {/* Box 1 */}
-            <motion.div 
+            <motion.div
               style={{
                 width: '299px',
                 minHeight: '201px',
@@ -504,7 +513,7 @@ export default function TuongLaiPage() {
               }}>VỊ THẾ DẪN ĐẦU</h4>
               <ul className="space-y-3">
                 <li className="flex items-start gap-2 text-left">
-                  <span className="text-[#EE0033] shrink-0" style={{lineHeight:"1.4",display:"inline-block"}}>•</span>
+                  <span className="text-[#EE0033] shrink-0" style={{ lineHeight: "1.4", display: "inline-block" }}>•</span>
                   <span style={{ color: '#111', fontSize: '15px', fontFamily: 'Roboto', fontWeight: 400, lineHeight: '1.4' }}>
                     Vững vàng <strong className="text-[#EE0033]">TOP 3</strong> chuỗi bán lẻ lớn nhất Việt Nam
                   </span>
@@ -513,7 +522,7 @@ export default function TuongLaiPage() {
             </motion.div>
 
             {/* Box 2 */}
-            <motion.div 
+            <motion.div
               style={{
                 width: '299px',
                 minHeight: '201px',
@@ -542,14 +551,14 @@ export default function TuongLaiPage() {
               </h4>
               <ul className="space-y-3">
                 <li className="flex items-start gap-2 text-left">
-                  <span className="text-[#EE0033] shrink-0" style={{lineHeight:"1.4",display:"inline-block"}}>•</span>
+                  <span className="text-[#EE0033] shrink-0" style={{ lineHeight: "1.4", display: "inline-block" }}>•</span>
                   <span style={{ color: '#111', fontSize: '15px', fontFamily: 'Roboto', fontWeight: 400, lineHeight: '1.4' }}>
                     Phát triển hệ sinh thái đa dạng:<br />
                     Công nghệ – Tài chính – Giáo dục – Sức khỏe – Giải trí – Smart Home
                   </span>
                 </li>
                 <li className="flex items-start gap-2 text-left">
-                  <span className="text-[#EE0033] shrink-0" style={{lineHeight:"1.4",display:"inline-block"}}>•</span>
+                  <span className="text-[#EE0033] shrink-0" style={{ lineHeight: "1.4", display: "inline-block" }}>•</span>
                   <span style={{ color: '#111', fontSize: '15px', fontFamily: 'Roboto', fontWeight: 400, lineHeight: '1.4' }}>
                     Không ngừng mở rộng danh mục sản phẩm và dịch vụ mới
                   </span>
@@ -558,7 +567,7 @@ export default function TuongLaiPage() {
             </motion.div>
 
             {/* Box 3 */}
-            <motion.div 
+            <motion.div
               style={{
                 width: '299px',
                 minHeight: '201px',
@@ -587,19 +596,19 @@ export default function TuongLaiPage() {
               </h4>
               <ul className="space-y-3">
                 <li className="flex items-start gap-2 text-left">
-                  <span className="text-[#EE0033] shrink-0" style={{lineHeight:"1.4",display:"inline-block"}}>•</span>
+                  <span className="text-[#EE0033] shrink-0" style={{ lineHeight: "1.4", display: "inline-block" }}>•</span>
                   <span style={{ color: '#111', fontSize: '15px', fontFamily: 'Roboto', fontWeight: 400, lineHeight: '1.4' }}>
                     Kênh online là trụ cột tăng trưởng
                   </span>
                 </li>
                 <li className="flex items-start gap-2 text-left">
-                  <span className="text-[#EE0033] shrink-0" style={{lineHeight:"1.4",display:"inline-block"}}>•</span>
+                  <span className="text-[#EE0033] shrink-0" style={{ lineHeight: "1.4", display: "inline-block" }}>•</span>
                   <span style={{ color: '#111', fontSize: '15px', fontFamily: 'Roboto', fontWeight: 400, lineHeight: '1.4' }}>
                     Dẫn đầu thương mại điện tử
                   </span>
                 </li>
                 <li className="flex items-start gap-2 text-left">
-                  <span className="text-[#EE0033] shrink-0" style={{lineHeight:"1.4",display:"inline-block"}}>•</span>
+                  <span className="text-[#EE0033] shrink-0" style={{ lineHeight: "1.4", display: "inline-block" }}>•</span>
                   <span style={{ color: '#111', fontSize: '15px', fontFamily: 'Roboto', fontWeight: 400, lineHeight: '1.4' }}>
                     Phát triển đồng bộ các kênh:<br />
                     Cửa hàng – Online – KHDN – Affiliate – Bán hàng tự động
@@ -658,7 +667,7 @@ export default function TuongLaiPage() {
           {/* 3 Red Boxes */}
           <div className="flex flex-wrap justify-center gap-8 mb-12">
             {/* Box 1 */}
-            <motion.div 
+            <motion.div
               style={{
                 width: '299px',
                 minHeight: '201px',
@@ -690,7 +699,7 @@ export default function TuongLaiPage() {
                   "Tự động hóa vận hành, tối ưu hiệu quả"
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-2 text-left">
-                    <span className="text-white shrink-0" style={{lineHeight:"1.4",display:"inline-block"}}>•</span>
+                    <span className="text-white shrink-0" style={{ lineHeight: "1.4", display: "inline-block" }}>•</span>
                     <span style={{ color: '#FFF', fontSize: '15px', fontFamily: 'Roboto', fontWeight: 400, lineHeight: '1.4' }}>
                       {item}
                     </span>
@@ -700,7 +709,7 @@ export default function TuongLaiPage() {
             </motion.div>
 
             {/* Box 2 */}
-            <motion.div 
+            <motion.div
               style={{
                 width: '299px',
                 minHeight: '201px',
@@ -734,7 +743,7 @@ export default function TuongLaiPage() {
                   "Nghiên cứu mở rộng ra thị trường quốc tế và phát triển mô hình bán lẻ mới"
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-2 text-left">
-                    <span className="text-white shrink-0" style={{lineHeight:"1.4",display:"inline-block"}}>•</span>
+                    <span className="text-white shrink-0" style={{ lineHeight: "1.4", display: "inline-block" }}>•</span>
                     <span style={{ color: '#FFF', fontSize: '15px', fontFamily: 'Roboto', fontWeight: 400, lineHeight: '1.4' }}>
                       {item}
                     </span>
@@ -744,7 +753,7 @@ export default function TuongLaiPage() {
             </motion.div>
 
             {/* Box 3 */}
-            <motion.div 
+            <motion.div
               style={{
                 width: '299px',
                 minHeight: '201px',
@@ -778,7 +787,7 @@ export default function TuongLaiPage() {
                   "Đội ngũ phục vụ chuyên nghiệp, tận tâm"
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-2 text-left">
-                    <span className="text-white shrink-0" style={{lineHeight:"1.4",display:"inline-block"}}>•</span>
+                    <span className="text-white shrink-0" style={{ lineHeight: "1.4", display: "inline-block" }}>•</span>
                     <span style={{ color: '#FFF', fontSize: '15px', fontFamily: 'Roboto', fontWeight: 400, lineHeight: '1.4' }}>
                       {item}
                     </span>
@@ -837,7 +846,7 @@ export default function TuongLaiPage() {
           {/* 3 White Boxes */}
           <div className="flex flex-wrap justify-center gap-8 mb-12">
             {/* Box 1 */}
-            <motion.div 
+            <motion.div
               style={{
                 width: '299px',
                 minHeight: '201px',
@@ -871,7 +880,7 @@ export default function TuongLaiPage() {
                   "Môi trường làm việc hiện đại, đãi ngộ cạnh tranh"
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-2 text-left">
-                    <span className="text-[#EE0033] shrink-0" style={{lineHeight:"1.4",display:"inline-block"}}>•</span>
+                    <span className="text-[#EE0033] shrink-0" style={{ lineHeight: "1.4", display: "inline-block" }}>•</span>
                     <span style={{ color: '#111', fontSize: '15px', fontFamily: 'Roboto', fontWeight: 400, lineHeight: '1.4' }}>
                       {item}
                     </span>
@@ -881,7 +890,7 @@ export default function TuongLaiPage() {
             </motion.div>
 
             {/* Box 2 */}
-            <motion.div 
+            <motion.div
               style={{
                 width: '299px',
                 minHeight: '201px',
@@ -915,7 +924,7 @@ export default function TuongLaiPage() {
                   "Giữ vững bản lĩnh chính trị, phòng chống “tự diễn biến”, “tự chuyển hóa”"
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-2 text-left">
-                    <span className="text-[#EE0033] shrink-0" style={{lineHeight:"1.4",display:"inline-block"}}>•</span>
+                    <span className="text-[#EE0033] shrink-0" style={{ lineHeight: "1.4", display: "inline-block" }}>•</span>
                     <span style={{ color: '#111', fontSize: '15px', fontFamily: 'Roboto', fontWeight: 400, lineHeight: '1.4' }}>
                       {item}
                     </span>
@@ -925,7 +934,7 @@ export default function TuongLaiPage() {
             </motion.div>
 
             {/* Box 3 */}
-            <motion.div 
+            <motion.div
               style={{
                 width: '299px',
                 minHeight: '201px',
@@ -959,7 +968,7 @@ export default function TuongLaiPage() {
                   "Bảo vệ chính trị nội bộ"
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-2 text-left">
-                    <span className="text-[#EE0033] shrink-0" style={{lineHeight:"1.4",display:"inline-block"}}>•</span>
+                    <span className="text-[#EE0033] shrink-0" style={{ lineHeight: "1.4", display: "inline-block" }}>•</span>
                     <span style={{ color: '#111', fontSize: '15px', fontFamily: 'Roboto', fontWeight: 400, lineHeight: '1.4' }}>
                       {item}
                     </span>
@@ -972,7 +981,7 @@ export default function TuongLaiPage() {
       </section>
 
       {/* 3. QUOTE SECTION */}
-      <section 
+      <section
         className="relative w-full overflow-hidden h-auto lg:h-[900px] min-h-[500px] flex flex-col items-center justify-center py-20 lg:py-0"
         style={{
           backgroundImage: 'url(/images/tuong-lai/header-ve-chung-toi.webp)',
@@ -981,26 +990,26 @@ export default function TuongLaiPage() {
         }}
       >
         {/* Red Overlay */}
-        <div 
+        <div
           className="absolute inset-0 z-[1]"
           style={{ backgroundColor: 'rgba(104, 0, 22, 0.8)' }}
         />
         <WavyBackground />
 
         {/* Content Wrapper */}
-        <motion.div 
+        <motion.div
           className="relative z-[2] h-full flex flex-col items-center justify-center text-center text-white px-6 w-full max-w-[1200px] mx-auto"
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 1, ease: "easeOut" }}
         >
-          <div className="text-[80px] lg:text-[128px] font-bold mb-[-20px] leading-normal" style={{ 
-            fontFamily: 'Rockwell', 
+          <div className="text-[80px] lg:text-[128px] font-bold mb-[-20px] leading-normal" style={{
+            fontFamily: 'Rockwell',
           }}>
             “
           </div>
-          
+
           <h2 className="text-[24px] sm:text-[36px] lg:text-[52px] font-bold text-center uppercase mb-8 leading-tight tracking-tight w-full max-w-[1000px] mx-auto" style={{
             fontFamily: 'var(--font-beausans)',
           }}>

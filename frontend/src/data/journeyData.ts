@@ -20,7 +20,7 @@ export const journeyData: Milestone[] = [
     year: "2006",
     title: "Khởi đầu một hành trình lớn",
     description: "Viettel chính thức bước vào lĩnh vực bán lẻ, đặt nền móng cho một chặng đường phát triển dài hạn.",
-    image: "/images/journey/milestones/2006.jpeg",
+    image: "/images/journey/milestones/2006.webp",
     events: [
       {
         date: "3/5/2006",
@@ -37,7 +37,7 @@ export const journeyData: Milestone[] = [
     year: "2008",
     title: "Bứt tốc mở rộng quy mô",
     description: "Hệ thống nhanh chóng phát triển, khẳng định vị thế trong thị trường bán lẻ thiết bị di động.",
-    image: "/images/journey/milestones/2008.jpeg",
+    image: "/images/journey/milestones/2008.webp",
     events: [
       {
         date: "10/2008",
@@ -50,7 +50,7 @@ export const journeyData: Milestone[] = [
     year: "2009",
     title: "Xây nền vận hành",
     description: "Viettel Store hoàn thiện bộ máy và từng bước xây dựng nền tảng vận hành chuyên nghiệp.",
-    image: "/images/journey/milestones/2009.jpeg",
+    image: "/images/journey/milestones/2009.webp",
     events: [
       {
         date: "21/01/2009",
@@ -71,7 +71,7 @@ export const journeyData: Milestone[] = [
     year: "2010",
     title: "Củng cố hệ thống",
     description: "Chuẩn hóa quy trình và nâng cao hiệu quả phục vụ trên toàn chuỗi bán lẻ.",
-    image: "/images/journey/milestones/2010.jpeg",
+    image: "/images/journey/milestones/2010.webp",
     events: [
       {
         date: "01/05/2010",
@@ -88,7 +88,7 @@ export const journeyData: Milestone[] = [
     year: "2011",
     title: "Nâng cao trải nghiệm",
     description: "Tăng cường năng lực vận hành, tập trung chất lượng dịch vụ khách hàng.",
-    image: "/images/journey/milestones/2011.jpeg",
+    image: "/images/journey/milestones/2011.webp",
     events: [
       {
         date: "08/2011",
@@ -101,7 +101,7 @@ export const journeyData: Milestone[] = [
     year: "2012",
     title: "Mở rộng giá trị dịch vụ",
     description: "Tăng chiều sâu sản phẩm và dịch vụ, tạo đà cho giai đoạn tăng trưởng mới.",
-    image: "/images/journey/milestones/2012.jpeg",
+    image: "/images/journey/milestones/2012.webp",
     events: [
       {
         date: "2012",
@@ -114,7 +114,7 @@ export const journeyData: Milestone[] = [
     year: "2013",
     title: "Tái cấu trúc để bứt phá",
     description: "Tập trung nguồn lực vào ngành hàng cốt lõi, tối ưu chiến lược phát triển.",
-    image: "/images/journey/milestones/2013.jpg",
+    image: "/images/journey/milestones/2013.webp",
     events: [
       {
         date: "01/2013",
@@ -135,7 +135,7 @@ export const journeyData: Milestone[] = [
     year: "2014",
     title: "Tinh gọn để hiệu quả hơn",
     description: "Điều chỉnh mô hình vận hành nhằm nâng cao hiệu suất và chuyên môn hóa.",
-    image: "/images/journey/milestones/2014.jpg",
+    image: "/images/journey/milestones/2014.webp",
     events: [
       {
         date: "2014",
@@ -148,8 +148,8 @@ export const journeyData: Milestone[] = [
     year: "2015",
     title: "Chuyển mình trong kỷ nguyên số",
     description: "Ra mắt kênh thương mại điện tử, mở ra hành trình bán lẻ đa kênh.",
-    image: "/images/journey/milestones/2015.jpg",
-    modalImage: "/images/journey/milestones/2015_modal.jpg",
+    image: "/images/journey/milestones/2015.webp",
+    modalImage: "/images/journey/milestones/2015_modal.webp",
     events: [
       {
         date: "04/2015",
@@ -166,7 +166,7 @@ export const journeyData: Milestone[] = [
     year: "2016",
     title: "Vươn mình mạnh mẽ",
     description: "Mở rộng hệ thống cửa hàng và nâng cao năng lực phục vụ trên toàn quốc.",
-    image: "/images/journey/milestones/2016.jpg",
+    image: "/images/journey/milestones/2016.webp",
     events: [
       {
         date: "10/04/2016",
@@ -183,7 +183,7 @@ export const journeyData: Milestone[] = [
     year: "2017",
     title: "Tăng tốc chất lượng",
     description: "Nâng chuẩn trải nghiệm mua sắm và vận hành đồng nhất trên toàn hệ thống.",
-    image: "/images/journey/milestones/2017.jpg",
+    image: "/images/journey/milestones/2017.webp",
     events: [
       {
         date: "2017",
@@ -196,7 +196,7 @@ export const journeyData: Milestone[] = [
     year: "2018",
     title: "Bứt phá quy mô",
     description: "Tăng trưởng mạnh về hệ thống cửa hàng và năng lực phục vụ khách hàng.",
-    image: "/images/journey/milestones/2018.jpg",
+    image: "/images/journey/milestones/2018.webp",
     events: [
       {
         date: "Đầu năm 2018",
@@ -209,7 +209,7 @@ export const journeyData: Milestone[] = [
     year: "2019",
     title: "Vượt qua thử thách – Trở lại mạnh mẽ",
     description: "Thoát lỗ và quay lại quỹ đạo tăng trưởng bền vững.",
-    image: "/images/journey/milestones/2019.jpg",
+    image: "/images/journey/milestones/2019.webp",
     events: [
       {
         date: "04/2019",
@@ -222,7 +222,7 @@ export const journeyData: Milestone[] = [
     year: "2020",
     title: "Linh hoạt thích ứng trong biến động",
     description: "Đẩy mạnh bán hàng online, thích ứng nhanh với bối cảnh đại dịch.",
-    image: "/images/journey/milestones/2020.jpg",
+    image: "/images/journey/milestones/2020.webp",
     events: [
       {
         date: "2020",
@@ -235,7 +235,7 @@ export const journeyData: Milestone[] = [
     year: "2021",
     title: "Tái định vị – Một diện mạo mới",
     description: "Chính thức mang tên Viettel Store với nhận diện thương hiệu mới.",
-    image: "/images/journey/milestones/2021.png",
+    image: "/images/journey/milestones/2021.webp",
     events: [
       {
         date: "2021",
@@ -252,7 +252,7 @@ export const journeyData: Milestone[] = [
     year: "2022",
     title: "Số hóa toàn diện",
     description: "Đẩy mạnh chuyển đổi số toàn diện trong mọi hoạt động vận hành và kinh doanh.",
-    image: "/images/journey/milestones/2022.png",
+    image: "/images/journey/milestones/2022.webp",
     events: [
       {
         date: "2022",
@@ -265,7 +265,7 @@ export const journeyData: Milestone[] = [
     year: "2023",
     title: "Mở rộng hệ sinh thái số",
     description: "Tích hợp thêm nhiều dịch vụ tiện ích số, nâng tầm trải nghiệm khách hàng.",
-    image: "/images/journey/milestones/2023.jpg",
+    image: "/images/journey/milestones/2023.webp",
     events: [
       {
         date: "2023",
@@ -278,7 +278,7 @@ export const journeyData: Milestone[] = [
     year: "2024",
     title: "Phát triển bền vững",
     description: "Khẳng định vị thế dẫn đầu với chiến lược phát triển xanh và bền vững.",
-    image: "/images/journey/milestones/2024.jpg",
+    image: "/images/journey/milestones/2024.webp",
     events: [
       {
         date: "2024",
@@ -291,7 +291,7 @@ export const journeyData: Milestone[] = [
     year: "2025",
     title: "Thiết lập kỷ lục doanh thu",
     description: "Lần đầu vượt mốc 11.560 tỷ đồng, đồng thời mở rộng lĩnh vực kinh doanh mới.",
-    image: "/images/journey/milestones/2025.jpg",
+    image: "/images/journey/milestones/2025.webp",
     events: [
       {
         date: "12/2025",
@@ -308,7 +308,7 @@ export const journeyData: Milestone[] = [
     year: "2026",
     title: "Kiến tạo tương lai",
     description: "Tiếp tục hành trình kiến tạo những giá trị mới cho cộng đồng và xã hội.",
-    image: "/images/journey/milestones/2026.jpg",
+    image: "/images/journey/milestones/2026.webp",
     events: [
       {
         date: "04/2026",

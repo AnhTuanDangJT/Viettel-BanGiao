@@ -8,14 +8,14 @@ const AchievementsSection = () => {
         
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {[
-            '/images/IMG_0006.JPG',
-            '/images/IMG_0041.JPG',
-            '/images/IMG_0126.JPG',
-            '/images/IMG_0237.JPG',
-            '/images/IMG_0284.JPG',
-            '/images/IMG_0290.JPG',
-            '/images/IMG_0416.JPG',
-            '/images/IMG_0427.JPG'
+            '/images/IMG_0006.webp',
+            '/images/IMG_0041.webp',
+            '/images/IMG_0126.webp',
+            '/images/IMG_0237.webp',
+            '/images/IMG_0284.webp',
+            '/images/IMG_0290.webp',
+            '/images/IMG_0416.webp',
+            '/images/IMG_0427.webp'
           ].map((src, index) => (
             <div key={index} className="aspect-square relative group overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500">
               {/* eslint-disable-next-line @next/next/no-img-element */}

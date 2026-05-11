@@ -12,7 +12,7 @@ interface BranchModalProps {
 const BranchModal = ({ branch, onClose }: BranchModalProps) => {
   return (
     <div className="fixed inset-0 z-[2147483647] bg-black/30 backdrop-blur-lg flex items-center justify-center p-0 animate-in fade-in duration-300 font-beausans">
-      <div className="absolute inset-0 opacity-10 pointer-events-none bg-[url('/images/backgrounds/diahinh.png')] bg-[length:200%_auto] bg-center mix-blend-screen"></div>
+      <div className="absolute inset-0 opacity-10 pointer-events-none bg-[url('/images/backgrounds/diahinh.webp')] bg-[length:200%_auto] bg-center mix-blend-screen"></div>
       <div className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(circle at center, rgba(238,0,51,0.05) 0%, transparent 70%)' }}></div>
 
 
@@ -35,7 +35,7 @@ const BranchModal = ({ branch, onClose }: BranchModalProps) => {
                 sizes="(max-width: 768px) 280px, 450px"
                 className="object-cover" 
                 alt="leader" 
-                onError={(e) => e.currentTarget.src = "/images/homepage/logo-viettel-store.png"} 
+                onError={(e) => e.currentTarget.src = "/images/homepage/logo-viettel-store.webp"} 
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
             </div>
@@ -53,7 +53,7 @@ const BranchModal = ({ branch, onClose }: BranchModalProps) => {
                 sizes="(max-width: 768px) 95vw, 600px"
                 className="object-cover group-hover:scale-105 transition-transform duration-1000"
                 alt="group"
-                onError={(e) => e.currentTarget.src = "/images/homepage/logo-viettel-store.png"}
+                onError={(e) => e.currentTarget.src = "/images/homepage/logo-viettel-store.webp"}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
             </div>
@@ -71,7 +71,7 @@ const BranchModal = ({ branch, onClose }: BranchModalProps) => {
                   sizes="(max-width: 768px) 280px, 450px"
                   className="object-cover" 
                   alt="deputy" 
-                  onError={(e) => e.currentTarget.src = "/images/homepage/logo-viettel-store.png"} 
+                  onError={(e) => e.currentTarget.src = "/images/homepage/logo-viettel-store.webp"} 
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
               </div>

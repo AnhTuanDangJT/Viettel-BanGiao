@@ -62,20 +62,20 @@ const ProvinceModal = ({
     <div
       style={{
         backgroundColor: 'rgba(5, 5, 5, 0.3)',
-        backgroundImage: 'url("/images/provinces/background_hethongsieuthi.png")',
+        backgroundImage: 'url("/images/provinces/background_hethongsieuthi.webp")',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         touchAction: 'pan-y'
       }}
-      className="fixed inset-0 z-[2147483647] backdrop-blur-md font-beausans overflow-y-auto"
+      className="fixed inset-0 z-[2147483647] backdrop-blur-sm font-beausans overflow-y-auto"
       onTouchStart={handleTouchStart}
       onTouchEnd={handleTouchEnd}
     >
       <div className="absolute inset-0 overflow-hidden pointer-events-none fixed">
         <div className="absolute inset-0 bg-black/40"></div>
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1200px] h-[1200px] bg-white/[0.03] rounded-full blur-[120px]"></div>
-        <div className="absolute -top-[20%] -left-[10%] w-[600px] h-[600px] bg-[#EE0033]/[0.07] rounded-full blur-[100px]"></div>
-        <div className="absolute -bottom-[20%] -right-[10%] w-[800px] h-[800px] bg-[#EE0033]/[0.05] rounded-full blur-[120px]"></div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-white/[0.02] rounded-full blur-[60px]"></div>
+        <div className="absolute -top-[10%] -left-[5%] w-[400px] h-[400px] bg-[#EE0033]/[0.05] rounded-full blur-[50px]"></div>
+        <div className="absolute -bottom-[10%] -right-[5%] w-[500px] h-[500px] bg-[#EE0033]/[0.03] rounded-full blur-[60px]"></div>
         <div className="absolute inset-0 opacity-[0.03] mix-blend-overlay bg-[url('https://www.transparenttextures.com/patterns/stardust.png')]"></div>
       </div>
 
@@ -176,7 +176,7 @@ const ProvinceModal = ({
                     alt={province.name}
                     fill
                     sizes="(max-width: 768px) 95vw, 1400px"
-                    priority
+                    loading="lazy"
                     className={`${
                       currentStore.objectFit === 'object-contain' 
                         ? 'object-contain' 
@@ -186,7 +186,7 @@ const ProvinceModal = ({
                       objectPosition: currentStore.objectPosition || 'center',
                       transform: `scale(${getScale()}) translate(${currentStore.translateX || '0px'}, ${currentStore.translateY || '0px'})`
                     }}
-                    onError={(e) => e.currentTarget.src = "/images/homepage/logo-viettel-store.png"}
+                    onError={(e) => e.currentTarget.src = "/images/homepage/logo-viettel-store.webp"}
                   />
                 </motion.div>
               </AnimatePresence>

@@ -128,7 +128,7 @@ const BranchesSection = ({
                               alt={branch.name}
                               loading="lazy"
                               quality={100}
-                              onError={(e) => e.currentTarget.src = "/images/homepage/logo-viettel-store.png"}
+                              onError={(e) => e.currentTarget.src = "/images/homepage/logo-viettel-store.webp"}
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent flex items-end p-8 md:p-12">
                               {!branch.hasTextOnImage && (

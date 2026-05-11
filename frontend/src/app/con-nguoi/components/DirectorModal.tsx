@@ -36,7 +36,7 @@ const DirectorModal = ({ director, isMobile, onClose }: DirectorModalProps) => {
                 : (director.modalObjectPosition || director.objectPosition || 'center top'),
               transform: `scale(${isMobile ? (director.mobileModalScale || director.modalScale || 1) : (director.modalScale || 1)}) translateY(${isMobile ? (director.mobileModalTranslateY || director.modalTranslateY || '0px') : (director.modalTranslateY || '0px')})`
             }}
-            onError={(e) => e.currentTarget.src = "/images/homepage/logo-viettel-store.png"} 
+            onError={(e) => e.currentTarget.src = "/images/homepage/logo-viettel-store.webp"} 
           />
         </div>
 

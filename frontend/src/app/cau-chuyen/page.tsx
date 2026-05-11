@@ -73,42 +73,6 @@ export default function CauChuyenPage() {
 
   const heartRef = useRef<HTMLDivElement>(null);
   const mobileHeartRef = useRef<HTMLDivElement>(null);
-  const [scrollProgress, setScrollProgress] = useState(0);
-  const [mobileScrollProgress, setMobileScrollProgress] = useState(0);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (heartRef.current) {
-        const rect = heartRef.current.getBoundingClientRect();
-        const windowHeight = window.innerHeight;
-        
-        const startPos = windowHeight;
-        const endPos = 50;
-        
-        let progress = (startPos - rect.top) / (startPos - endPos);
-        progress = Math.max(0, Math.min(1, progress));
-        
-        setScrollProgress(progress);
-      }
-
-      if (mobileHeartRef.current) {
-        const rect = mobileHeartRef.current.getBoundingClientRect();
-        const windowHeight = window.innerHeight;
-        
-        const startPos = windowHeight;
-        const endPos = 50;
-        
-        let progress = (startPos - rect.top) / (startPos - endPos);
-        progress = Math.max(0, Math.min(1, progress));
-        
-        setMobileScrollProgress(progress);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    handleScroll();
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   return (
     <div className="w-full bg-[#F2F2F2] pt-24 min-h-screen relative overflow-x-hidden">
@@ -261,14 +225,14 @@ export default function CauChuyenPage() {
           <div ref={heartRef} className="relative w-full flex justify-center mt-6">
             <div style={{ width: "972px", height: "730px", position: "relative", perspective: "1000px" }}>
               {heartPieces.map((box) => {
-                const pieceYNorm = (box.y - minY) / (3060 - minY);
-                const isActive = scrollProgress > (pieceYNorm * 0.6);
-                const isFinished = scrollProgress > 0.98;
+                // Make it static for desktop as well to avoid white gaps
+                const isActive = true;
+                const isFinished = false;
 
                 return (
                   <div
                     key={box.id}
-                    className={`flip-card absolute ${isActive && !isFinished ? 'is-active' : ''} ${isFinished ? 'is-finished' : ''}`}
+                    className="flip-card absolute"
                     style={{
                       left: `${box.x - minX}px`,
                       top: `${box.y - minY}px`,
@@ -277,23 +241,21 @@ export default function CauChuyenPage() {
                       zIndex: 10
                     }}
                   >
-                    <div className="flip-card-inner shadow-sm">
+                    <div className="flip-card-inner shadow-sm" style={{ transform: 'rotateY(180deg)', transition: 'none' }}>
                       <div className="flip-card-front bg-white flex items-center justify-center" />
                       <div className="flip-card-back bg-gray-200 overflow-hidden">
-                        {isActive && (
-                            <Image
-                              src={box.img}
-                              fill
-                              className="object-cover"
-                              style={{ 
-                                objectPosition: box.pos || "center",
-                                transform: `scale(${box.scale || 1}) translate(${box.translateX || 0}px, ${box.translateY || 0}px)`
-                              }}
-                              alt={`Staff ${box.id}`}
-                              loading="lazy"
-                              unoptimized
-                            />
-                        )}
+                        <Image
+                          src={box.img}
+                          fill
+                          className="object-cover"
+                          style={{ 
+                            objectPosition: box.pos || "center",
+                            transform: `scale(${box.scale || 1}) translate(${box.translateX || 0}px, ${box.translateY || 0}px)`
+                          }}
+                          alt={`Staff ${box.id}`}
+                          priority={box.id === 'BOX-017'}
+                          sizes={`${box.w}px`}
+                        />
                       </div>
                     </div>
                   </div>
@@ -366,14 +328,14 @@ export default function CauChuyenPage() {
                 perspective: "1000px"
               }}>
                 {heartPieces.map((box) => {
-                  const pieceYNorm = (box.y - minY) / (3060 - minY);
-                  const isActive = mobileScrollProgress > (pieceYNorm * 0.6);
-                  const isFinished = mobileScrollProgress > 0.98;
+                  // On mobile, we want it to be static (always show the image) to avoid white gaps
+                  const isActive = true; 
+                  const isFinished = false;
 
                   return (
                     <div
                       key={box.id}
-                      className={`flip-card absolute ${isActive && !isFinished ? 'is-active' : ''} ${isFinished ? 'is-finished' : ''}`}
+                      className="flip-card absolute"
                       style={{
                         left: `${box.x - minX}px`,
                         top: `${box.y - minY}px`,
@@ -382,23 +344,21 @@ export default function CauChuyenPage() {
                         zIndex: 10
                       }}
                     >
-                      <div className="flip-card-inner shadow-sm">
+                      <div className="flip-card-inner shadow-sm" style={{ transform: 'rotateY(180deg)', transition: 'none' }}>
                         <div className="flip-card-front bg-white flex items-center justify-center" />
                           <div className={`flip-card-back ${box.id === 'BOX-038' ? 'bg-red-500' : 'bg-gray-200'} overflow-hidden`}>
-                          {isActive && (
-                            <Image
-                              src={box.img}
-                              fill
-                              className="object-cover"
-                              style={{ 
-                                objectPosition: box.pos || "center",
-                                transform: `scale(${box.scale || 1})`
-                              }}
-                              alt={`Staff ${box.id}`}
-                              loading="lazy"
-                              unoptimized
-                            />
-                          )}
+                          <Image
+                            src={box.img}
+                            fill
+                            className="object-cover"
+                            style={{ 
+                              objectPosition: box.pos || "center",
+                              transform: `scale(${box.scale || 1})`
+                            }}
+                            alt={`Staff ${box.id}`}
+                            priority={box.id === 'BOX-017'}
+                            sizes={`${box.w}px`}
+                          />
                         </div>
                       </div>
                     </div>

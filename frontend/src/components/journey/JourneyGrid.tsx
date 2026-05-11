@@ -13,12 +13,46 @@ function cn(...inputs: ClassValue[]) {
 }
 
 export const JourneyGrid: React.FC = () => {
-  const itemsPerPage = 6;
+  const [isMobile, setIsMobile] = useState(false);
+  const itemsPerPage = isMobile ? 1 : 6;
   const totalPages = Math.ceil(journeyData.length / itemsPerPage);
   
   const [[page, direction], setPage] = useState([0, 0]);
   const [selectedMilestone, setSelectedMilestone] = useState<Milestone | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [touchStart, setTouchStart] = useState<{x: number, y: number} | null>(null);
+  const [dragOffset, setDragOffset] = useState(0);
+  const [isDragging, setIsDragging] = useState(false);
+  const containerRef = React.useRef<HTMLDivElement>(null);
+
+  React.useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  // Radical fix for vertical slip
+  React.useEffect(() => {
+    const el = containerRef.current;
+    if (!el || !isMobile) return;
+
+    const handleTouchMoveManual = (e: TouchEvent) => {
+      if (!touchStart) return;
+      const x = e.touches[0].clientX;
+      const y = e.touches[0].clientY;
+      const dx = Math.abs(x - touchStart.x);
+      const dy = Math.abs(y - touchStart.y);
+
+      // If swiping mostly horizontally, prevent vertical scrolling
+      if (dx > dy && dx > 10) {
+        if (e.cancelable) e.preventDefault();
+      }
+    };
+
+    el.addEventListener('touchmove', handleTouchMoveManual, { passive: false });
+    return () => el.removeEventListener('touchmove', handleTouchMoveManual);
+  }, [isMobile, touchStart]);
 
   React.useEffect(() => {
     const handleScroll = (e: Event) => {
@@ -61,6 +95,37 @@ export const JourneyGrid: React.FC = () => {
     setPage([targetPage, newDirection]);
   };
 
+  const handleTouchStart = (e: React.TouchEvent) => {
+    if (!isMobile) return;
+    setTouchStart({
+      x: e.targetTouches[0].clientX,
+      y: e.targetTouches[0].clientY
+    });
+    setIsDragging(true);
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    if (!isMobile || touchStart === null) return;
+    setDragOffset(e.targetTouches[0].clientX - touchStart.x);
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (!isMobile || touchStart === null) return;
+    const touchEnd = e.changedTouches[0].clientX;
+    const diff = touchStart.x - touchEnd;
+
+    if (Math.abs(diff) > 50) {
+      if (diff > 0) {
+        paginate(1);
+      } else {
+        paginate(-1);
+      }
+    }
+    setTouchStart(null);
+    setDragOffset(0);
+    setIsDragging(false);
+  };
+
   const currentItems = journeyData.slice(
     page * itemsPerPage,
     (page + 1) * itemsPerPage
@@ -87,7 +152,14 @@ export const JourneyGrid: React.FC = () => {
   };
 
   return (
-    <div className="w-full relative pt-6 pb-6 flex flex-col items-center overflow-hidden">
+    <div 
+      ref={containerRef}
+      className="w-full relative pt-6 pb-6 flex flex-col items-center overflow-hidden"
+      style={{ touchAction: isMobile ? 'pan-y' : 'auto' }}
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleTouchEnd}
+    >
       <div className="w-full flex justify-center min-h-[300px] md:min-h-[660px]">
         <AnimatePresence initial={false} custom={direction} mode="wait">
           <motion.div
@@ -98,7 +170,7 @@ export const JourneyGrid: React.FC = () => {
             animate="center"
             exit="exit"
             transition={{
-              x: { type: "spring", stiffness: 200, damping: 25 },
+              x: { duration: 0.3, ease: [0.2, 1, 0.3, 1] },
               opacity: { duration: 0.3 },
               scale: { duration: 0.3 }
             }}
@@ -109,7 +181,7 @@ export const JourneyGrid: React.FC = () => {
                 key={milestone.id}
                 milestone={milestone}
                 isActive={true}
-                isPriority={page === 0 && idx < 6}
+                isPriority={page === 0 && idx < itemsPerPage}
                 onClick={() => {
                   setSelectedMilestone(milestone);
                   setIsModalOpen(true);

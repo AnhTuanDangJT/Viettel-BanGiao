@@ -20,13 +20,15 @@ import {
   FormerDirector
 } from "./data";
 
-// Components
-import LeadersSection from "./components/LeadersSection";
-import FormerDirectorsSection from "./components/FormerDirectorsSection";
-import LongServiceSection from "./components/LongServiceSection";
-import DepartmentsSection from "./components/DepartmentsSection";
-import ProvincesSection from "./components/ProvincesSection";
-import PartySection from "./components/PartySection";
+import dynamic from "next/dynamic";
+
+// Lazy Load Components
+const LeadersSection = dynamic(() => import("./components/LeadersSection"), { ssr: false, loading: () => <div className="h-96 animate-pulse bg-gray-100 rounded-2xl m-4" /> });
+const FormerDirectorsSection = dynamic(() => import("./components/FormerDirectorsSection"), { ssr: false });
+const LongServiceSection = dynamic(() => import("./components/LongServiceSection"), { ssr: false });
+const DepartmentsSection = dynamic(() => import("./components/DepartmentsSection"), { ssr: false });
+const ProvincesSection = dynamic(() => import("./components/ProvincesSection"), { ssr: false });
+const PartySection = dynamic(() => import("./components/PartySection"), { ssr: false });
 
 // Modals
 import DepartmentModal from "./components/DepartmentModal";
@@ -142,11 +144,11 @@ export default function ConNguoiPage() {
       {renderModals()}
 
       <div 
-        className={`min-h-screen flex flex-col font-beausans bg-[#F2F2F2] overflow-x-hidden relative z-0 transition-[opacity,transform,filter] duration-500 ${isAnyModalOpen ? 'opacity-30 blur-[4px] scale-[0.98]' : 'opacity-100 blur-0 scale-100'}`} 
+        className={`min-h-screen flex flex-col font-beausans bg-[#F2F2F2] overflow-x-hidden relative z-0 transition-[opacity,transform] duration-500 ${isAnyModalOpen ? 'opacity-30 scale-[0.98]' : 'opacity-100 scale-100'}`} 
         style={{ paddingTop: '80px' }}
       >
         <div className="absolute top-0 left-0 right-0 z-0 pointer-events-none opacity-[0.03]">
-          <div className="w-full h-[1000px] bg-[url('/images/backgrounds/diahinh.png')] bg-cover bg-center"></div>
+          <div className="w-full h-[1000px] bg-[url('/images/backgrounds/diahinh_small.webp')] bg-cover bg-center"></div>
         </div>
 
         <div className="relative z-10 w-full pt-0">
@@ -176,7 +178,7 @@ export default function ConNguoiPage() {
           <div className="relative bg-[#F2F2F2] overflow-hidden">
             {/* Diagonal terrain background */}
             <div 
-              className="absolute inset-0 z-0 pointer-events-none bg-[url('/images/backgrounds/diahinh2.2.png')] bg-no-repeat bg-cover opacity-[0.15]"
+              className="absolute inset-0 z-0 pointer-events-none bg-[url('/images/backgrounds/diahinh_small.webp')] bg-no-repeat bg-cover opacity-[0.15]"
               style={{ 
                 transform: 'scale(1.8) rotate(-12deg)',
                 transformOrigin: 'center center',
@@ -210,6 +212,7 @@ export default function ConNguoiPage() {
               <DepartmentsSection 
                 departments={departments}
                 onSelectDept={setSelectedDept}
+                isMobile={isMobile}
               />
 
               {/* New Section for Ecommerce Channel */}

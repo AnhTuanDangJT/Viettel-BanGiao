@@ -127,8 +127,8 @@ const LeadersSection = ({ leaders, positions, isMobile, isTablet, rotateLeaders 
                       objectPosition: leader.objectPosition || 'top',
                       transform: `scale(${leader.scale || 1.8})`
                     }}
-                    priority={true}
-                    onError={(e) => e.currentTarget.src = "/images/homepage/logo-viettel-store.png"}
+                    priority={isCenter}
+                    onError={(e) => e.currentTarget.src = "/images/homepage/logo-viettel-store.webp"}
                   />
                 </div>
               </motion.div>

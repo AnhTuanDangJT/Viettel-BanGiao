@@ -16,6 +16,7 @@ const LongServiceSection = ({
   const [selectedHonoree, setSelectedHonoree] = useState<number | null>(null);
   const [isTransitioning, setIsTransitioning] = useState(true);
   const [touchStart, setTouchStart] = useState<number | null>(null);
+  const [touchStartY, setTouchStartY] = useState<number | null>(null);
   const [dragOffset, setDragOffset] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
 
@@ -42,20 +43,29 @@ const LongServiceSection = ({
         } else {
           setVdIndex((vdIndex + totalItems) % totalItems);
         }
-      }, 1000); // Wait for transition duration
+      }, 500); // Wait for transition duration
       return () => clearTimeout(timer);
     }
   }, [vdIndex, totalItems, step]);
 
   const handleTouchStart = (e: React.TouchEvent) => {
     setTouchStart(e.targetTouches[0].clientX);
+    setTouchStartY(e.targetTouches[0].clientY);
     setIsDragging(true);
   };
 
   const handleTouchMove = (e: React.TouchEvent) => {
-    if (touchStart === null) return;
-    const currentTouch = e.targetTouches[0].clientX;
-    setDragOffset(currentTouch - touchStart);
+    if (touchStart === null || touchStartY === null) return;
+    const currentTouchX = e.targetTouches[0].clientX;
+    const currentTouchY = e.targetTouches[0].clientY;
+    
+    const diffX = Math.abs(currentTouchX - touchStart);
+    const diffY = Math.abs(currentTouchY - touchStartY);
+    
+    // If swiping horizontally, we focus on that and handle the offset
+    if (diffX > diffY && diffX > 5) {
+      setDragOffset(currentTouchX - touchStart);
+    }
   };
 
   const handleTouchEnd = (e: React.TouchEvent) => {
@@ -74,7 +84,7 @@ const LongServiceSection = ({
 
   return (
     <section className="py-24 bg-black relative w-full overflow-hidden">
-      <div className="absolute inset-0 opacity-20 mix-blend-screen bg-[url('/images/backgrounds/diahinh.png')] bg-cover bg-center"></div>
+      <div className="absolute inset-0 opacity-20 mix-blend-screen bg-[url('/images/backgrounds/diahinh_small.webp')] bg-cover bg-center"></div>
       <div className="absolute inset-0 pointer-events-none z-0" style={{ background: 'radial-gradient(ellipse 60% 50% at center, rgba(238,0,51,0.4) 0%, rgba(0,0,0,0) 100%)' }}></div>
       <div className="container mx-auto px-4 relative z-10 max-w-6xl">
         <h2 className="text-white font-beausans font-black text-2xl md:text-4xl uppercase mb-16 text-center tracking-wide">VINH DANH NHÂN SỰ CỐNG HIẾN LÂU NĂM</h2>
@@ -86,11 +96,13 @@ const LongServiceSection = ({
           style={{ touchAction: 'pan-y' }}
         >
           <div 
-            className={`flex gap-4 md:gap-8 will-change-transform ${isDragging || !isTransitioning ? '' : 'transition-transform duration-1000 ease-in-out'}`} 
+            className={`flex gap-4 md:gap-8 will-change-transform ${isDragging || !isTransitioning ? '' : 'transition-transform duration-300 ease-[cubic-bezier(0.2,1,0.3,1)]'}`} 
             style={{ 
               transform: `translateX(calc(-1 * (var(--ls-active-idx) * (var(--ls-card-width) + var(--ls-card-gap))) + (var(--ls-center-offset)) + ${dragOffset}px))`,
               '--ls-active-idx': vdIndex + longService.length,
-              '--ls-center-offset': '0px'
+              '--ls-center-offset': isMobile ? 'calc((100vw - var(--ls-card-width)) / 2 - 16px)' : '0px',
+              '--ls-card-width': isMobile ? '280px' : isTablet ? '320px' : '260px',
+              '--ls-card-gap': isMobile ? '16px' : '32px'
             } as React.CSSProperties}
           >
             {[...longService, ...longService, ...longService].map((person, idx) => {
@@ -128,15 +140,16 @@ const LongServiceSection = ({
                         <Image 
                           src={encodeURI(person.img)} 
                           fill 
-                          sizes="(max-width: 640px) 95vw, (max-width: 1024px) 50vw, 350px"
+                          sizes="(max-width: 640px) 300px, (max-width: 1024px) 50vw, 260px"
                           className="object-cover transition-transform duration-1000 group-hover:scale-105 rounded-[40px]" 
                           alt={person.name} 
                           loading="lazy"
+                          quality={65}
                           style={{ 
                             objectPosition: person.objectPosition || 'center',
                             transform: `scale(${person.scale || 1})`
                           }}
-                          onError={(e) => e.currentTarget.src = "/images/homepage/logo-viettel-store.png"} 
+                          onError={(e) => e.currentTarget.src = "/images/homepage/logo-viettel-store.webp"} 
                         />
                         <div className={`absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent transition-opacity duration-300 flex items-end p-6 ${isFlipped ? 'opacity-0' : 'opacity-100'}`}>
                           <div className="flex flex-col items-start">
@@ -147,31 +160,33 @@ const LongServiceSection = ({
                       </div>
                     )}
 
-                    {/* Back side */}
+                    {/* Back side - Only render details if flipped or not on mobile to save memory */}
                     {(!isMobile || isFlipped) && (
                       <div 
                         className="absolute inset-0 w-full h-full z-10 rounded-[40px] overflow-hidden shadow-2xl bg-[#EE0033] flex flex-col items-center justify-center p-4 md:p-6 text-center border-4 border-white/20 transition-all duration-500" 
                         style={!isMobile ? { backfaceVisibility: 'hidden', WebkitBackfaceVisibility: 'hidden', transform: 'rotateY(180deg)' } : {}}
                       >
-                        <div className="absolute inset-0 opacity-15 bg-[url('/images/backgrounds/diahinh.png')] bg-cover bg-center"></div>
-                        <div className="relative z-10 flex flex-col h-full w-full justify-between pt-1 pb-8 -translate-y-3 md:-translate-y-4">
-                          <div className="flex flex-col items-center shrink-0">
-                            <div className="w-14 h-14 md:w-16 md:h-16 relative rounded-full overflow-hidden border-2 border-white mb-2 shadow-md">
-                              <Image src={encodeURI(person.img)} fill sizes="64px" className="object-cover" alt={person.name} style={{ objectPosition: person.objectPosition || 'center', transform: `scale(${person.scale || 1})` }} />
+                        <div className="absolute inset-0 opacity-15 bg-[url('/images/backgrounds/diahinh_small.webp')] bg-cover bg-center"></div>
+                        {isFlipped || !isMobile ? (
+                          <div className="relative z-10 flex flex-col h-full w-full justify-between pt-1 pb-8 -translate-y-3 md:-translate-y-4">
+                            <div className="flex flex-col items-center shrink-0">
+                              <div className="w-14 h-14 md:w-16 md:h-16 relative rounded-full overflow-hidden border-2 border-white mb-2 shadow-md">
+                                <Image src={encodeURI(person.img)} fill sizes="80px" quality={50} className="object-cover" alt={person.name} style={{ objectPosition: person.objectPosition || 'center', transform: `scale(${person.scale || 1})` }} />
+                              </div>
+                              <h2 className="text-white text-2xl md:text-3xl font-beausans font-black mb-1 drop-shadow-lg uppercase tracking-tighter leading-none">{person.years} NĂM</h2>
+                              <p className="text-white/90 text-sm md:text-xs font-beausans font-bold">cống hiến</p>
                             </div>
-                            <h2 className="text-white text-2xl md:text-3xl font-beausans font-black mb-1 drop-shadow-lg uppercase tracking-tighter leading-none">{person.years} NĂM</h2>
-                            <p className="text-white/90 text-sm md:text-xs font-beausans font-bold">cống hiến</p>
+                            <div className="my-auto flex flex-col justify-center py-2">
+                              <p className="text-white/80 text-sm md:text-xs font-beausans font-bold mb-1 tracking-widest">Đồng chí</p>
+                              <h3 className="text-white text-lg md:text-xl font-beausans font-black mb-2 uppercase leading-tight drop-shadow-md tracking-tighter">{person.name.replace('ĐỒNG CHÍ ', '')}</h3>
+                              <div className="w-8 h-1 bg-white/30 mx-auto mb-2"></div>
+                              <p className="text-white text-base md:text-sm font-beausans font-black tracking-tight px-2 leading-tight">{person.dept}</p>
+                            </div>
+                            <div className="shrink-0">
+                              <p className="text-white/80 text-sm md:text-xs font-roboto font-medium">Ngày gia nhập: {person.date}</p>
+                            </div>
                           </div>
-                          <div className="my-auto flex flex-col justify-center py-2">
-                            <p className="text-white/80 text-sm md:text-xs font-beausans font-bold mb-1 tracking-widest">Đồng chí</p>
-                            <h3 className="text-white text-lg md:text-xl font-beausans font-black mb-2 uppercase leading-tight drop-shadow-md tracking-tighter">{person.name.replace('ĐỒNG CHÍ ', '')}</h3>
-                            <div className="w-8 h-1 bg-white/30 mx-auto mb-2"></div>
-                            <p className="text-white text-base md:text-sm font-beausans font-black tracking-tight px-2 leading-tight">{person.dept}</p>
-                          </div>
-                          <div className="shrink-0">
-                            <p className="text-white/80 text-sm md:text-xs font-roboto font-medium">Ngày gia nhập: {person.date}</p>
-                          </div>
-                        </div>
+                        ) : null}
                       </div>
                     )}
                   </div>

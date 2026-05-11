@@ -227,6 +227,14 @@ export default function HanhTrinhPage() {
   const [awardsActiveIndex, setAwardsActiveIndex] = useState(0);
   const [isMarketHovered, setIsMarketHovered] = useState(false);
   const [hoveredCardIndex, setHoveredCardIndex] = useState<number | null>(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  React.useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
 
 
@@ -493,7 +501,26 @@ export default function HanhTrinhPage() {
         <div className="honors-container">
           <h2 className="honors-title">DANH HIỆU GIAI ĐOẠN 2021 ĐẾN NAY</h2>
 
-          <div className="honors-carousel">
+          <div 
+            className="honors-carousel"
+            onTouchStart={(e) => {
+              const touch = e.targetTouches[0];
+              (e.currentTarget as any)._touchStartX = touch.clientX;
+            }}
+            onTouchEnd={(e) => {
+              const touch = e.changedTouches[0];
+              const startX = (e.currentTarget as any)._touchStartX;
+              if (startX === undefined) return;
+              const diff = startX - touch.clientX;
+              if (Math.abs(diff) > 50) {
+                if (diff > 0) {
+                  setAwardsActiveIndex((awardsActiveIndex + 1) % awards.length);
+                } else {
+                  setAwardsActiveIndex((awardsActiveIndex - 1 + awards.length) % awards.length);
+                }
+              }
+            }}
+          >
             {awards.map((award, i) => {
               const total = awards.length;
               const diff = (i - awardsActiveIndex + total) % total;
@@ -565,9 +592,8 @@ export default function HanhTrinhPage() {
         </div>
       </motion.section>
 
-      {/* 5. CÚP VÀ GIẢI THƯỞNG */}
       <motion.div className="mt-0" {...fadeInUp}>
-        <TrophyAwardsSection />
+        <TrophyAwardsSection isMobile={isMobile} />
       </motion.div>
     </div>
   );

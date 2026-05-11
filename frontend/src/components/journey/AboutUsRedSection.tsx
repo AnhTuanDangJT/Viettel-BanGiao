@@ -15,14 +15,14 @@ type AboutTile = {
 const aboutTiles: AboutTile[] = [
   // row 1
   { id: "r1c1", isRed: true, redType: 'dark', colSpan: 4 }, // Extended to the left
-  { id: "r1c2", image: "/images/about/2.jpg", alt: "Nhân viên tư vấn" },
+  { id: "r1c2", image: "/images/about/2.webp", alt: "Nhân viên tư vấn" },
   { id: "r1c3", isRed: true, redType: 'bright' },
-  { id: "r1c4", image: "/images/about/4.jpg", alt: "Đội ngũ nhân viên" },
+  { id: "r1c4", image: "/images/about/4.webp", alt: "Đội ngũ nhân viên" },
   // row 2
   { id: "spacer", isSpacer: true, colSpan: 3 }, // Spacer to push the rest to the right
-  { id: "r2c1", image: "/images/about/1.jpg", alt: "Cửa hàng Viettel" },
+  { id: "r2c1", image: "/images/about/1.webp", alt: "Cửa hàng Viettel" },
   { id: "r2c2", isRed: true, redType: 'bright' },
-  { id: "r2c3", image: "/images/about/3.jpg", alt: "Trải nghiệm khách hàng" },
+  { id: "r2c3", image: "/images/about/3.webp", alt: "Trải nghiệm khách hàng" },
   { id: "r2c4", isRed: true, redType: 'dark' },
 ];
 
@@ -147,7 +147,7 @@ export function AboutUsRedSection() {
           width: '1364px',
           height: '575px',
           aspectRatio: '216/91',
-          background: 'url(/images/about/diahinh3.png) -0.615px -279.851px / 100.108% 158.424% no-repeat',
+          background: 'url(/images/about/diahinh3.webp) -0.615px -279.851px / 100.108% 158.424% no-repeat',
           opacity: 1,
           mixBlendMode: 'multiply',
           bottom: '0px',
@@ -162,7 +162,7 @@ export function AboutUsRedSection() {
           width: '1364px',
           height: '575px',
           aspectRatio: '216/91',
-          background: 'url(/images/about/diahinh3.png) -0.615px -279.851px / 100.108% 158.424% no-repeat',
+          background: 'url(/images/about/diahinh3.webp) -0.615px -279.851px / 100.108% 158.424% no-repeat',
           opacity: 1,
           mixBlendMode: 'multiply',
           bottom: '0px',

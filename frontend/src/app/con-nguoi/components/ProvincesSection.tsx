@@ -24,18 +24,27 @@ const ProvincesSection = ({
   onNext 
 }: ProvincesSectionProps) => {
   const [touchStart, setTouchStart] = useState<number | null>(null);
+  const [touchStartY, setTouchStartY] = useState<number | null>(null);
   const [dragOffset, setDragOffset] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
 
   const handleTouchStart = (e: React.TouchEvent) => {
     setTouchStart(e.targetTouches[0].clientX);
+    setTouchStartY(e.targetTouches[0].clientY);
     setIsDragging(true);
   };
 
   const handleTouchMove = (e: React.TouchEvent) => {
-    if (touchStart === null) return;
-    const currentTouch = e.targetTouches[0].clientX;
-    setDragOffset(currentTouch - touchStart);
+    if (touchStart === null || touchStartY === null) return;
+    const currentTouchX = e.targetTouches[0].clientX;
+    const currentTouchY = e.targetTouches[0].clientY;
+    
+    const diffX = Math.abs(currentTouchX - touchStart);
+    const diffY = Math.abs(currentTouchY - touchStartY);
+
+    if (diffX > diffY && diffX > 5) {
+      setDragOffset(currentTouchX - touchStart);
+    }
   };
 
   const handleTouchEnd = (e: React.TouchEvent) => {
@@ -65,7 +74,7 @@ const ProvincesSection = ({
       <div
         className="absolute inset-0 opacity-15 pointer-events-none"
         style={{
-          backgroundImage: "url('/images/provinces/background_hethongsieuthi.png')",
+          backgroundImage: "url('/images/provinces/background_hethongsieuthi.webp')",
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat'
@@ -118,31 +127,32 @@ const ProvincesSection = ({
                   } as React.CSSProperties}
                 >
                   <div className="relative w-full h-full flex flex-col items-center justify-center">
-                    {/* Base Map (Always visible) */}
-                    <div className={`absolute inset-0 flex items-center justify-center transition-all duration-1000 ${isCenter ? "scale-110" : "scale-90"}`}>
-                      <Image
-                        quality={60}
-                        src={encodeURI(prov.map)}
-                        alt={prov.name}
-                        fill
-                        sizes="(max-width: 768px) 60vw, 350px"
-                        className="object-contain pointer-events-none"
-                        priority={isCenter}
-                        loading={isCenter ? "eager" : "lazy"}
-                      />
-                    </div>
-
-                    {/* Detailed Map with Text (Fades in when centered) */}
-                    {prov.mapWithText && (
-                      <div className={`absolute inset-0 flex items-center justify-center transition-all duration-1000 ${isCenter ? "opacity-100 scale-110" : "opacity-0 scale-90"}`}>
+                    {/* Base Map (Visible for nearby provinces) */}
+                    {Math.abs(offset) <= 2 && (
+                      <div className={`absolute inset-0 flex items-center justify-center transition-all duration-1000 ${isCenter ? "scale-110" : "scale-90"}`}>
                         <Image
-                          quality={60}
+                          quality={40}
+                          loading="lazy"
+                          src={encodeURI(prov.map)}
+                          alt={prov.name}
+                          fill
+                          sizes="(max-width: 768px) 300px, 400px"
+                          className="object-contain pointer-events-none"
+                        />
+                      </div>
+                    )}
+
+                    {/* Detailed Map with Text (ONLY for center province) */}
+                    {isCenter && prov.mapWithText && (
+                      <div className={`absolute inset-0 flex items-center justify-center transition-all duration-1000 opacity-100 scale-110`}>
+                        <Image
+                          quality={40}
+                          loading="lazy"
                           src={encodeURI(prov.mapWithText)}
                           alt={`${prov.name} details`}
                           fill
-                          sizes="(max-width: 768px) 60vw, 350px"
+                          sizes="(max-width: 768px) 300px, 400px"
                           className="object-contain pointer-events-none"
-                          priority={isCenter}
                         />
                       </div>
                     )}

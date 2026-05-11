@@ -115,7 +115,7 @@ export const LoadingIntro = () => {
       >
         <div className="relative w-80 h-40 md:w-[600px] md:h-[300px] animate-float">
           <Image 
-            src="/images/homepage/logo-viettel-store.png" 
+            src="/images/homepage/logo-viettel-store.webp" 
             alt="Viettel Store" 
             fill 
             className="object-contain filter brightness-0 invert" 
