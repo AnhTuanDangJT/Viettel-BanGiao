@@ -20,9 +20,7 @@ export const JourneyGrid: React.FC = () => {
   const [[page, direction], setPage] = useState([0, 0]);
   const [selectedMilestone, setSelectedMilestone] = useState<Milestone | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [touchStart, setTouchStart] = useState<{x: number, y: number} | null>(null);
-  const [dragOffset, setDragOffset] = useState(0);
-  const [isDragging, setIsDragging] = useState(false);
+  const [touchStart, setTouchStart] = React.useState<{x: number, y: number} | null>(null);
   const containerRef = React.useRef<HTMLDivElement>(null);
 
   React.useEffect(() => {
@@ -101,12 +99,10 @@ export const JourneyGrid: React.FC = () => {
       x: e.targetTouches[0].clientX,
       y: e.targetTouches[0].clientY
     });
-    setIsDragging(true);
   };
 
   const handleTouchMove = (e: React.TouchEvent) => {
     if (!isMobile || touchStart === null) return;
-    setDragOffset(e.targetTouches[0].clientX - touchStart.x);
   };
 
   const handleTouchEnd = (e: React.TouchEvent) => {
@@ -122,8 +118,6 @@ export const JourneyGrid: React.FC = () => {
       }
     }
     setTouchStart(null);
-    setDragOffset(0);
-    setIsDragging(false);
   };
 
   const currentItems = journeyData.slice(

@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import Image from "next/image";
 import { Roboto } from 'next/font/google';
 
@@ -228,6 +228,7 @@ export default function HanhTrinhPage() {
   const [isMarketHovered, setIsMarketHovered] = useState(false);
   const [hoveredCardIndex, setHoveredCardIndex] = useState<number | null>(null);
   const [isMobile, setIsMobile] = useState(false);
+  const awardsTouchStartX = useRef<number | null>(null);
 
   React.useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth < 768);
@@ -504,14 +505,12 @@ export default function HanhTrinhPage() {
           <div 
             className="honors-carousel"
             onTouchStart={(e) => {
-              const touch = e.targetTouches[0];
-              (e.currentTarget as any)._touchStartX = touch.clientX;
+              awardsTouchStartX.current = e.targetTouches[0].clientX;
             }}
             onTouchEnd={(e) => {
-              const touch = e.changedTouches[0];
-              const startX = (e.currentTarget as any)._touchStartX;
-              if (startX === undefined) return;
-              const diff = startX - touch.clientX;
+              if (awardsTouchStartX.current === null) return;
+              const touchEnd = e.changedTouches[0].clientX;
+              const diff = awardsTouchStartX.current - touchEnd;
               if (Math.abs(diff) > 50) {
                 if (diff > 0) {
                   setAwardsActiveIndex((awardsActiveIndex + 1) % awards.length);
@@ -519,6 +518,7 @@ export default function HanhTrinhPage() {
                   setAwardsActiveIndex((awardsActiveIndex - 1 + awards.length) % awards.length);
                 }
               }
+              awardsTouchStartX.current = null;
             }}
           >
             {awards.map((award, i) => {
