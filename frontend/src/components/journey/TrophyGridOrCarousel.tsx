@@ -1,6 +1,8 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 export const TrophyGridOrCarousel: React.FC<{ isMobile?: boolean }> = ({ isMobile: propIsMobile }) => {
   const [localIsMobile, setLocalIsMobile] = React.useState(false);
@@ -132,13 +134,12 @@ export const TrophyGridOrCarousel: React.FC<{ isMobile?: boolean }> = ({ isMobil
               className="overflow-hidden flex items-center justify-center relative transition-all duration-500 group-hover:shadow-2xl group-hover:-translate-y-2 group-hover:border-[#EE0033]/20"
             >
               <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-700 bg-gradient-to-tr from-white via-transparent to-white pointer-events-none" />
-              <img
+              <Image
                 src={trophy.image}
                 alt={trophy.title}
                 loading="eager"
+                fill
                 style={{ 
-                  width: '100%', 
-                  height: '100%', 
                   transition: 'transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1)',
                   transform: trophy.id === '3' ? 'scale(1.4) translateX(-15px)' : 'scale(1.4)',
                 }}
@@ -149,15 +150,42 @@ export const TrophyGridOrCarousel: React.FC<{ isMobile?: boolean }> = ({ isMobil
         ))}
       </div>
 
-      {/* Pagination Dots for Mobile */}
+      {/* Pagination Dots & Buttons for Mobile */}
       {isMobile && (
-        <div className="flex justify-center gap-2 mt-8">
-          {displayTrophies.map((_, i) => (
-            <div 
-              key={i}
-              className={`h-1.5 rounded-full transition-all duration-300 ${normalizedActivePage === i ? 'w-6 bg-[#EE0033]' : 'w-1.5 bg-gray-300'}`}
-            />
-          ))}
+        <div className="mt-8 flex flex-col items-center gap-6 w-full">
+          {/* Dots on top */}
+          <div className="flex justify-center gap-2">
+            {displayTrophies.map((_, i) => (
+              <div 
+                key={i}
+                className={`h-1.5 rounded-full transition-all duration-300 ${normalizedActivePage === i ? 'w-6 bg-[#EE0033]' : 'w-1.5 bg-gray-300'}`}
+              />
+            ))}
+          </div>
+
+          {/* Left/Right buttons underneath */}
+          <div className="flex items-center justify-center gap-8">
+            <button
+              onClick={() => {
+                setIsTransitioning(true);
+                setActiveIndex(prev => prev - 1);
+              }}
+              className="w-12 h-12 rounded-full bg-white text-gray-600 hover:text-[#EE0033] shadow-[0_4px_15px_rgba(0,0,0,0.15)] hover:shadow-[0_6px_20px_rgba(0,0,0,0.25)] transition-all duration-300 flex items-center justify-center"
+              aria-label="Previous Trophy"
+            >
+              <ChevronLeft size={22} />
+            </button>
+            <button
+              onClick={() => {
+                setIsTransitioning(true);
+                setActiveIndex(prev => prev + 1);
+              }}
+              className="w-12 h-12 rounded-full bg-white text-gray-600 hover:text-[#EE0033] shadow-[0_4px_15px_rgba(0,0,0,0.15)] hover:shadow-[0_6px_20px_rgba(0,0,0,0.25)] transition-all duration-300 flex items-center justify-center"
+              aria-label="Next Trophy"
+            >
+              <ChevronRight size={22} />
+            </button>
+          </div>
         </div>
       )}
     </div>
