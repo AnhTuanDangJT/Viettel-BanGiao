@@ -136,15 +136,15 @@ const PartySection = ({
                       className="relative w-full rounded-xl md:rounded-2xl overflow-hidden shadow-lg group cursor-pointer transition-all duration-500 hover:-translate-y-2 aspect-[4/3] bg-black/90"
                       onClick={() => onSelect(group)}
                     >
-                      <Image
-                        src={group.img}
-                        fill
-                        quality={40}
-                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 750px"
-                        className="transition-transform duration-1000 group-hover:scale-105 object-cover"
-                        alt={group.name}
-                        loading="lazy"
-                      />
+                        <Image
+                          src={group.img}
+                          fill
+                          quality={40}
+                          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 750px"
+                          className="transition-transform duration-1000 group-hover:scale-105 object-cover"
+                          alt={group.name}
+                          priority={idx === activeIndex || idx === activeIndex - 1 || idx === activeIndex + 1}
+                        />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent flex items-end p-6 md:p-8">
                         <div className="text-white">
                           <h3 className="text-sm md:text-base font-bold leading-tight drop-shadow-md">

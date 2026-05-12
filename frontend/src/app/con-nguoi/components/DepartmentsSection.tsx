@@ -156,7 +156,7 @@ const DepartmentsSection = ({
                               }}
                               alt={dept.name}
                               quality={40}
-                              loading="lazy"
+                              priority={pageIdx === activeDeptPage || pageIdx === activeDeptPage - 1 || pageIdx === activeDeptPage + 1}
                               onError={(e) => e.currentTarget.src = "/images/homepage/logo-viettel-store.webp"}
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent flex items-end p-6 md:p-8">

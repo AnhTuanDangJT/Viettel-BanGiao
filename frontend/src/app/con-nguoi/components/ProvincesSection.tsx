@@ -132,7 +132,7 @@ const ProvincesSection = ({
                       <div className={`absolute inset-0 flex items-center justify-center transition-all duration-1000 ${isCenter ? "scale-110" : "scale-90"}`}>
                         <Image
                           quality={40}
-                          loading="lazy"
+                          priority={Math.abs(offset) <= 1}
                           src={encodeURI(prov.map)}
                           alt={prov.name}
                           fill
@@ -147,7 +147,7 @@ const ProvincesSection = ({
                       <div className={`absolute inset-0 flex items-center justify-center transition-all duration-1000 opacity-100 scale-110`}>
                         <Image
                           quality={40}
-                          loading="lazy"
+                          priority={true}
                           src={encodeURI(prov.mapWithText)}
                           alt={`${prov.name} details`}
                           fill
