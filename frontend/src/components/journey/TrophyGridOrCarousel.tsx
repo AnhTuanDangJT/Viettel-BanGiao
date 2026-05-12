@@ -102,7 +102,7 @@ export const TrophyGridOrCarousel: React.FC<{ isMobile?: boolean }> = ({ isMobil
   return (
     <div 
       ref={containerRef}
-      className="relative z-10 w-full mt-[30px] md:mt-[65px] overflow-hidden px-4 md:px-0"
+      className="relative z-10 w-full mt-[30px] md:mt-[65px] overflow-hidden px-4 md:px-0 pb-8"
       style={{ touchAction: isMobile ? 'pan-y' : 'auto' }}
       onTouchStart={handleTouchStart}
       onTouchMove={handleTouchMove}
