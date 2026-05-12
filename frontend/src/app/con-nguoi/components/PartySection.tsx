@@ -118,7 +118,10 @@ const PartySection = ({
             style={{ touchAction: isMobile ? 'pan-y' : 'auto' }}
           >
             <div
-              className={`flex ${isDragging || !isTransitioning ? '' : 'transition-transform duration-300 ease-[cubic-bezier(0.2,1,0.3,1)]'}`}
+              className={isMobile 
+                ? `flex ${isDragging || !isTransitioning ? '' : 'transition-transform duration-300 ease-[cubic-bezier(0.2,1,0.3,1)]'}`
+                : "grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 max-w-6xl mx-auto"
+              }
               style={{ 
                 transform: isMobile 
                   ? `translateX(calc(-${activeIndex * 100}% + ${dragOffset}px))` 
@@ -129,19 +132,19 @@ const PartySection = ({
               {(isMobile ? extendedGroups : partyGroups).map((group, idx) => (
                 <div 
                   key={`${isMobile ? 'mobile' : 'desktop'}-${idx}-${group.name}`} 
-                  className={isMobile ? "w-full shrink-0 px-4" : "grid-item w-1/4 px-2"}
+                  className={isMobile ? "w-full shrink-0 px-4" : "w-full"}
                 >
-                  <div className="max-w-4xl mx-auto w-full">
+                  <div className="w-full">
                     <div
-                      className="relative w-full rounded-xl md:rounded-2xl overflow-hidden shadow-lg group cursor-pointer transition-all duration-500 hover:-translate-y-2 aspect-[4/3] bg-black/90"
+                      className="relative w-full rounded-xl md:rounded-3xl overflow-hidden shadow-2xl group cursor-pointer transition-all duration-700 hover:-translate-y-3 aspect-[16/10] md:aspect-[16/9] bg-black/90"
                       onClick={() => onSelect(group)}
                     >
                         <Image
                           src={group.img}
                           fill
-                          quality={40}
-                          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 750px"
-                          className="transition-transform duration-1000 group-hover:scale-105 object-cover"
+                          quality={60}
+                          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 800px"
+                          className="transition-transform duration-1000 group-hover:scale-110 object-cover"
                           alt={group.name}
                           priority={idx === activeIndex || idx === activeIndex - 1 || idx === activeIndex + 1}
                         />
