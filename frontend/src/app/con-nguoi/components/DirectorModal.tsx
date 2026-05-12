@@ -23,7 +23,7 @@ const DirectorModal = ({ director, isMobile, onClose }: DirectorModalProps) => {
         {/* Image Card */}
         <div className="w-full md:w-[38%] aspect-square md:aspect-[4/5] relative rounded-[24px] overflow-hidden shadow-lg">
           <Image 
-            unoptimized
+            priority
             quality={100}
             src={encodeURI(director.modalImg || director.img)} 
             alt={director.name} 

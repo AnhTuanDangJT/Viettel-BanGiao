@@ -170,14 +170,14 @@ const ProvinceModal = ({
                   transition={{ duration: 0.3, ease: "easeOut" }}
                   className="relative z-10 w-full h-full shadow-2xl"
                 >
-                  <Image
-                    quality={75}
-                    src={encodeURI(currentStore.img)}
-                    alt={province.name}
-                    fill
-                    sizes="(max-width: 768px) 95vw, 1400px"
-                    loading="lazy"
-                    className={`${
+                    <Image
+                      quality={75}
+                      src={encodeURI(currentStore.img)}
+                      alt={province.name}
+                      fill
+                      sizes="(max-width: 768px) 95vw, 1400px"
+                      priority
+                      className={`${
                       currentStore.objectFit === 'object-contain' 
                         ? 'object-contain' 
                         : 'object-cover'

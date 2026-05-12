@@ -145,26 +145,26 @@ const DepartmentModal = ({ dept, onClose, hideComradeLabel }: DepartmentModalPro
                     <div className="grid grid-cols-2 gap-8 h-[min(620px,68vh)] max-w-[1000px] mx-auto w-full">
                       {dept.details.mainItems.slice(0, 4).map((item, i) => (
                         <div key={i} className="relative rounded-[2.5rem] overflow-hidden group border-2 border-white/10 shadow-2xl">
-                          <Image quality={75} src={encodeURI(item.img)} fill sizes="500px" className="object-cover transition-transform duration-1000 group-hover:scale-110" style={{ objectPosition: item.objectPosition || 'center', transform: item.scale ? `scale(${item.scale})` : 'none' }} alt="" />
+                          <Image priority quality={75} src={encodeURI(item.img)} fill sizes="500px" className="object-cover transition-transform duration-1000 group-hover:scale-110" style={{ objectPosition: item.objectPosition || 'center', transform: item.scale ? `scale(${item.scale})` : 'none' }} alt="" />
                         </div>
                       ))}
                     </div>
                   ) : dept.details.useCollageStaggered4 && dept.details.mainItems ? (
                     <div className="flex gap-8 w-full h-[min(620px,68vh)] max-w-[1200px] mx-auto">
                       <div className="relative flex-[1.8] rounded-[3rem] overflow-hidden border-2 border-white/10 shadow-2xl group">
-                        <Image quality={75} src={encodeURI(dept.details.mainItems[0].img)} fill sizes="800px" className="transition-transform duration-1000 group-hover:scale-105" style={{ objectPosition: dept.details.mainItems[0].objectPosition || 'center', objectFit: dept.details.mainItems[0].objectFit || 'cover', transform: `scale(${dept.details.mainItems[0].scale || 1}) scaleX(${dept.details.mainItems[0].scaleX || 1})` }} alt="" />
+                        <Image priority quality={75} src={encodeURI(dept.details.mainItems[0].img)} fill sizes="800px" className="transition-transform duration-1000 group-hover:scale-105" style={{ objectPosition: dept.details.mainItems[0].objectPosition || 'center', objectFit: dept.details.mainItems[0].objectFit || 'cover', transform: `scale(${dept.details.mainItems[0].scale || 1}) scaleX(${dept.details.mainItems[0].scaleX || 1})` }} alt="" />
                       </div>
                       <div className="flex-[1.2] flex flex-col gap-8">
                         <div className="flex-[0.4] flex gap-8">
                           <div className="relative flex-[0.8] rounded-[2.5rem] overflow-hidden border-2 border-white/10 shadow-xl group">
-                            <Image quality={75} src={encodeURI(dept.details.mainItems[1].img)} fill sizes="400px" className="object-cover transition-transform duration-1000 group-hover:scale-105" style={{ objectPosition: dept.details.mainItems[1].objectPosition || 'center', transform: dept.details.mainItems[1].scale ? `scale(${dept.details.mainItems[1].scale})` : 'none' }} alt="" />
+                            <Image priority quality={75} src={encodeURI(dept.details.mainItems[1].img)} fill sizes="400px" className="object-cover transition-transform duration-1000 group-hover:scale-105" style={{ objectPosition: dept.details.mainItems[1].objectPosition || 'center', transform: dept.details.mainItems[1].scale ? `scale(${dept.details.mainItems[1].scale})` : 'none' }} alt="" />
                           </div>
                           <div className="relative flex-[1.2] rounded-[2.5rem] overflow-hidden border-2 border-white/10 shadow-xl group">
-                            <Image quality={75} src={encodeURI(dept.details.mainItems[2].img)} fill sizes="600px" className="object-cover transition-transform duration-1000 group-hover:scale-105" style={{ objectPosition: dept.details.mainItems[2].objectPosition || 'center', transform: dept.details.mainItems[2].scale ? `scale(${dept.details.mainItems[2].scale})` : 'none' }} alt="" />
+                            <Image priority quality={75} src={encodeURI(dept.details.mainItems[2].img)} fill sizes="600px" className="object-cover transition-transform duration-1000 group-hover:scale-105" style={{ objectPosition: dept.details.mainItems[2].objectPosition || 'center', transform: dept.details.mainItems[2].scale ? `scale(${dept.details.mainItems[2].scale})` : 'none' }} alt="" />
                           </div>
                         </div>
                         <div className="relative flex-[0.6] rounded-[3rem] overflow-hidden border-2 border-white/10 shadow-xl group">
-                          <Image quality={75} src={encodeURI(dept.details.mainItems[3].img)} fill sizes="800px" className="object-cover transition-transform duration-1000 group-hover:scale-105" style={{ objectPosition: dept.details.mainItems[3].objectPosition || 'center', transform: dept.details.mainItems[3].scale ? `scale(${dept.details.mainItems[3].scale})` : 'none' }} alt="" />
+                          <Image priority quality={75} src={encodeURI(dept.details.mainItems[3].img)} fill sizes="800px" className="object-cover transition-transform duration-1000 group-hover:scale-105" style={{ objectPosition: dept.details.mainItems[3].objectPosition || 'center', transform: dept.details.mainItems[3].scale ? `scale(${dept.details.mainItems[3].scale})` : 'none' }} alt="" />
                         </div>
                       </div>
                     </div>
@@ -172,24 +172,24 @@ const DepartmentModal = ({ dept, onClose, hideComradeLabel }: DepartmentModalPro
                     <div className="w-full space-y-2">
                       <div className="flex gap-2 h-[min(300px,32vh)]">
                         <div className="relative flex-[1.6] rounded-[2.5rem] overflow-hidden group border-2 border-white/10 shadow-2xl">
-                          <Image quality={75} src={encodeURI(dept.details.mainItems[0].img)} fill sizes="800px" className="object-cover transition-transform duration-1000 group-hover:scale-105" style={{ objectPosition: dept.details.mainItems[0].objectPosition || 'center', transform: dept.details.mainItems[0].scale ? `scale(${dept.details.mainItems[0].scale})` : 'none' }} alt="" />
+                          <Image priority quality={75} src={encodeURI(dept.details.mainItems[0].img)} fill sizes="800px" className="object-cover transition-transform duration-1000 group-hover:scale-105" style={{ objectPosition: dept.details.mainItems[0].objectPosition || 'center', transform: dept.details.mainItems[0].scale ? `scale(${dept.details.mainItems[0].scale})` : 'none' }} alt="" />
                         </div>
                         <div className="relative flex-[0.8] rounded-[2.5rem] overflow-hidden group border-2 border-white/10 shadow-2xl">
-                          <Image quality={75} src={encodeURI(dept.details.mainItems[1].img)} fill sizes="400px" className="object-cover transition-transform duration-1000 group-hover:scale-105" style={{ objectPosition: dept.details.mainItems[1].objectPosition || 'center', transform: dept.details.mainItems[1].scale ? `scale(${dept.details.mainItems[1].scale})` : 'none' }} alt="" />
+                          <Image priority quality={75} src={encodeURI(dept.details.mainItems[1].img)} fill sizes="400px" className="object-cover transition-transform duration-1000 group-hover:scale-105" style={{ objectPosition: dept.details.mainItems[1].objectPosition || 'center', transform: dept.details.mainItems[1].scale ? `scale(${dept.details.mainItems[1].scale})` : 'none' }} alt="" />
                         </div>
                         <div className="relative flex-[1.2] rounded-[2.5rem] overflow-hidden group border-2 border-white/10 shadow-2xl">
-                          <Image quality={75} src={encodeURI(dept.details.mainItems[2].img)} fill sizes="600px" className="object-cover transition-transform duration-1000 group-hover:scale-105" style={{ objectPosition: dept.details.mainItems[2].objectPosition || 'center', transform: dept.details.mainItems[2].scale ? `scale(${dept.details.mainItems[2].scale})` : 'none' }} alt="" />
+                          <Image priority quality={75} src={encodeURI(dept.details.mainItems[2].img)} fill sizes="600px" className="object-cover transition-transform duration-1000 group-hover:scale-105" style={{ objectPosition: dept.details.mainItems[2].objectPosition || 'center', transform: dept.details.mainItems[2].scale ? `scale(${dept.details.mainItems[2].scale})` : 'none' }} alt="" />
                         </div>
                       </div>
                       <div className="flex gap-2 h-[min(300px,32vh)]">
                         <div className="relative flex-[1] rounded-[2.5rem] overflow-hidden group border-2 border-white/10 shadow-2xl">
-                          <Image quality={75} src={encodeURI(dept.details.mainItems[3].img)} fill sizes="500px" className="object-cover transition-transform duration-1000 group-hover:scale-105" style={{ objectPosition: dept.details.mainItems[3].objectPosition || 'center', transform: dept.details.mainItems[3].scale ? `scale(${dept.details.mainItems[3].scale})` : 'none' }} alt="" />
+                          <Image priority quality={75} src={encodeURI(dept.details.mainItems[3].img)} fill sizes="500px" className="object-cover transition-transform duration-1000 group-hover:scale-105" style={{ objectPosition: dept.details.mainItems[3].objectPosition || 'center', transform: dept.details.mainItems[3].scale ? `scale(${dept.details.mainItems[3].scale})` : 'none' }} alt="" />
                         </div>
                         <div className="relative flex-[1.4] rounded-[2.5rem] overflow-hidden group border-2 border-white/10 shadow-2xl">
-                          <Image quality={75} src={encodeURI(dept.details.mainItems[4].img)} fill sizes="700px" className="object-cover transition-transform duration-1000 group-hover:scale-105" style={{ objectPosition: dept.details.mainItems[4].objectPosition || 'center', transform: dept.details.mainItems[4].scale ? `scale(${dept.details.mainItems[4].scale})` : 'none' }} alt="" />
+                          <Image priority quality={75} src={encodeURI(dept.details.mainItems[4].img)} fill sizes="700px" className="object-cover transition-transform duration-1000 group-hover:scale-105" style={{ objectPosition: dept.details.mainItems[4].objectPosition || 'center', transform: dept.details.mainItems[4].scale ? `scale(${dept.details.mainItems[4].scale})` : 'none' }} alt="" />
                         </div>
                         <div className="relative flex-[1.4] rounded-[2.5rem] overflow-hidden group border-2 border-white/10 shadow-2xl">
-                          <Image quality={75} src={encodeURI(dept.details.mainItems[5].img)} fill sizes="700px" className="object-cover transition-transform duration-1000 group-hover:scale-105" style={{ objectPosition: dept.details.mainItems[5].objectPosition || 'center', transform: dept.details.mainItems[5].scale ? `scale(${dept.details.mainItems[5].scale})` : 'none' }} alt="" />
+                          <Image priority quality={75} src={encodeURI(dept.details.mainItems[5].img)} fill sizes="700px" className="object-cover transition-transform duration-1000 group-hover:scale-105" style={{ objectPosition: dept.details.mainItems[5].objectPosition || 'center', transform: dept.details.mainItems[5].scale ? `scale(${dept.details.mainItems[5].scale})` : 'none' }} alt="" />
                         </div>
                       </div>
                     </div>
@@ -214,7 +214,7 @@ const DepartmentModal = ({ dept, onClose, hideComradeLabel }: DepartmentModalPro
                       {dept.details.group && (
                         <div className={`flex flex-col items-center group ${(!dept.details.leader && (!dept.details.deputies || dept.details.deputies.length === 0)) ? 'w-full max-w-[1200px]' : 'flex-1 min-w-[300px]'}`}>
                           <div className={`relative w-full rounded-[3rem] overflow-hidden border-4 border-white/20 group-hover:border-white/40 transition-all duration-500 shadow-2xl ${(!dept.details.leader && (!dept.details.deputies || dept.details.deputies.length === 0)) ? 'h-[min(650px,75vh)]' : 'h-[min(450px,50vh)] xl:h-[min(550px,60vh)]'}`}>
-                            <Image quality={75} src={encodeURI(dept.details.group.img)} fill sizes="1200px" className={dept.details.group.objectFit === 'contain' ? 'object-contain' : 'object-cover'} style={{ objectPosition: dept.details.group.objectPosition || 'center' }} alt="group" />
+                            <Image priority quality={75} src={encodeURI(dept.details.group.img)} fill sizes="1200px" className={dept.details.group.objectFit === 'contain' ? 'object-contain' : 'object-cover'} style={{ objectPosition: dept.details.group.objectPosition || 'center' }} alt="group" />
                           </div>
                           <div className="mt-6 text-center">
                             <h3 className="text-white font-bold text-xl tracking-wide whitespace-pre-line">{dept.details.group.name}</h3>

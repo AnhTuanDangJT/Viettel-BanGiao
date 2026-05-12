@@ -66,6 +66,7 @@ const BranchModal = ({ branch, onClose }: BranchModalProps) => {
             <div className="flex flex-col items-center group">
               <div className="relative w-full aspect-[3/4] max-w-[280px] rounded-[2rem] overflow-hidden shadow-2xl border-2 border-white/10 group-hover:border-[#EE0033]/50 transition-all duration-500">
                 <Image 
+                  priority
                   src={encodeURI(branch.details.deputies[0].img)} 
                   fill 
                   sizes="(max-width: 768px) 280px, 450px"
