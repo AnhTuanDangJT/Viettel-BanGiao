@@ -109,7 +109,7 @@ export const ProvinceModal: React.FC<ProvinceModalProps> = ({
               width: "100%",
               maxWidth: "400px",
               height: "auto",
-              maxHeight: "85vh",
+              maxHeight: "92vh",
               flexShrink: 0,
               borderRadius: "24px",
               background: "#FFF",
@@ -234,7 +234,7 @@ export const ProvinceModal: React.FC<ProvinceModalProps> = ({
                     <div 
                       ref={scrollRef}
                       className="custom-scrollbar overflow-y-auto pr-4 mt-4"
-                      style={isMobile ? { maxHeight: "250px" } : { height: "380px" }}
+                      style={isMobile ? { maxHeight: "200px" } : { height: "380px" }}
                     >
                       <p
                         style={{
