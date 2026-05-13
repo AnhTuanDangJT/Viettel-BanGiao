@@ -242,7 +242,7 @@ export default function CauChuyenPage() {
                       <div className="flip-card-front bg-white flex items-center justify-center" />
                       <div className="flip-card-back bg-gray-200 overflow-hidden">
                         <Image
-                          src={box.img}
+                          src={encodeURI(box.img)}
                           fill
                           className="object-cover"
                           style={{ 
@@ -342,7 +342,7 @@ export default function CauChuyenPage() {
                         <div className="flip-card-front bg-white flex items-center justify-center" />
                           <div className={`flip-card-back ${box.id === 'BOX-038' ? 'bg-red-500' : 'bg-gray-200'} overflow-hidden`}>
                           <Image
-                            src={box.img}
+                            src={encodeURI(box.img)}
                             fill
                             className="object-cover"
                             style={{ 
