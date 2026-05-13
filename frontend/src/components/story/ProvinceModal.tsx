@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, PanInfo } from "framer-motion";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import Image from "next/image";
 import { StoryCard } from "./map-data/provincesContent";
@@ -75,7 +75,7 @@ export const ProvinceModal: React.FC<ProvinceModalProps> = ({
 
   // Swipe handlers for mobile
   const dragThreshold = 50;
-  const onDragEnd = (e: any, { offset, velocity }: any) => {
+  const onDragEnd = (_: unknown, { offset, velocity }: PanInfo) => {
     if (Math.abs(velocity.x) > 500 || Math.abs(offset.x) > dragThreshold) {
       if (offset.x > 0) {
         handlePrev();
