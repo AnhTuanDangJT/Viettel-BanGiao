@@ -278,7 +278,7 @@ export const ProvinceModal: React.FC<ProvinceModalProps> = ({
                       alt={currentStory?.subheader || provinceName || "Province Image"}
                       fill
                       priority
-                      className="object-cover"
+                      className="object-contain bg-gray-50"
                     />
                   </div>
                 </div>
