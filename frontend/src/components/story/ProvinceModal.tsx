@@ -164,13 +164,15 @@ export const ProvinceModal: React.FC<ProvinceModalProps> = ({
             <AnimatePresence mode="wait" initial={false}>
               <motion.div
                 key={currentIndex}
-                initial={{ x: 20, opacity: 0 }}
+                initial={{ x: 30, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
-                exit={{ x: -20, opacity: 0 }}
-                transition={{ duration: 0.3 }}
+                exit={{ x: -30, opacity: 0 }}
+                transition={{ type: "spring", stiffness: 350, damping: 35, mass: 0.5 }}
                 drag={isMobile ? "x" : false}
                 dragConstraints={{ left: 0, right: 0 }}
+                dragElastic={0.7}
                 onDragEnd={onDragEnd}
+                style={{ willChange: "transform, opacity" }}
                 className="flex flex-col h-full w-full"
               >
                 {/* Content Section: Row on PC, Column on Mobile */}
