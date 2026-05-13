@@ -293,6 +293,7 @@ export const ProvinceModal: React.FC<ProvinceModalProps> = ({
                       priority
                       loading="eager"
                       className="object-cover"
+                      style={{ transition: 'none' }}
                     />
                   </div>
                 </div>
