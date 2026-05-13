@@ -58,6 +58,17 @@ export const ProvinceModal: React.FC<ProvinceModalProps> = ({
     }
   }, [currentIndex]);
 
+  // Preload all images of the province when stories change
+  useEffect(() => {
+    if (!stories || stories.length === 0) return;
+    stories.forEach((story) => {
+      if (story.image) {
+        const img = new window.Image();
+        img.src = story.image;
+      }
+    });
+  }, [stories]);
+
   if (!mounted) return null;
 
   const currentStory = stories && stories.length > 0 ? stories[currentIndex] : null;
@@ -280,6 +291,7 @@ export const ProvinceModal: React.FC<ProvinceModalProps> = ({
                       alt={currentStory?.subheader || provinceName || "Province Image"}
                       fill
                       priority
+                      loading="eager"
                       className="object-cover"
                     />
                   </div>
