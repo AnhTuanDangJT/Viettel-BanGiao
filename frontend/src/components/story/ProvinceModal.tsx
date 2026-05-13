@@ -258,7 +258,7 @@ export const ProvinceModal: React.FC<ProvinceModalProps> = ({
                   <div
                     style={isMobile ? {
                       width: "100%",
-                      aspectRatio: "3 / 4",
+                      aspectRatio: "1 / 1",
                       borderRadius: "16px",
                       overflow: "hidden",
                       flexShrink: 0,
