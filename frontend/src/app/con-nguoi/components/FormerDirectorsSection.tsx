@@ -1,6 +1,6 @@
 "use client";
 
-import React, { memo } from "react";
+import React, { memo, useCallback } from "react";
 import Image from "next/image";
 import { FormerDirector } from "../data";
 
@@ -11,6 +11,15 @@ interface FormerDirectorsSectionProps {
 }
 
 const FormerDirectorsSection = ({ formerDirectorsData, isMobile, onSelect }: FormerDirectorsSectionProps) => {
+  const handleHover = useCallback((director: FormerDirector) => {
+    // Preload the high-res modal image into browser cache on hover
+    const src = director.modalImg || director.img;
+    if (src) {
+      const img = new window.Image();
+      img.src = encodeURI(src);
+    }
+  }, []);
+
   return (
     <section className="mb-4 container mx-auto mt-10 md:mt-10 max-w-7xl px-6 lg:px-8">
       <h2 className="text-gray-700 font-black text-2xl md:text-5xl uppercase mb-12 tracking-tighter text-left px-4">GIÁM ĐỐC CÁC THỜI KÌ</h2>
@@ -19,6 +28,7 @@ const FormerDirectorsSection = ({ formerDirectorsData, isMobile, onSelect }: For
           <div
             key={idx}
             className="group flex flex-col bg-white shadow-sm hover:shadow-xl transition-all duration-500 cursor-pointer hover:-translate-y-2 rounded-none overflow-hidden"
+            onMouseEnter={() => handleHover(director)}
             onClick={() => onSelect(director)}
           >
             <div className="relative w-full aspect-[4/5] bg-white overflow-hidden">

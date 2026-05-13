@@ -31,6 +31,7 @@ const DirectorModal = ({ director, isMobile, onClose }: DirectorModalProps) => {
             sizes="(max-width: 768px) 100vw, 400px"
             className="object-cover" 
             style={{ 
+              transition: 'none',
               objectPosition: isMobile 
                 ? (director.mobileModalObjectPosition || director.modalObjectPosition || director.objectPosition || 'center top')
                 : (director.modalObjectPosition || director.objectPosition || 'center top'),
