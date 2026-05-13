@@ -22,7 +22,6 @@ export const ProvinceModal: React.FC<ProvinceModalProps> = ({
   const [mounted, setMounted] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [imgAspectRatio, setImgAspectRatio] = useState<number | null>(null);
 
   useEffect(() => {
     setMounted(true);
@@ -52,18 +51,12 @@ export const ProvinceModal: React.FC<ProvinceModalProps> = ({
     };
   }, [isOpen, provinceName]);
 
-  // Reset scroll position and image aspect ratio when story changes
+  // Reset scroll position when story changes
   useEffect(() => {
     if (scrollRef.current) {
       scrollRef.current.scrollTop = 0;
     }
-    setImgAspectRatio(null);
   }, [currentIndex]);
-
-  // Also reset ratio when modal is reopened for a new province
-  useEffect(() => {
-    if (isOpen) setImgAspectRatio(null);
-  }, [isOpen, provinceName]);
 
   if (!mounted) return null;
 
@@ -241,7 +234,7 @@ export const ProvinceModal: React.FC<ProvinceModalProps> = ({
                     <div 
                       ref={scrollRef}
                       className="custom-scrollbar overflow-y-auto pr-4 mt-4"
-                      style={isMobile ? { maxHeight: "200px" } : { height: "380px" }}
+                      style={isMobile ? { maxHeight: "150px" } : { height: "380px" }}
                     >
                       <p
                         style={{
@@ -265,49 +258,27 @@ export const ProvinceModal: React.FC<ProvinceModalProps> = ({
                   <div
                     style={isMobile ? {
                       width: "100%",
-                      // dynamically size by aspect ratio; fall back to auto height until image loads
-                      aspectRatio: imgAspectRatio ? `${imgAspectRatio}` : undefined,
-                      maxHeight: "300px",
+                      aspectRatio: "3 / 4",
                       borderRadius: "16px",
                       overflow: "hidden",
                       flexShrink: 0,
                       marginTop: "8px",
-                      position: "relative",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      background: "#f9f9f9"
+                      position: "relative"
                     } : {
-                      // Desktop: cap width and let height follow aspect ratio
                       width: "320px",
-                      aspectRatio: imgAspectRatio ? `${imgAspectRatio}` : "320 / 500",
-                      maxHeight: "500px",
+                      height: "500px",
                       borderRadius: "22px",
                       overflow: "hidden",
                       flexShrink: 0,
-                      position: "relative",
+                      position: "relative"
                     }}
                   >
-                    {/* Hidden img to detect natural dimensions */}
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
-                      src={currentStory?.image || '/images/story-map/province-preview.webp'}
-                      alt=""
-                      aria-hidden="true"
-                      style={{ display: "none" }}
-                      onLoad={(e) => {
-                        const el = e.currentTarget;
-                        if (el.naturalWidth && el.naturalHeight) {
-                          setImgAspectRatio(el.naturalWidth / el.naturalHeight);
-                        }
-                      }}
-                    />
-                    <Image
+                    <Image 
                       src={currentStory?.image || '/images/story-map/province-preview.webp'}
                       alt={currentStory?.subheader || provinceName || "Province Image"}
                       fill
                       priority
-                      className="object-contain"
+                      className="object-cover"
                     />
                   </div>
                 </div>
