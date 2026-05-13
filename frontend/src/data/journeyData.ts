@@ -149,7 +149,6 @@ export const journeyData: Milestone[] = [
     title: "Chuyển mình trong kỷ nguyên số",
     description: "Ra mắt kênh thương mại điện tử, mở ra hành trình bán lẻ đa kênh.",
     image: "/images/journey/milestones/2015.webp",
-    modalImage: "/images/journey/milestones/2015_modal.webp",
     events: [
       {
         date: "04/2015",
