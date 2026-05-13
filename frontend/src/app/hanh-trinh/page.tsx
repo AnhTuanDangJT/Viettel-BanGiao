@@ -18,11 +18,11 @@ import { RipplePattern } from "@/components/journey/RipplePattern";
 import { motion } from "framer-motion";
 
 const fadeInUp = {
-  initial: { opacity: 0, y: 50 },
+  initial: { opacity: 0, y: 20 },
   whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, amount: 0.15 },
+  viewport: { once: true, amount: 0.05, margin: "0px 0px -50px 0px" },
   transition: { 
-    duration: 1.0, 
+    duration: 0.8, 
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     ease: [0.22, 1, 0.36, 1] as any
   }
