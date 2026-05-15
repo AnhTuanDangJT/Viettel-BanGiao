@@ -153,20 +153,20 @@ export const ProvinceModal: React.FC<ProvinceModalProps> = ({
               <X size={isMobile ? 24 : 32} />
             </button>
 
-            {/* Navigation Buttons (Floating on sides if multiple stories) - Hidden on mobile as we use swipe */}
-            {hasMultipleStories && !isMobile && (
+            {/* Navigation Buttons (Floating on sides if multiple stories) */}
+            {hasMultipleStories && (
               <>
                 <button
                   onClick={handlePrev}
-                  className="absolute top-1/2 -translate-y-1/2 flex items-center justify-center rounded-full bg-white shadow-md text-[#ED1C24] hover:bg-gray-50 transition-colors z-[10001] left-4 w-12 h-12"
+                  className={`absolute top-1/2 -translate-y-1/2 flex items-center justify-center rounded-full bg-white/80 backdrop-blur-sm shadow-lg text-[#ED1C24] hover:bg-white transition-colors z-[10001] ${isMobile ? 'left-2 w-10 h-10' : 'left-4 w-12 h-12'}`}
                 >
-                  <ChevronLeft size={32} />
+                  <ChevronLeft size={isMobile ? 24 : 32} />
                 </button>
                 <button
                   onClick={handleNext}
-                  className="absolute top-1/2 -translate-y-1/2 flex items-center justify-center rounded-full bg-white shadow-md text-[#ED1C24] hover:bg-gray-50 transition-colors z-[10001] right-4 w-12 h-12"
+                  className={`absolute top-1/2 -translate-y-1/2 flex items-center justify-center rounded-full bg-white/80 backdrop-blur-sm shadow-lg text-[#ED1C24] hover:bg-white transition-colors z-[10001] ${isMobile ? 'right-2 w-10 h-10' : 'right-4 w-12 h-12'}`}
                 >
-                  <ChevronRight size={32} />
+                  <ChevronRight size={isMobile ? 24 : 32} />
                 </button>
               </>
             )}
