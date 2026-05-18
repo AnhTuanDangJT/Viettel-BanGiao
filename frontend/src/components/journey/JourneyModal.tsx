@@ -30,7 +30,8 @@ export const JourneyModal: React.FC<JourneyModalProps> = ({ isOpen, onClose, mil
             initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.9, opacity: 0 }}
-            className="relative bg-[#333] w-full max-w-[1200px] rounded-lg shadow-2xl flex flex-col md:flex-row max-h-[90vh] md:max-h-none overflow-y-auto md:min-h-[600px]"
+            className="relative bg-[#333] w-full max-w-[1200px] rounded-lg shadow-2xl flex flex-col md:flex-row h-[60vh] md:h-auto md:max-h-none overflow-hidden md:min-h-[600px]"
+            onClick={(e) => e.stopPropagation()}
           >
             {/* Close Button */}
             <button
@@ -45,7 +46,7 @@ export const JourneyModal: React.FC<JourneyModalProps> = ({ isOpen, onClose, mil
             </button>
 
             {/* Left Side - Image */}
-            <div className="w-full md:w-1/2 relative min-h-[260px] sm:min-h-[320px] md:min-h-[400px]">
+            <div className="w-full md:w-1/2 relative min-h-[260px] sm:min-h-[320px] md:min-h-[400px] shrink-0">
               <Image
                 src={milestone.modalImage || milestone.image}
                 alt={milestone.title}
@@ -55,8 +56,12 @@ export const JourneyModal: React.FC<JourneyModalProps> = ({ isOpen, onClose, mil
             </div>
 
             {/* Right Side - Content */}
-            <div className="w-full md:w-1/2 p-6 md:p-12 flex flex-col justify-center">
-              <div className="space-y-6 md:space-y-12 overflow-y-auto max-h-[70vh] pr-4 custom-scrollbar">
+            <div 
+              data-modal-scrollable="true"
+              className="w-full md:w-1/2 flex-1 min-h-0 overflow-y-auto custom-scrollbar pointer-events-auto relative z-10"
+              style={{ WebkitOverflowScrolling: 'touch', overscrollBehavior: 'none' }}
+            >
+              <div className="p-6 md:p-12 pb-16 md:pb-12 space-y-6 md:space-y-12 w-full">
                 {milestone.events?.map((event, index) => (
                   <div key={index} className="flex flex-col gap-4">
                     <h3

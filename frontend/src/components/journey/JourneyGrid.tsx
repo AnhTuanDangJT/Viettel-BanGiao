@@ -52,36 +52,42 @@ export const JourneyGrid: React.FC = () => {
     return () => el.removeEventListener('touchmove', handleTouchMoveManual);
   }, [isMobile, touchStart]);
 
-  React.useEffect(() => {
-    const handleScroll = (e: Event) => {
-      if (isModalOpen) {
-        e.preventDefault();
-        e.stopPropagation();
-      }
-    };
-    const preventKeyScroll = (e: KeyboardEvent) => {
-      const keys = [" ", "ArrowUp", "ArrowDown", "PageUp", "PageDown", "Home", "End"];
-      if (keys.includes(e.key)) {
-        e.preventDefault();
-        e.stopPropagation();
-      }
-    };
+  const scrollYRef = React.useRef(0);
 
+  React.useEffect(() => {
     if (isModalOpen) {
-      document.body.style.overflow = "hidden";
-      window.addEventListener("wheel", handleScroll, { passive: false });
-      window.addEventListener("touchmove", handleScroll, { passive: false });
-      window.addEventListener("keydown", preventKeyScroll, { passive: false });
+      scrollYRef.current = window.scrollY;
+      document.body.style.position = 'fixed';
+      document.body.style.top = `-${scrollYRef.current}px`;
+      document.body.style.width = '100%';
+      document.body.style.overflow = 'hidden';
     } else {
-      document.body.style.overflow = "";
+      document.body.style.position = '';
+      document.body.style.top = '';
+      document.body.style.width = '';
+      document.body.style.overflow = '';
+      
+      const html = document.documentElement;
+      const prevScrollBehavior = html.style.scrollBehavior;
+      
+      html.style.scrollBehavior = 'auto';
+      window.scrollTo(0, scrollYRef.current);
+      
+      setTimeout(() => {
+        html.style.scrollBehavior = prevScrollBehavior;
+      }, 10);
     }
-    return () => {
-      document.body.style.overflow = "";
-      window.removeEventListener("wheel", handleScroll);
-      window.removeEventListener("touchmove", handleScroll);
-      window.removeEventListener("keydown", preventKeyScroll);
-    };
   }, [isModalOpen]);
+
+  // Cleanup only on unmount
+  React.useEffect(() => {
+    return () => {
+      document.body.style.position = '';
+      document.body.style.top = '';
+      document.body.style.width = '';
+      document.body.style.overflow = '';
+    };
+  }, []);
 
   const paginate = (newDirection: number) => {
     const nextPage = (page + newDirection + totalPages) % totalPages;
@@ -94,7 +100,7 @@ export const JourneyGrid: React.FC = () => {
   };
 
   const handleTouchStart = (e: React.TouchEvent) => {
-    if (!isMobile) return;
+    if (!isMobile || isModalOpen) return;
     setTouchStart({
       x: e.targetTouches[0].clientX,
       y: e.targetTouches[0].clientY
@@ -102,11 +108,11 @@ export const JourneyGrid: React.FC = () => {
   };
 
   const handleTouchMove = () => {
-    if (!isMobile || touchStart === null) return;
+    if (!isMobile || isModalOpen || touchStart === null) return;
   };
 
   const handleTouchEnd = (e: React.TouchEvent) => {
-    if (!isMobile || touchStart === null) return;
+    if (!isMobile || isModalOpen || touchStart === null) return;
     const touchEnd = e.changedTouches[0].clientX;
     const diff = touchStart.x - touchEnd;
 

@@ -1184,7 +1184,7 @@ export const formerDirectorsData: FormerDirector[] = [
   {
     name: "Đồng chí Nguyễn Chí Thanh",
     img: "/images/giamdoc/nguyen-chi-thanh.webp",
-    role: "Giám đốc Trung tâm Viettel Store",
+    role: "Giám đốc Viettel Store",
     period: "01/2009 - 06/2012",
     description: (
       <>

@@ -122,7 +122,7 @@ export const journeyData: Milestone[] = [
       },
       {
         date: "09/2013",
-        content: "Quyết định đóng cửa chuỗi siêu thị Starmark để dồn lực tập trung for ngành hàng cốt lõi là thiết bị viễn thông và công nghệ thông tin."
+        content: "Quyết định đóng cửa chuỗi siêu thị Starmark để dồn lực tập trung cho ngành hàng cốt lõi là thiết bị viễn thông và công nghệ thông tin."
       },
       {
         date: "10/2013",

@@ -95,20 +95,47 @@ export default function ConNguoiPage() {
   // --- Body Scroll Lock ---
   const isAnyModalOpen = !!(selectedDept || selectedProvince || selectedDirector);
 
+  const scrollYRef = React.useRef(0);
+
   useEffect(() => {
     if (isAnyModalOpen) {
-      document.body.style.overflow = "hidden";
+      scrollYRef.current = window.scrollY;
+      document.body.style.position = 'fixed';
+      document.body.style.top = `-${scrollYRef.current}px`;
+      document.body.style.width = '100%';
+      document.body.style.overflow = 'hidden';
       const header = document.querySelector('header');
       if (header) header.style.transform = 'translateY(-100%)';
     } else {
-      document.body.style.overflow = "unset";
+      document.body.style.position = '';
+      document.body.style.top = '';
+      document.body.style.width = '';
+      document.body.style.overflow = '';
+      
       const header = document.querySelector('header');
       if (header) header.style.transform = 'translateY(0)';
+      
+      const html = document.documentElement;
+      const prevScrollBehavior = html.style.scrollBehavior;
+      
+      html.style.scrollBehavior = 'auto';
+      window.scrollTo(0, scrollYRef.current);
+      
+      setTimeout(() => {
+        html.style.scrollBehavior = prevScrollBehavior;
+      }, 10);
     }
-    return () => {
-      document.body.style.overflow = "unset";
-    };
   }, [isAnyModalOpen]);
+
+  // Cleanup only on unmount
+  useEffect(() => {
+    return () => {
+      document.body.style.position = '';
+      document.body.style.top = '';
+      document.body.style.width = '';
+      document.body.style.overflow = '';
+    };
+  }, []);
 
   // --- Render Modals ---
   const renderModals = () => {

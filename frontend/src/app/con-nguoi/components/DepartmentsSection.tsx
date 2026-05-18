@@ -147,7 +147,7 @@ const DepartmentsSection = ({
                             <Image
                               src={encodeURI(dept.img)}
                               fill
-                              sizes="(max-width: 640px) 400px, (max-width: 1024px) 50vw, 600px"
+                              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 800px"
                               className="transition-transform duration-1000 group-hover:scale-105"
                               style={{
                                 objectFit: dept.gridObjectFit || 'cover',
@@ -155,8 +155,8 @@ const DepartmentsSection = ({
                                 transform: dept.gridScale ? `scale(${dept.gridScale})` : (dept.name.includes('Kế hoạch') ? 'scale(1.1)' : 'none')
                               }}
                               alt={dept.name}
-                              quality={40}
-                              priority={pageIdx === activeDeptPage || pageIdx === activeDeptPage - 1 || pageIdx === activeDeptPage + 1}
+                              quality={75}
+                              priority={pageIdx === 0}
                               onError={(e) => e.currentTarget.src = "/images/homepage/logo-viettel-store.webp"}
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent flex items-end p-6 md:p-8">
