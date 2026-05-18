@@ -10,12 +10,10 @@ const roboto = Roboto({
   display: 'swap',
 });
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import dynamic from "next/dynamic";
+import { TrophyAwardsSection } from "@/components/journey/TrophyAwardsSection";
 import { AboutUsRedSection } from "@/components/journey/AboutUsRedSection";
 import { ProudJourneySection } from "@/components/journey/ProudJourneySection";
-
-const TrophyAwardsSection = dynamic(() => import("@/components/journey/TrophyAwardsSection").then(mod => mod.TrophyAwardsSection), { ssr: false });
-const JourneySection = dynamic(() => import("@/components/journey/JourneySection").then(mod => mod.JourneySection), { ssr: false });
+import { JourneySection } from "@/components/journey/JourneySection";
 import { RipplePattern } from "@/components/journey/RipplePattern";
 import { motion } from "framer-motion";
 

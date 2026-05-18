@@ -14,7 +14,18 @@ function cn(...inputs: ClassValue[]) {
 
 export const JourneyGrid: React.FC = () => {
   const [isMobile, setIsMobile] = useState(false);
-  const itemsPerPage = isMobile ? 1 : 6;
+  const [mounted, setMounted] = useState(false);
+  
+  React.useEffect(() => {
+    setMounted(true);
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  const isMobileView = mounted && isMobile;
+  const itemsPerPage = isMobileView ? 1 : 6;
   const totalPages = Math.ceil(journeyData.length / itemsPerPage);
   
   const [[page, direction], setPage] = useState([0, 0]);
@@ -22,13 +33,6 @@ export const JourneyGrid: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [touchStart, setTouchStart] = React.useState<{x: number, y: number} | null>(null);
   const containerRef = React.useRef<HTMLDivElement>(null);
-
-  React.useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth < 768);
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
-  }, []);
 
   // Radical fix for vertical slip
   React.useEffect(() => {
@@ -155,7 +159,7 @@ export const JourneyGrid: React.FC = () => {
     <div 
       ref={containerRef}
       className="w-full relative pt-6 pb-6 flex flex-col items-center overflow-hidden"
-      style={{ touchAction: isMobile ? 'pan-y' : 'auto' }}
+      style={{ touchAction: isMobileView ? 'pan-y' : 'auto' }}
       onTouchStart={handleTouchStart}
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
@@ -210,7 +214,7 @@ export const JourneyGrid: React.FC = () => {
         milestone={selectedMilestone}
       />
 
-      {isMobile ? (
+      {isMobileView ? (
         <div className="mt-8 flex flex-col items-center gap-6 w-full">
           {/* Dots on top */}
           <div className="flex flex-nowrap justify-center gap-1.5 items-center max-w-full px-4">

@@ -155,11 +155,11 @@ const DepartmentsSection = ({
                                 transform: dept.gridScale ? `scale(${dept.gridScale})` : (dept.name.includes('Kế hoạch') ? 'scale(1.1)' : 'none')
                               }}
                               alt={dept.name}
-                              quality={dept.name.includes('Công nghệ Thông tin') ? 100 : 75}
+                              unoptimized
                               priority={pageIdx === 0}
                               onError={(e) => e.currentTarget.src = "/images/homepage/logo-viettel-store.webp"}
                             />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent flex items-end p-6 md:p-8">
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/35 via-black/5 to-transparent flex items-end p-6 md:p-8">
                               <div className="text-white">
                                 <h3 className="text-sm md:text-base font-bold leading-tight drop-shadow-md whitespace-pre-line">
                                   {dept.name}
