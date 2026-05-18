@@ -64,7 +64,19 @@ const myriadPro = localFont({
 
 export const metadata: Metadata = {
   title: "Viettel Store",
-  description: "Viettel Store Landing Page",
+  description: "Viettel Store - 20 Năm Khát Vọng Vươn Xa",
+  openGraph: {
+    type: "website",
+    locale: "vi_VN",
+    title: "Viettel Store",
+    description: "Viettel Store - 20 Năm Khát Vọng Vươn Xa",
+    images: [
+      {
+        url: "https://cdn.viettelstore.vn/images/Advertises/default-logo-vts.png",
+        secureUrl: "https://cdn.viettelstore.vn/images/Advertises/default-logo-vts.png",
+      }
+    ],
+  },
 };
 
 import { Header } from "@/components/layout/Header";

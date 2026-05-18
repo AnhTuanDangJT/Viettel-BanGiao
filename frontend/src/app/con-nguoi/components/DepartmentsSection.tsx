@@ -155,7 +155,7 @@ const DepartmentsSection = ({
                                 transform: dept.gridScale ? `scale(${dept.gridScale})` : (dept.name.includes('Kế hoạch') ? 'scale(1.1)' : 'none')
                               }}
                               alt={dept.name}
-                              quality={75}
+                              quality={dept.name.includes('Công nghệ Thông tin') ? 100 : 75}
                               priority={pageIdx === 0}
                               onError={(e) => e.currentTarget.src = "/images/homepage/logo-viettel-store.webp"}
                             />
