@@ -79,9 +79,9 @@ const ProvinceModal = ({
         <div className="absolute inset-0 opacity-[0.03] mix-blend-overlay bg-[url('https://www.transparenttextures.com/patterns/stardust.png')]"></div>
       </div>
 
-      <div className="relative z-50 min-h-full w-full flex flex-col items-center justify-center py-12 md:py-20 px-4">
+      <div className="relative z-50 min-h-full w-full flex flex-col items-center justify-center py-4 md:py-10 px-4">
 
-      <div className="w-full text-center mb-6 md:mb-10">
+      <div className="w-full text-center mb-3 md:mb-6">
         {/* Inside Close Button */}
         <button 
         onClick={onClose}
@@ -96,7 +96,7 @@ const ProvinceModal = ({
         </h2>
       </div>
 
-      <div className="flex flex-col items-center justify-center gap-y-4 md:gap-y-8 w-full animate-in fade-in zoom-in-90 duration-1000 delay-200">
+      <div className="flex flex-col items-center justify-center gap-y-3 md:gap-y-5 w-full animate-in fade-in zoom-in-90 duration-1000 delay-200">
         <div className="relative flex items-center justify-center w-full max-w-[1600px] px-4 md:px-0">
           {province.stores.length > 1 && (
             <>
@@ -171,7 +171,7 @@ const ProvinceModal = ({
                   className="relative z-10 w-full h-full shadow-2xl"
                 >
                     <Image
-                      quality={75}
+                      unoptimized
                       src={encodeURI(currentStore.img)}
                       alt={province.name}
                       fill
@@ -197,7 +197,7 @@ const ProvinceModal = ({
           </div>
         </div>
 
-          <div className="w-full text-center mt-4 md:mt-6">
+          <div className="w-full text-center mt-2 md:mt-4">
             <h3 className="relative z-50 font-beausans font-bold text-2xl md:text-4xl lg:text-5xl tracking-normal !text-white !opacity-100 drop-shadow-[0_4px_12px_rgba(0,0,0,0.8)]">
               {currentStore.id.includes('CH')
                 ? `Cửa hàng ${currentStore.id}`
