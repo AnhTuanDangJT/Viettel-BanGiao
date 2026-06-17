@@ -108,7 +108,7 @@ export interface FormerDirector {
 
 export const leaders: Leader[] = [
   { name: "THƯỢNG TÁ\nTRƯƠNG ĐẠI NGHĨA", role: "Phó giám đốc Viettel Store", img: encodeURI("/images/giamdoc/le-quoc-tuan-1.webp"), objectPosition: "20% top", scale: 1.08, objectFit: "cover" },
-  { name: "THIẾU TÁ\nĐINH THỊ DUNG", role: "Phó giám đốc công ty Viettel Commerce\nGiám đốc Viettel Store", img: encodeURI("/images/ban_giam_doc/dung.webp"), objectPosition: "center top", scale: 1.45 },
+  { name: "TRUNG TÁ\nĐINH THỊ DUNG", role: "Phó giám đốc công ty Viettel Commerce\nGiám đốc Viettel Store", img: encodeURI("/images/ban_giam_doc/dung.webp"), objectPosition: "center top", scale: 1.45 },
   { name: "THIẾU TÁ\nĐINH SƠN TÙNG", role: "Phó giám đốc Viettel Store", img: encodeURI("/images/ban_giam_doc/tung.webp"), objectPosition: "center top", scale: 1.15 },
 ];
 
