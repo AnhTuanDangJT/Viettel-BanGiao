@@ -108,22 +108,22 @@ export interface FormerDirector {
 
 export const leaders: Leader[] = [
   { name: "THƯỢNG TÁ\nTRƯƠNG ĐẠI NGHĨA", role: "Phó giám đốc Viettel Store", img: encodeURI("/images/giamdoc/le-quoc-tuan-1.webp"), objectPosition: "20% top", scale: 1.08, objectFit: "cover" },
-  { name: "TRUNG TÁ\nĐINH THỊ DUNG", role: "Phó giám đốc công ty Viettel Commerce\nGiám đốc Viettel Store", img: encodeURI("/images/ban_giam_doc/dung.webp"), objectPosition: "center top", scale: 1.45 },
+  { name: "TRUNG TÁ\nĐINH THỊ DUNG", role: "Phó tổng Giám đốc Viettel Commerce\nGiám đốc Viettel Store", img: encodeURI("/images/ban_giam_doc/dung.webp"), objectPosition: "center top", scale: 1.45 },
   { name: "THIẾU TÁ\nĐINH SƠN TÙNG", role: "Phó giám đốc Viettel Store", img: encodeURI("/images/ban_giam_doc/tung.webp"), objectPosition: "center top", scale: 1.15 },
 ];
 
 export const longService: LongService[] = [
   { name: "ĐỒNG CHÍ NGÔ NGÂN HÀ", years: 20, dept: "Phòng Kinh doanh Thiết bị", date: "01/10/2005", img: "/images/vinhdanh/v1.webp", objectPosition: "center 10%", scale: 1.0 },
   { name: "ĐỒNG CHÍ NGUYỄN THỊ THÙY DƯƠNG", years: 20, dept: "Phòng Chất lượng Dịch vụ", date: "01/10/2005", img: "/images/vinhdanh/v2.webp" },
-  { name: "ĐỒNG CHÍ ĐOÀN CHÍ HIẾU", years: 20, dept: "Phòng Kế hoạch và Kiểm soát", date: "01/10/2005", img: "/images/vinhdanh/v3.webp" },
-  { name: "ĐỒNG CHÍ BÙI ĐỨC TOÀN", years: 20, dept: "Phòng Chất lượng Dịch vụ", date: "01/10/2005", img: "/images/vinhdanh/v4.webp" },
-  { name: "ĐỒNG CHÍ PHAN MINH TUẤN", years: 19, dept: "Phòng Kinh doanh Thiết bị", date: "27/12/2005", img: "/images/vinhdanh/v5.webp" },
+  { name: "ĐỒNG CHÍ ĐOÀN CHÍ HIẾU", years: 20, dept: "Phòng Kiểm soát nội bộ", date: "01/10/2005", img: "/images/vinhdanh/v3.webp" },
+  { name: "ĐỒNG CHÍ BÙI ĐỨC TOÀN", years: 20, dept: "Phòng Kinh doanh Thiết bị", date: "01/10/2005", img: "/images/vinhdanh/v4.webp" },
+  { name: "ĐỒNG CHÍ PHAN MINH TUẤN", years: 19, dept: "Phòng Chất lượng Dịch vụ", date: "27/12/2005", img: "/images/vinhdanh/v5.webp" },
   { name: "ĐỒNG CHÍ NGUYỄN THỊ DUYÊN", years: 19, dept: "Hệ thống siêu thị: HNI03", date: "01/07/2006", img: "/images/vinhdanh/v6.webp" },
   { name: "ĐỒNG CHÍ NGUYỄN THỊ NGỌC OANH", years: 19, dept: "Hệ thống cửa hàng: HYN-CH01", date: "03/01/2006", img: "/images/vinhdanh/v7.webp" },
   { name: "ĐỒNG CHÍ BÙI THỊ THU LÊ", years: 19, dept: "Phòng Marketing", date: "15/10/2006", img: "/images/vinhdanh/v8.webp" },
-  { name: "ĐỒNG CHÍ PHÙNG THU HUYỀN", years: 18, dept: "Phòng Kế hoạch và Kiểm soát", date: "01/05/2007", img: "/images/vinhdanh/v9.webp" },
+  { name: "ĐỒNG CHÍ PHÙNG THU HUYỀN", years: 18, dept: "Phòng Chiến lược", date: "01/05/2007", img: "/images/vinhdanh/v9.webp" },
   { name: "ĐỒNG CHÍ BÙI THỊ LƯ", years: 18, dept: "Hệ thống siêu thị: HNI06", date: "01/05/2007", img: "/images/vinhdanh/v10.webp" },
-  { name: "ĐỒNG CHÍ TRẦN HẢI VINH", years: 18, dept: "Phòng Điều hành và Phát triển siêu thị", date: "01/05/2007", img: "/images/vinhdanh/v11.webp" },
+  { name: "ĐỒNG CHÍ TRẦN HẢI VINH", years: 18, dept: "Phòng Phát triển Kênh", date: "01/05/2007", img: "/images/vinhdanh/v11.webp" },
   { name: "ĐỒNG CHÍ NGUYỄN THỊ THU HƯỜNG", years: 18, dept: "Hệ thống siêu thị: HNI06", date: "05/01/2007", img: "/images/vinhdanh/v12.webp" },
   { name: "ĐỒNG CHÍ VŨ KIM CHUNG", years: 18, dept: "Phòng Kinh doanh Thiết bị", date: "01/11/2007", img: "/images/vinhdanh/v13.webp" },
   { name: "ĐỒNG CHÍ DƯƠNG SƠN TÙNG", years: 18, dept: "Phòng Kinh doanh Dịch vụ", date: "01/11/2007", img: "/images/vinhdanh/v14.webp" },
@@ -173,25 +173,25 @@ export const departments: Department[] = [
     }
   },
   {
-    name: "Phòng Điều hành và Phát triển Siêu thị\nBộ phận Điều hành Siêu thị",
+    name: "Phòng Điều hành Siêu thị",
     img: "/images/tapthephong/bo_phan_dieu_hanh_sieu_thi.webp",
     hasTextOnImage: false,
     details: {
-      leader: { name: "Phạm Anh Tuấn", role: "Trưởng phòng Điều hành và Phát triển Siêu thị", img: "/images/tapthephong/tp_pp/dieu_hanh_sieu_thi/tp_pham_anh_tuan.webp" },
-      group: { name: "Tập thể Phòng Điều hành và Phát triển Siêu thị\nBộ phận Điều hành Siêu thị", subName: "Phòng Điều hành và Phát triển Siêu thị", img: "/images/tapthephong/bo_phan_dieu_hanh_sieu_thi.webp" },
+      leader: { name: "Phạm Anh Tuấn", role: "Trưởng phòng Điều hành Siêu thị", img: "/images/tapthephong/tp_pp/dieu_hanh_sieu_thi/tp_pham_anh_tuan.webp" },
+      group: { name: "Tập thể Phòng Điều hành Siêu thị", subName: "Phòng Điều hành Siêu thị", img: "/images/tapthephong/bo_phan_dieu_hanh_sieu_thi.webp" },
       deputies: [
-        { name: "Chung Duy Tuấn", role: "Phó phòng Điều hành và Phát triển Siêu thị", img: "/images/tapthephong/tp_pp/dieu_hanh_sieu_thi/pp_chung_duy_tuan_2.webp" }
+        { name: "Chung Duy Tuấn", role: "Phó phòng Điều hành Siêu thị", img: "/images/tapthephong/tp_pp/dieu_hanh_sieu_thi/pp_chung_duy_tuan_2.webp" }
       ]
     }
   },
   {
-    name: "Phòng Điều hành và Phát triển Siêu thị\nBộ phận Phát triển Kênh",
+    name: "Phòng Phát triển Kênh",
     img: "/images/tapthephong/phong_phat_trien_sieu_thi.webp",
     hasTextOnImage: false,
     details: {
-      group: { name: "Tập thể Phòng Điều hành và Phát triển Siêu thị\nBộ phận Phát triển Kênh", subName: "Phòng Điều hành và Phát triển Siêu thị", img: "/images/tapthephong/phong_phat_trien_sieu_thi.webp" },
+      group: { name: "Tập thể Phòng Phát triển Kênh", subName: "Phòng Phát triển Kênh", img: "/images/tapthephong/phong_phat_trien_sieu_thi.webp" },
       deputies: [
-        { name: "Đồng chí Trần Hải Vinh", role: "Phó phòng - Phụ trách bộ phận Phát triển Kênh", img: "/images/tapthephong/tp_pp/phat_trien_kenh/pp_tran_hai_vinh.webp" }
+        { name: "Đồng chí Trần Hải Vinh", role: "Trưởng phòng Phát triển Kênh", img: "/images/tapthephong/tp_pp/phat_trien_kenh/pp_tran_hai_vinh.webp" }
       ]
     }
   },
@@ -245,35 +245,35 @@ export const departments: Department[] = [
     }
   },
   {
-    name: "Phòng Kế hoạch và Kiểm soát\nBộ phận Kế Hoạch",
+    name: "Phòng Chiến lược",
     img: "/images/tapthephong/bo_phan_ke_hoach_tong_hop.webp",
     gridObjectPosition: "80% center",
     hasTextOnImage: false,
     details: {
-      leader: { name: "Đồng chí Phan Thị Ngọc Tú", role: "Trưởng phòng Bộ phận Kế hoạch", img: encodeURI("/images/tapthephong/tp_pp/bo_phan_ke_hoach/tp_phan_thi_ngoc_tu.webp") },
-      group: { name: "Tập thể Phòng Kế hoạch và Kiểm soát\nBộ phận Kế hoạch", subName: "Phòng Kế hoạch và Kiểm soát", img: "/images/tapthephong/bo_phan_ke_hoach_tong_hop.webp", objectPosition: "90% center" },
+      leader: { name: "Đồng chí Phan Thị Ngọc Tú", role: "Trưởng phòng Chiến lược", img: encodeURI("/images/tapthephong/tp_pp/bo_phan_ke_hoach/tp_phan_thi_ngoc_tu.webp") },
+      group: { name: "Tập thể Phòng Chiến lược", subName: "Phòng Chiến lược", img: "/images/tapthephong/bo_phan_ke_hoach_tong_hop.webp", objectPosition: "90% center" },
       deputies: [
-        { name: "Đồng chí Phạm Anh Quân", role: "Phó phòng Bộ phận Kế hoạch", img: encodeURI("/images/tapthephong/tp_pp/bo_phan_ke_hoach/pp_pham_anh_quan.webp") }
+        { name: "Đồng chí Phạm Anh Quân", role: "Phó phòng Chiến lược", img: encodeURI("/images/tapthephong/tp_pp/bo_phan_ke_hoach/pp_pham_anh_quan.webp") }
       ]
     }
   },
   {
-    name: "Phòng Kế hoạch và Kiểm soát\nBộ phận Kiểm soát",
+    name: "Phòng Kiểm soát nội bộ",
     img: "/images/tapthephong/bo_phan_kiem_soat.webp",
     hasTextOnImage: false,
     details: {
-      group: { name: "Tập thể Phòng Kế hoạch và Kiểm soát\nBộ phận Kiểm soát", subName: "Phòng Kế hoạch và Kiểm soát", img: "/images/tapthephong/bo_phan_kiem_soat.webp" },
+      group: { name: "Tập thể Phòng Kiểm soát nội bộ", subName: "Phòng Kiểm soát nội bộ", img: "/images/tapthephong/bo_phan_kiem_soat.webp" },
       deputies: [
-        { name: "Đồng chí Đoàn Chí Hiếu", role: "Phó phòng - Phụ trách bộ phận Kiểm soát", img: encodeURI("/images/tapthephong/tp_pp/bo_phan_kiem_soat/pp_doan_chi_hieu.webp") }
+        { name: "Đồng chí Đoàn Chí Hiếu", role: "Phó phòng - Phụ trách Phòng Kiểm soát nội bộ", img: encodeURI("/images/tapthephong/tp_pp/bo_phan_kiem_soat/pp_doan_chi_hieu.webp") }
       ]
     }
   },
   {
-    name: "Chi nhánh bán lẻ khu vực phía Nam",
+    name: "Chi nhánh khu vực phía Nam",
     img: "/images/ban_le_mien_nam/ban_le_mien_nam_main.webp",
     hasTextOnImage: false,
     details: {
-      group: { name: "Chi nhánh bán lẻ khu vực phía Nam", subName: "Viettel Store", img: "/images/ban_le_mien_nam/ban_le_mien_nam_main.webp" },
+      group: { name: "Chi nhánh khu vực phía Nam", subName: "Viettel Store", img: "/images/ban_le_mien_nam/ban_le_mien_nam_main.webp" },
       deputies: []
     }
   },
@@ -326,19 +326,18 @@ export const supermarketChannel: Department = {
         items: [
           { img: "/images/anh_nhan_su/pham_minh_khanh.webp", name: "Đồng chí Phạm Minh Khánh", role: "Quản lý vùng" },
           { img: "/images/anh_nhan_su/vu_manh_tien.webp", name: "Đồng chí Vũ Mạnh Tiến", role: "Quản lý vùng" },
-          { img: "/images/anh_nhan_su/trinh_xuan_hanh.webp", name: "Đồng chí Trịnh Xuân Hạnh", role: "Quản lý vùng" }
+          { img: "/images/anh_nhan_su/truong_cong_luan.webp", name: "Đồng chí Trương Công Luân", role: "Quản lý vùng" }
         ]
       },
       {
         items: [
-          { img: "/images/anh_nhan_su/truong_cong_luan.webp", name: "Đồng chí Trương Công Luân", role: "Quản lý vùng" },
           { img: "/images/anh_nhan_su/phan_minh_hai.webp", name: "Đồng chí Phan Minh Hải", role: "Quản lý vùng" },
-          { img: "/images/anh_nhan_su/truong_minh_sang.webp", name: "Đồng chí Trương Minh Sang", role: "Quản lý vùng" }
+          { img: "/images/anh_nhan_su/truong_minh_sang.webp", name: "Đồng chí Trương Minh Sang", role: "Quản lý vùng" },
+          { img: "/images/anh_nhan_su/diep_nghia_trong.webp", name: "Đồng chí Diệp Nghĩa Trọng", role: "Quản lý vùng" }
         ]
       },
       {
         items: [
-          { img: "/images/anh_nhan_su/diep_nghia_trong.webp", name: "Đồng chí Diệp Nghĩa Trọng", role: "Quản lý vùng" },
           { img: "/images/anh_nhan_su/tran_quoc_viet.webp", name: "Đồng chí Trần Quốc Việt", role: "Quản lý vùng" },
           { img: "/images/anh_nhan_su/doan_anh_thao.webp", name: "Đồng chí Đoàn Anh Thao", role: "Quản lý vùng" }
         ]
