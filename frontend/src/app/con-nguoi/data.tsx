@@ -108,7 +108,7 @@ export interface FormerDirector {
 
 export const leaders: Leader[] = [
   { name: "THƯỢNG TÁ\nTRƯƠNG ĐẠI NGHĨA", role: "Phó giám đốc Viettel Store", img: encodeURI("/images/giamdoc/le-quoc-tuan-1.webp"), objectPosition: "20% top", scale: 1.08, objectFit: "cover" },
-  { name: "TRUNG TÁ\nĐINH THỊ DUNG", role: "Phó tổng Giám đốc Viettel Commerce\nGiám đốc Viettel Store", img: encodeURI("/images/ban_giam_doc/dung.webp"), objectPosition: "center top", scale: 1.45 },
+  { name: "TRUNG TÁ\nĐINH THỊ DUNG", role: "Phó Tổng Giám đốc Viettel Commerce\nGiám đốc Viettel Store", img: encodeURI("/images/ban_giam_doc/dung.webp"), objectPosition: "center top", scale: 1.45 },
   { name: "THIẾU TÁ\nĐINH SƠN TÙNG", role: "Phó giám đốc Viettel Store", img: encodeURI("/images/ban_giam_doc/tung.webp"), objectPosition: "center top", scale: 1.15 },
 ];
 
@@ -264,7 +264,7 @@ export const departments: Department[] = [
     details: {
       group: { name: "Tập thể Phòng Kiểm soát nội bộ", subName: "Phòng Kiểm soát nội bộ", img: "/images/tapthephong/bo_phan_kiem_soat.webp" },
       deputies: [
-        { name: "Đồng chí Đoàn Chí Hiếu", role: "Phó phòng - Phụ trách Phòng Kiểm soát nội bộ", img: encodeURI("/images/tapthephong/tp_pp/bo_phan_kiem_soat/pp_doan_chi_hieu.webp") }
+        { name: "Đồng chí Đoàn Chí Hiếu", role: "Trưởng phòng Kiểm soát nội bộ", img: encodeURI("/images/tapthephong/tp_pp/bo_phan_kiem_soat/pp_doan_chi_hieu.webp") }
       ]
     }
   },

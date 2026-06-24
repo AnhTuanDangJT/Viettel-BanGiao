@@ -336,7 +336,7 @@ export default function TuongLaiPage() {
 
               <ul className="space-y-6">
                 {[
-                  "Công ty bán lẻ đa dịch vụ hiện đại, chuyên nghiệp hàng đầu Việt Nam",
+                  "Công ty kinh doanh thiết bị số hiện đại, chuyên nghiệp hàng đầu Việt Nam",
                   "Dẫn đầu về ứng dụng công nghệ và trải nghiệm khách hàng",
                   "Đóng góp lớn cho Tập đoàn và là đại diện hình ảnh Viettel"
                 ].map((text, idx) => (
